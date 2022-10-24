@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementos avanzados de HTML</title>
+    <link rel="stylesheet" href="general.css">
+    <style>
+        /* Se seleccionan a las que están dentro de div */
+        div{
+            border: 1px solid black;
+            display:flex;
+            justify-content: center;
+            /* Ejemplo de como centrar el botón */
+        }
+        div a{
+            text-decoration: none;
+            background-color: rgb(80, 80, 80);
+            color: white;
+            padding:5px;
+            border-radius: 5px;
+
+
+        }
+
+        h1{
+            border: 3px solid black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Elementos avanzados de HTML</h1>
+
+    <h2>Links o hipervínculos</h2>
+    <p>Los link se encuentran en todo tipo de paginas. permiten 
+        al usuario navegar por los documentos de la web.
+    </p>
+    <p>
+        Cuando clicas en un link te mueve a otro documento o a una parte concreta del mismo.
+
+        <p>
+            cuando se pasa el cursor sobre un link, este se torna en 
+            una mano.
+        </p>
+        <p>
+            Un link se define mediante un elemento <code>&lt;a&gt;
+            </code>
+        </p>
+
+    <p>
+        La sintaxis de un link, por norma general, es:
+        <code>
+            &lt;a href="url&gt;Text del link&lt;/a&gt;"
+        </code>
+    </p>
+    
+    <p>
+        El atributo mas importante de un link es el "hrf" ya que este 
+        indica el punto al que nos llevaráel link.
+    </p>
+    <p>Ejemplos:</p>
+
+    <a href="https://colorhunt.co/palettes/popular"
+    target="_blank"> Link a color hunt</a> <br>
+    <a href="CSS-basico.html">Link a la teoría de CSS</a>
+
+    <P>
+        lOS LINKS TIENEN 3 ESTADOS:
+        <ul>
+            <li>Son azules cuando no han sido visitados.</li>
+            <li>Morados cuando ya han sido clicados.</li>
+            <li>y rojos cuando están activos</li>
+        
+        </ul>
+    </P>
+
+    <p>
+        Los links se pueden modificar mediante CSS para que tengan un
+        aspecto completamente distinto.
+    </p>
+    
+    <div>
+        <a href="#">Esto es un link</a>
+    </div>
+    <h3>Usar una imagen como link</h3>
+
+    <a target="blank"
+     href="https://tuul.tv/es/ecologia/medio-ambiente-valores-ambientales-hay-conocer">
+     <img width="40%"src="https://tuul.tv/sites/default/files/2vam.jpg" alt="">
+    </a>
+       
+
+    <!--Linka la página de cascadas-->
+
+    <a target="blank"
+    
+     href="https://tipsparatuviaje.com/cascadas-en-chiapas/">
+     <!--En el href de la a -->
+     <img width="40%"src="https://tipsparatuviajecom62b65.zapwp.com/q:intelligent/retina:false/webp:false/w:1440/url:https://tipsparatuviaje.com/wp-content/uploads/2019/02/cascadas-las-nubes.jpg" alt="">
+    </a>
+
+    <a target="blank"
+     href="https://www.meteorologiaenred.com/cielo-estrellado.html">
+     <img width="40%"src="https://www.meteorologiaenred.com/wp-content/uploads/2017/01/cielo-estrellado-830x553.jpg.webp" alt="">
+    </a>
+
+    <a target="blank"
+     href="https://planosmodernos.info/imagenes-de-paisajes-bonitos/">
+     <img width="40%"src="https://planosmodernos.info/wp-content/uploads/Im%C3%A1genes-de-paisajes-bonitos.jpg" alt="">
+    </a>
+
+
+</body>
+</html>
