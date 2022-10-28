@@ -1,0 +1,80 @@
+form.simple-form {
+    /* Para los degradados depende de los grados que le pongas antes del color*/
+    background: linear-gradient(45deg, rgb(180, 138, 164),
+            transparent);
+    border: 5px;
+    width: 75%;
+}
+
+/* Selecciona únicamente a los hijos directos del form */
+.simple-form .content {
+    display: flex;
+    justify-content: space-between;
+
+    width: 350px;
+    margin-bottom: 5px;
+
+}
+
+/* Selecciona al div que es el único hijo del form */
+form.simple-form div:last-child {
+    justify-content: flex-start;
+}
+
+form.simple-form input,
+form.simple-form div button {
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(190, 140, 171);
+    margin-right: 5px;
+    /* font-weight: para nergita las palabras */
+    font-weight: bold;
+    /* text-transform: para poner en mayuscula las pabras */
+    text-transform: uppercase;
+}
+
+/* input{
+    background-color: red !important;
+} */
+
+form.contact {
+    background-color: rgb(218, 157, 204);
+    display: flex;
+   
+}
+
+form.contact div {
+    width: 50%;
+}
+
+form.contact input[type='text'],
+form.contact textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid black;
+    width: 100%;
+}
+
+form.contact input[type='submit'] {
+    background: transparent;
+    padding: 10px 40px;
+    margin: 20px 0;
+}
+
+.boton:hover {
+    background-color: rgb(221, 221, 177);
+}
+
+form.contact input[type='submit']:hover {
+    background: rgb(184, 153, 199);
+    color: white;
+    /* El curso cambia a una mano al usuario que puede clicar sobre él */
+    cursor: pointer;
+    /* cursor:pointer para poner la mano */
+}
+
+.icono i{
+    width: 50%;
+    font-size: 40px;
+
+}
