@@ -40,9 +40,9 @@
         <div class="content">
             <label for="gender">Gender:</label>
             <div>
-                <input type="radio" name="gender" id="">Male
-                <input type="radio" name="gender" id="">Female
-                <input type="radio" name="gender" id="">Other
+                <input type="radio" name="gender" value="male">Male
+                <input type="radio" name="gender" value="female">Female
+                <input type="radio" name="gender" value="other">Other
             </div>
             <!-- </div><div class="content"> es un salto de línea -->
         </div>
@@ -105,43 +105,52 @@
 
     <h2>Formulario de vehículos</h2>
 
-    <form action="renting"></form>
-    <label for="">Por favor, seleccione un tipo de vehículo</label>
-    <!-- label significa etiqueta los formularios necesitan de etiquetas -->
-    <!-- El selector nos da a elegir entre un conjunto de opciones 
+    <!-- En las etiquetas no se debe poner mayúscula ejem: name:, for:, etc -->
+    <form action="renting">
+        <label for="tipos">Por favor, seleccione un tipo de vehículo</label>
+        <!-- label significa etiqueta los formularios necesitan de etiquetas -->
+        <!-- El selector nos da a elegir entre un conjunto de opciones 
     preestablecidos -->
-    <select name="" id="">
-        <option value=""></option>
-        <option value="">Coche</option>
-        <option value="">Moto</option>
-        <option value="">Furgoneta</option>
-    </select>
+        <select name="tipos" id="">
+            <option value=""></option>
+            <option value="coche">Coche</option>
+            <option value="moto">Moto</option>
+            <option value="furgoneta">Furgoneta</option>
+        </select>
 
-    <br>
-    <label for="">Necesita usted un conductor</label>
-    <select name="" id="">
-        <option value=""></option>
-        <option value="">Si</option>
-        <option value="">No</option>
-    </select>
+        <br>
+        <label for="seleccione">Necesita usted un conductor</label>
+        <select name="seleccione" id="seleccione">
+            <option value=""></option>
+            <option value="">Si</option>
+            <option value="">No</option>
+        </select>
 
-    <br>
-    <label for="">Seleccione marca del vehículo</label>
-    <input list="marcas">
-    <!-- Detalist + input nos genera un cuadro de inserción de datos con 
+        <br>
+        <label for="marcas">Seleccione marca del vehículo</label>
+        <input name="marcas" list="marcas">
+        <!-- Detalist + input nos genera un cuadro de inserción de datos con 
         una lista de sugerencias -->
-    <datalist id="marcas">
-        <option value="Fiat"></option>
-        <option value="Citröen"></option>
-        <option value="Renault"></option>
-        <option value="Audi"></option>
-    </datalist>
+        <datalist id="marcas">
+            <option value="Fiat"></option>
+            <option value="Citröen"></option>
+            <option value="Renault"></option>
+            <option value="Audi"></option>
+        </datalist>
 
-    <br>
-    <input type="submit">
+        <br>
+        <input type="SUBMIT">
+    </form>
+    <H2>fORMULARIO DE INICIO DE SECIÓN O LOGIN</H2>
+
+    <forn action="" class="login">
+        <input name="user" type="text" placeholder="Introduce la contraseña">
+        <br>
+        <input name="password" type="password" placeholder="Inserte la contraseña">
+        <br>
+        <input type="submit">
+    </forn>
     
-
-
 </body>
 
 </html>
