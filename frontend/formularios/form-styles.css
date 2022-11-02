@@ -78,3 +78,6 @@ form.contact input[type='submit']:hover {
     font-size: 40px;
 
 }
+form.contact div.contact-left{
+    padding: 10px 20px;
+}
