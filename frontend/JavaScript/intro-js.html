@@ -42,9 +42,14 @@
     <p>
         Pulsa el botón para encender la bombilla
     </p>
-        <img id='bulb' src="../recursos/bombilla-apagada.gif" alt="">
-        <button onclick="bulbSwitch()">Encender la luz</button>
- <div>ughj</div>
+    <img id="bulb" src="../recursos/bombilla-apagada.gif" alt="">
+    <!-- <img id="bulbOn" src="../recursos/bombilla-encendida.gif" alt=""> -->
+    <br>
+    <!-- <button onclick="encender()">Encender la luz</button>
+    <button onclick="apagar()">Apagar la luz</button> -->
+    <button onclick="lightSwitch()">Interruptor de la luz</button>
+        
+ 
 </body>
 <script>
     function colorChange() {
@@ -78,13 +83,40 @@
         }
     }
 
-    function bulbSwitch() {
-        // console.log(document.getElementById('bulb').src) sirve para ver el fallo
-        document.getElementById('bulb').scr = "../recursos/bombilla-encendida.gif";
-        
+
+
+     // Interruptor de la luz
+
+    // declaramos las variables y guardamos los datos
+    // esto ocurrirá cuando se cargue el documento en el navegador
+    var bombilla = document.getElementById('bulb');
+    var estado = "apagada";
+    // estado me sirve para hacer un seguimiento del estado de la bombilla
+    var encendida = "../recursos/bombilla-encendida.gif";
+    var apagada = "../recursos/bombilla-apagada.gif";
+    // estas dos variables guardan una cadena de texto para ahorrar tiempo
+
+    function lightSwitch() {
+        if (estado == "apagada") {
+            bombilla.src = encendida;
+            estado = "encendida";
+        } else {
+            bombilla.src = apagada;
+            estado = "apagada";
+        }
     }
+
+    // function encender() {
+    //     document.getElementById('bulbOn').style.display = "block";
+    //     document.getElementById('bulbOff').style.display = "none";
+    // }
+    // function apagar() {
+    //     document.getElementById('bulbOn').style.display = "none";
+    //     document.getElementById('bulbOff').style.display = "block";
+    // }
 
 
 </script>
+<script src="intro-js.js"></script>
 
 </html>
