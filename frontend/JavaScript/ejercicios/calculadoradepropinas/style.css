@@ -3,3 +3,79 @@
     font-weight: bold;
     font-size: large;
 }
+
+
+body {
+    background: linear-gradient(to right, #258ef6, #001333);
+    font-family: verdana;
+    font-size: 0.9rem;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 400px;
+    max-height: 90vh;
+    margin: 0 auto;
+
+    background: white;
+    border-radius: 20px;
+}
+
+.container h1 {
+    background-color: #001333;
+    color: white;
+    width: 100%;
+    text-align: center;
+    margin-top: 0;
+    border-radius: 20px 20px 0 0;
+    padding: 10px 0;
+}
+
+.container div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 10px;
+    margin: 0 auto;
+}
+.container div p:first-child {
+    /* font-size: 1.05rem; */
+    font-weight: bold;
+}
+.container input {
+    width: 50px;
+    border: none;
+    border-bottom: 2px solid #001333;
+}
+.container button {
+    width: 150px;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: #258ef6;
+    border-radius: 10px;
+    border: none;
+}
+
+#divResultado {
+    background: #001333;
+    width: 100%;
+    min-height: 65px;
+    border-radius: 0 0 20px 20px;
+    box-sizing: border-box;
+    /* padding: 0; */
+}
+#pResultado {
+    display: none;
+    visibility: hidden;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    margin: auto;
+}
