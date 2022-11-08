@@ -1,0 +1,53 @@
+ @import url('https://fonts.cdnfonts.com/css/mosaico-2');
+                
+body{
+    background: linear-gradient(75deg, rgb(958, 450, 960), rgb(112, 32, 102));
+    height: 100vh;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */  
+    
+    font-family: 'Mosaico', sans-serif;
+
+}
+
+h1{
+    color: rgb(61, 21, 134);
+    background: transparent;
+    
+        
+    display: flex;
+}
+
+h1 div.number {
+    padding: 4px 10 px;
+    min-width: 66px;
+}
+/* de los div que tengan h1 el quinto hijo */
+h1 div.number:nth-child(5) {
+    text-align: justify;
+    padding-left: 15px;
+}
+
+
+div button {
+    border: 3.5px solid rgb(161, 101, 173);
+    background: transparent;
+    color: rgb(23, 11, 133);
+    padding:10px;
+    margin: auto;
+    
+
+    transition: all 1s;
+}
+
+div button:hover {
+    box-shadow: 0px 0px 30px 7px rgba(48, 54, 139, 0.8);
+    border: 4px solid rgb(77, 128, 177);
+    font-size: 1.05rem;
+    /* rem tamaño  */
+}
+

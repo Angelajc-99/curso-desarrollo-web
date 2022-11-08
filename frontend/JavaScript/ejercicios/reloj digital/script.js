@@ -47,6 +47,8 @@ function clock() {
     // El timeout ejecuta la función indicada después de una pausa de los más indicados 
     // Al final de la función, clock() se va a ejecutar a sí tras una pausa de 1 seg (1000 ms). Creando así un bucle.
 
+
+    
     function getFecha() {
         let fecha = new Date();
         let diaSemana = fecha.getDay();
@@ -54,7 +56,7 @@ function clock() {
         let mes = fecha.getMonth();
         let year = fecha.getFullYear();
 
-        let texto = '';
+    
         
         const dias = [
             "domingo",
@@ -81,10 +83,11 @@ function clock() {
             "diciembre",
         ]
 
-        texto = 'Día' + dias[ diaSemana ] + " , " + diaMes + ' de ' + meses[mes] + ' del año ' + year;
+        texto = 'Día ' + dias[ diaSemana ] + " , " + diaMes + ' de ' + meses[mes] + ' del año ' + year;
         document.getElementById('fechaGet').innerHTML = texto
     }
-
+    
+    getFecha()
 
 
 }

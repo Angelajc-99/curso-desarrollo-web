@@ -1,17 +1,39 @@
+
+@import url('https://fonts.cdnfonts.com/css/konstanhigh-free');
+                
+
 body {
-    background: rgb(300 46% 17%);
-    color:rgb(142, 60, 218)  ;
+    background: rgb(212,148,176);
+background: radial-gradient(circle, rgba(212,148,176,1) 10%, rgba(148,187,233,1) 87%);
+    
+    color:rgb(44, 157, 177)  ;
+    text-align: center;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 
-    height: 78%;
+    height: 100vh;
+    margin: 0%;
+
+    user-select: none;
+    font-family: 'Maybe But Not Always', sans-serif;
+                                                
+
+    
+                                                                             
 }
 
-h1 {
-    font-size: 40px;
 
-    margin-bottom: 8px;
+
+
+MARQUEE {
+
+        font-size: 40px;
+        margin-bottom: 0%;
+        /* border: 9px solid #bd8cd1;
+        width: 90%; */
+    
 }
