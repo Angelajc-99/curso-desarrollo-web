@@ -1,8 +1,9 @@
- @import url('https://fonts.cdnfonts.com/css/mosaico-2');
- @import url('https://fonts.cdnfonts.com/css/vipnagorgialla');
+@import url('https://fonts.cdnfonts.com/css/sting');
+ @import url('https://fonts.cdnfonts.com/css/letter-sketch');
+ @import url('https://fonts.cdnfonts.com/css/wellston');
                 
 body{
-    background: linear-gradient(75deg, rgb(958, 450, 960), rgb(112, 32, 102));
+    background: linear-gradient(75deg, rgb(998, 570, 960), rgb(32, 83, 112));
     height: 100vh;
     margin: 0;
 
@@ -11,17 +12,20 @@ body{
     align-items: center;
     /* justify-content: center; */  
     
-    font-family: 'Mosaico', sans-serif;
+    font-family: 'STING', sans-serif;
 
     text-align: center;
+    font-size: 40px;
 
 }
 
 h1{
-    color: rgb(61, 21, 134);
+    color: rgb(21, 111, 153);
     background: transparent;
-    width: 210px;
-    
+    width: 710px;
+    /* gap  solo se utiliza cuando utilizas display-flex o grid para dar espacio */
+    gap: 1rem;
+
     display: flex;
     justify-content: center;
 }
@@ -32,16 +36,15 @@ h1 div.number {
 }
 /* de los div que tengan h1 el quinto hijo */
 h1 div.number:nth-child(5) {
-    text-align: justify;
-    padding-left: 15px;
+    width: 100px;
 }
 
 
 div button {
-    border: 3.5px solid rgb(161, 101, 173);
+    border: 3.5px solid rgb(59, 135, 158);
     border-radius: 4px;
     background: transparent;
-    color: rgb(23, 11, 133);
+    color: rgba(8, 41, 78, 0.87);
     padding:10px 14px;
     margin: auto 8px;
     
@@ -51,11 +54,13 @@ div button {
 }
 
 div button:hover {
-    box-shadow: 0px 0px 30px 7px rgba(48, 54, 139, 0.8);
-    border: 4px solid rgb(77, 128, 177);
-    box-shadow: 0 0 3px 7px rgba(48, 145, 148, 0.8);
+    box-shadow: 0px 1px 65px 10px rgb(49, 118, 139);
+    /* box-shadow: 0px 0px 30px 7px rgba(17, 29, 192, 0.8); */
+    border:4px solid rgb(77, 128, 177);
+    /* box-shadow: 0 0 3px 7px rgba(41, 151, 179, 0.8); */
     border-width: 4.5px;
-    font-size: 1.05rem;
+    font-size: 1.5rem;
+    font-family: 'Letter Sketch', sans-serif;
     /* rem tamaño  */
 }
 
