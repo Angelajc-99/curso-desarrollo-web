@@ -1,0 +1,14 @@
+body {
+  /* background: linear-gradient(75deg, rgb(998, 570, 960), rgb(73, 39, 117)); */
+}
+#palabra {
+    font-size: 60px;
+    font-weight: bold;
+    letter-spacing: 20px;
+}
+#lienzo{
+  /* width: 900px;     */
+  height: 300px;                 
+  border: 2px solid #000;
+}
+
