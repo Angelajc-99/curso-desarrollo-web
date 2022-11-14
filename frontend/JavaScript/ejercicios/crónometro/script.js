@@ -2,6 +2,8 @@
 let minutos = document.getElementById('minutos');
 let segundos = document.getElementById('segundos');
 let cents = document.getElementById('cents');
+
+
 let contadorCents = 0;
 let contadorSecs = 0;
 let contadorMins = 0;
@@ -37,6 +39,7 @@ function start() {
     cents.innerHTML = contadorCents;
     segundos.innerHTML = contadorSecs;
     minutos.innerHTML = contadorMins;
+
     // Formato de los números
     if (contadorCents < 10) {
         cents.innerHTML = '0' + contadorCents;
@@ -50,7 +53,7 @@ function start() {
     }
 
     // La función se ejecuta cada 10ms (1 centésima de segundo)
-    // setTimeout(start, 10)
+    setTimeout(start, 10)
 
 
     // btnStart.disabled = true;

@@ -1,34 +1,14 @@
-// al lado del const siempre va un arride por ejemplo abecedario
+// forma distinta para no hacer muchos button
 // const abecedario = [
-//     "A",
-//     "B",
-//     "C",
-//     "D",
-//     "E",
-//     "F",
-//     "G",
-//     "H",
-//     "I",
-//     "J",
-//     "K",
-//     "L",
-//     "M",
-//     "N",
-//     "Ñ",
-//     "O",
-//     "P",
-//     "Q",
-//     "R",
-//     "S",
-//     "T",
-//     "U",
-//     "V",
-//     "W",
-//     "X",
-//     "Y",
-//     "Z",
+//     "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","U","V","W","X","Y","Z"
+// ];
 
-// ]
+//    let contenedorBotones = document.getElementById('botones');
+
+//    for (let i = 0; i < abecedario.length; i++) {
+//     console.log (abecedario[i] ); 
+//     contenedorBotones.innerHTML += `<button>${abecedario[i]}</button>`
+// }
 
 // Creamos un array con las distintas palabras del juego
 const palabras = [
