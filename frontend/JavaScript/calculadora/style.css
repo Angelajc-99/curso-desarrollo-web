@@ -1,0 +1,14 @@
+body {
+    
+}
+.btn {
+    width: 100%;
+    height: auto;
+}
+.numeros {
+    width: 100%;
+    height: auto;
+}
+.igual {
+    justify-content: left;
+}
