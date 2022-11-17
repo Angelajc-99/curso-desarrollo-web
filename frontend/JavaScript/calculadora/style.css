@@ -46,7 +46,7 @@ flex-direction: column;
 
     font-family: 'Digital Numbers', sans-serif;
     font-weight: bold;
-    color: #42b9b9;
+    color: #ffff;
     background: #00a6ff;
 }
 
@@ -88,11 +88,12 @@ flex-direction: column;
     padding-bottom: 10px;
     box-sizing: border-box;
 }
-.igual button {
+.equal button {
     height: 100%;
     margin-bottom: 10px;
     background: #00a6ff;
     color: white;
     border: none;
     font-size: 1.2rem;
+    width: 100px;
 }
