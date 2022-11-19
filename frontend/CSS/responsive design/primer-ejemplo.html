@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de diseño responsive</title>
+
+    <style>
+        body {
+            /* Por defecto este será el color del fondo */
+            background-color: rgb(99, 57, 138);
+        }
+
+        /* Conuna condición el color del fondo cambiará para dispositivos con un ancho de pantalla de 1000px o inferiores */
+        @media screen and (max-width: 1000px) {
+            body {
+                background-color: rgba(63, 142, 148, 0.925);
+            }
+        }
+
+        /* Otra condición que hará que el color de fondo tb sea distinto para dispositivos de 600px de ancho o menos */
+        @media screen and (max-width: 600px) {
+            body {
+                background-color: rgb(151, 71, 71);
+            }
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

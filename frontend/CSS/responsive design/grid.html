@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+
+    <link rel="stylesheet" href="../../general.css">
+    <style>
+        .grid-container {
+            
+            display: grid;
+            /* auto te indica el número de columnas en este caso 3 */
+            grid-template-columns: auto auto auto;
+            /* También le podemos asignar un espacio vacío entre los elementos */
+            /* column-gap: 5px; */
+            /* row-gap: 20px; */
+            gap: 5px;
+           
+            
+
+            background-color: #d3aed8;
+            padding: 10px;
+        }
+
+        .grid-item {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(194, 186, 186, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .item3 {
+            grid-row-start: 3;
+            grid-column-start: 2;
+
+            grid-row-end: 5;
+            grid-column-end: 4;      
+        }
+ /* primer ejercicio */
+        .contenedor-grid {
+            display: grid;
+            grid-template-columns: auto;
+            gap: 4px;
+            background-color: rgb(119, 224, 224);
+            padding: 5px;
+        }
+        .items {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(194, 186, 186, 0.8);
+            padding: 20px;
+            font-size: 20px;
+            text-align: center;
+        }
+        .item2 {
+              grid-column-start: 1;
+              grid-column-end: 4;
+              grid-row-start: 1;
+              grid-row-end: 3;  
+            }
+        .item1 {
+            grid-column-start: 1;
+            grid-row-start: 3;
+            grid-row-end: 5;  
+        }
+        .footer {
+            grid-row-start: ;
+            grid-column-start: 2;
+
+            grid-row-start: 4;
+            grid-column-end: 4;  
+        }
+
+        /* segundo ejercicio */
+        .container {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto auto;
+            gap: 4px;
+
+            background-color: #ee9a74;
+            padding: 5px;
+        }
+        .grid {
+            background-color: aliceblue;
+            border: 1px solid rgba(194, 186, 186, 0.8);
+            padding: 20px;
+            font-size: 20px;
+            text-align: center;
+        }
+        .eigth {
+            grid-column-start: 2;
+            grid-column-end: 6;
+            grid-row-start: 1;
+            grid-row-end: 5;  
+        }
+        @media screen and (min-width: 600px) {
+    #left-sidebar {
+        flex-direction: row;
+        /* width: 200px; */
+        /* float: left; */
+    }
+    #main {
+        margin-left: 200px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <h1>Grid o Rejilla</h1>
+    <p>
+        El sistema grid de CSS permite utilizar una plantilla de rejilla, con filas y columnas para alinear de maneras sencilla paginas web sin necesidad de usar float o posicionamiento.
+    </p>
+    
+
+    <h1>Elementos grid</h1>
+
+    <p>
+        Una rejilla consiste en un elemento padre, con uno o más hijos.
+    </p>
+
+    <p>
+         El elemento padre debe de tener la propiedad <code>display grid</code> o <code>inline-grid</code>. Los elementos descendientes se convertirán automáticamente en objetos(items) grid.
+    </p>
+
+    <div class="grid-container">
+        <div class="grid-item">1</div>
+        <div class="grid-item">2</div>
+        <div class="grid-item item3">3</div>
+        <div class="grid-item">4</div>
+        <div class="grid-item">5</div>
+        <div class="grid-item">6</div>
+        <div class="grid-item">7</div>
+        <div class="grid-item">8</div>
+        <div class="grid-item">9</div>
+        <div class="grid-item">10</div>
+        <div class="grid-item">11</div>
+        <div class="grid-item">12</div>
+    </div>
+
+
+
+    <div class="contenedor-grid">
+        <div class="items item2">Header</div>
+        <div class="items item1">Menu</div>
+        <div class="items">Main</div>
+        <div class="items">Rigth </div>
+        <div class="items footer">Footer</div>
+    </div>
+
+
+    <div class="container">
+        <div class="grid">1</div>
+        <div class="grid">2</div>
+        <div class="grid">3</div>
+        <div class="grid">4</div>
+        <div class="grid">5</div>
+        <div class="grid">6</div>
+        <div class="grid">7</div>
+        <div class="grid eigth ">8</div>
+        <div class="grid">9</div>
+        <div class="grid">10</div>
+        <div class="grid">11</div>
+        <div class="grid">12</div>
+        <div class="grid">13</div>
+        <div class="grid">14</div>
+        <div class="grid">15</div>
+    </div>
+
+
+
+
+</body>
+</html>
