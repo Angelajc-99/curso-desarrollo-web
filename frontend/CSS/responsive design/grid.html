@@ -66,7 +66,7 @@
             grid-row-end: 5;  
         }
         .footer {
-            grid-row-start: ;
+            grid-row-start: 3;
             grid-column-start: 2;
 
             grid-row-start: 4;
@@ -95,16 +95,53 @@
             grid-row-start: 1;
             grid-row-end: 5;  
         }
-        @media screen and (min-width: 600px) {
-    #left-sidebar {
-        flex-direction: row;
-        /* width: 200px; */
-        /* float: left; */
-    }
-    #main {
-        margin-left: 200px;
-    }
-}
+        
+        /* ejercicio3 */
+        .ejercicio {
+            display: grid;            
+            grid-template-columns: auto auto;
+            gap: 4px;
+            background-color: #d3aed8;
+            padding: 5px;
+        }
+        .celda {
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(194, 186, 186, 0.8);
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        /* .celda-one {
+            grid-column-start: ;
+            grid-column-end: ;
+            grid-row-start: ;
+            grid-row-end: ;
+        } */
+        .first {
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
+        /* .three {
+            grid-column-start: 1;
+            grid-column-end: 1;
+            grid-row-start: 4;
+            grid-row-end: 3;
+        } */
+        .four {
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 1;
+            grid-row-end: 4;
+        }
+        .five {
+            grid-column-start: 3;
+            grid-column-end: 1;
+            grid-row-start: 4;
+            grid-row-end: 4;
+        }
 
     </style>
 </head>
@@ -140,7 +177,7 @@
         <div class="grid-item">12</div>
     </div>
 
-
+    <hr>
 
     <div class="contenedor-grid">
         <div class="items item2">Header</div>
@@ -150,6 +187,7 @@
         <div class="items footer">Footer</div>
     </div>
 
+    <hr>
 
     <div class="container">
         <div class="grid">1</div>
@@ -167,6 +205,16 @@
         <div class="grid">13</div>
         <div class="grid">14</div>
         <div class="grid">15</div>
+    </div>
+
+    <hr>
+
+    <div class="ejercicio">
+        <div class="celda first">celda 1</div>
+        <div class="celda ">celda 2</div>
+        <div class="celda three">celda 3</div>
+        <div class="celda four">celda 4</div>
+        <div class="celda five">celda 5</div>
     </div>
 
 
