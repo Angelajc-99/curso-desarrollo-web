@@ -8,12 +8,15 @@
     <link rel="stylesheet" href="style.csss">
 </head>
 <style>
+    body{
+        background: linear-gradient(70deg, #dd8cdd, #4b076693);
+    }
     .calculadora {
         display: block;
         margin: 0 auto;
         padding: 20px;
         background-color: aqua;
-        width: 300px;
+        width: 350px;
         height: 500px;
         border-radius: 25px;
     }
@@ -23,11 +26,23 @@
         height: 70px;
         font-size: 25px;
     }
+    #resultado {
+        display: block;
+        text-align: center;
+        font-size: 40px;
+        margin-bottom: 50px;
+        width: 300px;
+        height: 100px;
+        line-height: 100px;
+        background-color: #fff;
+        border-radius: 25px;
+        overflow-y: scroll;
+    }
 </style>
-<body>
+<body onload="init();">
     <table class="calculadora">
         <tr>
-            <td colspan="4"><span id="resulado"></span></td>
+            <td colspan="4"><span id="resultado"></span></td>
         </tr>
         <tr>
             <td><button id="siete">7</button></td>
@@ -56,4 +71,88 @@
     </table>
     
 </body>
+<script>
+    var operandoa;
+    var operandob;
+    var operacion;
+
+    function init() {
+        // variables
+        var resultado = document.getElementById("resultado");
+        var  reset= document.getElementById("reset");
+        var  suma= document.getElementById("suma");
+        var  resta= document.getElementById("resta");
+        var  multiplicacion= document.getElementById("multiplicacion");
+        var  division= document.getElementById("division");
+        var  igual= document.getElementById("igual");
+        var  uno= document.getElementById("uno");
+        var  dos= document.getElementById("dos");
+        var  tres= document.getElementById("tres");
+        var  cuatro= document.getElementById("cuatro");
+        var  cinco= document.getElementById("cinco");
+        var  seis= document.getElementById("seis");
+        var  siete= document.getElementById("siete");
+        var  ocho= document.getElementById("ocho");
+        var  nueve= document.getElementById("nueve");
+        var  cero= document.getElementById("cero");   
+        
+        // Eventos
+        uno.onclick = function(e) {
+            resultado.TextContent = resultado.TextContent + "1";
+        }
+        dos.onclick = function(e) {
+            resultado.TextContent = resultado.TextContent + "2";
+        }
+        tres.onclick = function(e) {
+            resultado.TextContent = resultado.TextContent + "3";
+        }
+        cuatro.onclick = function(e) {
+            resultado.TextContent = resultado.TextContent + "4";
+        }
+        cinco.onclick = function(e) {
+            resultado.TextContent = resultado.TextContent + "5";
+        }
+        seis.onclick = function(e) {
+            resultado.TextContent = resultado.TextContent + "6";
+        }
+        siete.onclick = function(e) {
+            resultado.TextContent = resultado.TextContent + "7";
+        }
+        ocho.onclick = function(e) {
+            resultado.TextContent = resultado.TextContent + "8";
+        }
+        nueve.onclick = function(e) {
+            resultado.TextContent = resultado.TextContent + "9";
+        }
+        cero.onclick = function(e) {
+            resultado.TextContent = resultado.TextContent + "0";
+        }
+        reset.onclick = function(e) {
+            resetear();
+        }
+        suma.onclick = function(e){
+            operandoa = resultado.textContet;
+            operacion = "+";
+            limpiar();
+        }
+        resta.onclick = function(e) {
+            operandoa = resultado.textContent;
+            operacion = "-";
+            limpiar();
+        }
+        multiplicacion.onclick = function(e) {
+            operandoa = resultado.textContent;
+            operacion = "&times;";
+            limpiar();
+        }
+        division.onclick = function(e) {
+            operandoa = resultado.textContent;
+            operacion = "&#247;";
+            limpiar();
+        }
+
+
+
+    }
+</script>
 </html>
