@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos de elementos animados</title>
+
+    <link rel="stylesheet" href="../../../general.css">
+
+    <style>
+        .wait {
+            background-color: #d37979;
+            width: 40px;
+            height: 40px;
+            padding: 6px;
+            position: relative;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 50%;
+            margin-bottom: 50px;
+        }
+
+        .wait div {
+            animation: rotate 1.5s linear infinite;
+            width: 70%;
+            height: 70%;
+            border: 5px solid rgb(83, 221, 221);
+            border: 4px dashed;
+            border-bottom: 5px dashed transparent;
+            border-radius: 50%;
+        }
+
+        .wait div:nth-child(1) {
+        /* animation: rotate 1s linear infinite;*/
+        width: 30px;
+        height: 30px;
+
+        }
+        .wait div:nth-child(2) {
+        position: absolute;
+        top: 110%;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+        .wait p {
+            position: absolute;
+            top: 41px;
+            background: rgb(175, 24, 24);
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotateZ(0);
+            }
+
+            50% {
+                transform: rotateZ(180deg);
+            }
+
+            100% {
+                transform: rotateZ(360deg);
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Elementos animados con CSS</h1>
+
+    <h3>Símbolo de carga /espera</h3>
+
+    <div class="wait">
+        <div></div>
+
+        <p class="p">cargando...</p>
+    </div>
+
+    <hr>
+
+
+</body>
+
+</html>
