@@ -73,7 +73,7 @@
         position: relative;
         left: 50%;
         top: 0;
-        transform: translatex(-50%);
+        transform: translateX(-50%);
 
         animation: moverTriangulo 6s;
         animation-delay: 4s;
