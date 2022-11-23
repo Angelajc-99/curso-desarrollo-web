@@ -121,6 +121,8 @@
     }
     .boton:active {
         top: 5px;
+
+        /* La sombra no se mueve del sitio anterior, dando el efecto del pulsación */
         box-shadow: 0 0px 0 0 rgb(95, 95, 197);
     }
 
@@ -128,14 +130,14 @@
     .velocidades {
         position: relative;
         height: 70px;
-        width: 200px;
+        width: 100px;
         background-color: rgb(151, 240, 240);
         border: 1px solid black;
         text-align: center;
         
         animation-name: curvaVelocidad;
         animation-duration: 5s;
-        /* animation-fill-mode: forwards; */
+        animation-fill-mode: forwards;
     }
 
     #div1 {

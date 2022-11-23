@@ -1,10 +1,10 @@
 button {
     position: relative;
-    background: black;
+    background: rgb(63, 35, 35);
     cursor: pointer;
     border: none;
     padding: 16px 32px;
-    color: white;
+    color: rgb(193, 217, 226);
     font-size: 24px;
     font-weight: bold;
     border-radius: 12px;
@@ -18,8 +18,8 @@ button::before {
     height: 100%;
     z-index: -1;
     background: linear-gradient(45deg,
-        red, blue, deeppink, blue,
-        red, blue, deeppink, blue);
+        rgb(189, 29, 29), rgb(95, 95, 180), rgb(78, 13, 48), rgb(43, 43, 245),
+        rgb(219, 27, 27), rgb(24, 24, 223), rgb(219, 56, 143), rgb(27, 106, 151));
     background-size: 800%;
     border-radius: 10px;
     filter: blur(8px);
