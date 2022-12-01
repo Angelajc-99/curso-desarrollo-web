@@ -1,6 +1,4 @@
-body {
-    background: rgb(136, 204, 213);   
-}
+
 
 * {
     padding: 0;;
@@ -8,6 +6,10 @@ body {
     box-sizing: border-box;
     font-family: "Poppins" sans-serif;
 }
+body {
+    background: rgb(136, 204, 213);   
+}
+
 .wrapper {
     position: absolute;
     width: 90vmin;
