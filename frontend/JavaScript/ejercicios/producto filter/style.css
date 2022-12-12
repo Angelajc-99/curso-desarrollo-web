@@ -11,7 +11,7 @@ body {
     margin: 0 auto;
 }
 #search-container {
-    margin: 1em o;;
+    margin: 1em 0;
 }
 #search-container input {
     background-color: transparent;
@@ -83,7 +83,7 @@ img {
     .card {
         max-width: 10em;
         margin-top: 1em;
-        }
+        } 
     #products {
         grid-template-columns: auto auto;
         grid-column-gap: 1em;

@@ -36,4 +36,28 @@ for (let i of products.data) {
     //image div
     let imgContainer =document.createElement('div');
     imgContainer.classList.add("image-container");
+    //img tag
+    let image = document.createElement("img");
+    image.setAttribute("src", i.image);
+    imgContainer.appendChild(image);
+    card.appendChild(imgContainer);
+    //container
+    let container = document.createElement("div");
+    container.classList.add("container");
+    //product name
+    let name = document.createElement("h5");
+    name.classList.add("product-name");
+    name.innerText = i.productName.toUpperCase();
+    container.appendChild(name);
+    //price
+    let price = document.createElement("h6");
+    price.innerText = "$" + i.price;
+    container.appendChild(price);
+
+    card.appendChild(container);
+    document.getElementById("products").appendChild(card);
+}
+//parameter passed from button (Parameter sameas category)
+function filterProduct(value) {
+    //check if value equals innerText
 }
