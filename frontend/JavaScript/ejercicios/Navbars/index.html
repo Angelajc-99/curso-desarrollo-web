@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- <nav class="navbar">
+        <button onclick="toggleMenu()" class="burger"></button>
+        <div class="dropdowns">
+            <div class="dropdown">
+                <button>
+                    Products <img src="chevron.svg"/>
+                </button>
+                <div class="dropdown-menu">
+                    <div>
+                        <h2>Digital</h2>
+                        <button>Learn CSS Ebook</button>
+                        <button>Security Course</button>
+                        <button>Masterclass Bundle</button>
+                    </div> -->
+                    <!-- more menu blocks -->
+                <!-- </div> -->
+                <!-- more dropdowns -->
+            <!-- </div>
+        </div>
+    </nav> -->
+
+
+    <nav class="navbar">
+        <div class="content">
+            <div class="">
+                <h1 id="selecteMouseOver" >Products</h1>
+                <div id="dropdown-menu">
+                    <div>
+                        <h2>Digital</h2>
+                        <button>Learn CSS Ebook</button>
+                        <button>Security Course</button>
+                        <button>Masterclass Bundle</button>
+                    </div>
+                    <!-- more menu blocks -->
+                </div>
+                <!-- more dropdowns -->
+            </div>
+
+            <div class="">
+                <h1 id="selecteMouseOver2" >Services</h1>
+                <div id="dropdown-menu2">
+                    <div>
+                        <h2>Test</h2>
+                        <button>asdasd</button>
+                        <button>asdasdasdsad Course</button>
+                        <button>Masterclass asdasdBundle</button>
+                    </div>
+                </div>
+                <div class=""></div>
+                    <h1 id="selecteMouseOver3" >Support</h1>
+                    <div id="dropdown-menu3">
+                        <div>
+                            <h2>Test</h2>
+                            <button>asdasd</button>
+                            <button>asdasdasdsad Course</button>
+                            <button>Masterclass asdasdBundle</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- more menu blocks -->
+                
+                <!-- more dropdowns -->
+            </div>
+        </div>
+    </nav>
+    
+    <!-- <button onclick="toggleMenu()" class="burger"></button> -->
+</body>
+<script>
+    // const toggleMenu = () =>
+    // document.body.classList.toggle("open");
+
+    const eventMouse = document.getElementById('selecteMouseOver')
+    const eventMouse2 = document.getElementById('selecteMouseOver2')
+    const selectedSubnavbar =  document.getElementById('dropdown-menu')
+    const selectedSubnavbar2 =  document.getElementById('dropdown-menu2')
+
+    eventMouse.addEventListener("mouseover", function (event) {
+        console.log(selectedSubnavbar)
+        selectedSubnavbar.style.opacity = 1;
+    }, false);
+
+    eventMouse.addEventListener("mouseout", function (event) {
+        console.log(selectedSubnavbar)
+        selectedSubnavbar.style.opacity = 0;
+    }, false);
+
+
+    eventMouse2.addEventListener("mouseover", function (event) {
+        console.log(selectedSubnavbar2)
+        selectedSubnavbar2.style.opacity = 1;
+    }, false);
+
+    eventMouse2.addEventListener("mouseout", function (event) {
+        console.log(selectedSubnavbar2)
+        selectedSubnavbar2.style.opacity = 0;
+    }, false);
+
+
+    eventMouse3.addEventListener("mouseover", function (event) {
+        console.log(selectedSubnavbar3)
+        selectedSubnavbar3.style.opacity = 1;
+    }, false);
+
+    eventMouse2.addEventListener("mouseout", function (event) {
+        console.log(selectedSubnavbar3)
+        selectedSubnavbar3.style.opacity = 0;
+    }, false);
+
+
+ 
+</script>
+</html>
