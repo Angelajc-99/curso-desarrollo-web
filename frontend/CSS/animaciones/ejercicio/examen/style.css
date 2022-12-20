@@ -6,6 +6,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* background-position-y: 50%; */
   }
   
   body {
@@ -25,6 +26,7 @@
     max-width: 400px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     padding: 50px;
+    
   }
   .titulo {
     font-size: 25px;
