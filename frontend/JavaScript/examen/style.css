@@ -30,16 +30,19 @@
   }
   
   .image {
-    background-image: url("../../recursos/Instagram-Reels-Feed.jpg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    /* border: 2px solid black; */
-    /* border-radius: 100vh; */
-    min-height: 75%;
-    z-index: 2;
-  }
-  
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+img {
+  border-radius: 1rem;
+}
+
+.img-2 {
+  position: absolute;
+  margin-top: 1rem;
+  margin-left: 8rem;
+}
   .text {
     text-align: center;
     color: white;
@@ -169,9 +172,7 @@
     .btn {
       flex-direction: column;
     }
-    .image {
-      height: 70vh;
-    }
+    
   }
   
   @media (max-width: 425px) {
