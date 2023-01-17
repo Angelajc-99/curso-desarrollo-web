@@ -1,0 +1,5 @@
+CREATE DATABASE pub;
+USE pub;
+CREATE TABLE pub (
+    cod_pub: VARCHAR(5) NULL
+)

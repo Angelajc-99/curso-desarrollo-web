@@ -1,12 +1,11 @@
 -- 1.- Obtener los datos completos de los empleados.
-select *from empleados;
+select *from empleados_departamentos.empleados;
 
 -- 2.- Obtener los datos completos de los departamentos. 
 select * from departamentos;
 
 --  3.- Obtener los datos de los empleados con cargo ‘Secretaria’.
-select *
-from empleados
+select * from empleados_departamentos.empleados
 WHERE lower(cargoE)='secretaria';
 
 -- 4.- Obtener el nombre y salario de los empleados.
@@ -69,12 +68,46 @@ WHERE nomEmp BETWEEN 'J' AND 'Z'
 AND comisionE = 0;
 
 -- 18.- Hallar los empleados cuyo nombre no contiene la cadena «MA»
-select nomEmp from empleados
+select * from empleados
 WHERE upper(nomEmp) NOT LIKE '%MA%';
 
 --  19.- Obtener los nombres de los departamentos que no sean “Ventas” ni “Investigación” NI ‘MANTENIMIENTO’.
 SELECT nombreDpto as 'Nombre de Departamento' from departamentos
 where lower(nombreDpto) NOT IN ('ventas','investigación','mantenimiento');
+
+--  20.- Obtener el nombre y el departamento de los empleados con cargo ‘Secretaria’ o ‘Vendedor’, que no trabajan en el departamento de “PRODUCCION”, cuyo salario es superior a $1.000.000, ordenados por fecha de incorporación.
+SELECT E.nomEmp, D.nombreDpto, E.fecIncorporacion, E.salEmp FROM empleados E
+JOIN departamentos D
+ON E.codDepto = D.codDepto
+WHERE LOWER(E.cargoE) IN ('secretaria', 'vendedor') 
+AND D.nombreDpto != 'PRODUCCIÓN'
+AND E.salEmp > 1000000
+ORDER BY E.fecIncorporacion;
+
+
+
+-- 21.- Obtener información de los empleados cuyo nombre tiene exactamente 11 caracteres
+
+-- 22.- Obtener información de los empleados cuyo nombre tiene al menos 11 caracteres
+
+-- 23.- Listar los datos de los empleados cuyo nombre inicia por la letra ‘M’, su salario es mayor a $800.000 o reciben comisión y trabajan para el departamento de ‘VENTAS’
+
+-- 24.- Obtener los nombres, salarios y comisiones de los empleados que reciben un salario situado entre la mitad de la comisión la propia comisión.
+
+-- 25.- Mostrar el salario más alto de la empresa.
+
+-- 26.- Mostrar cada una de las comisiones y el número de empleados que las reciben. Solo si tiene comisión.
+
+-- select e.nomemp, d.nombreDpto 
+-- from empleados e, departamentos d 
+-- where e.codDepto=d.codDepto and (lower(e.cargoE)='secretaria' or lower(e.cargoE)='vendedor')
+-- and lower(d.nombreDpto)<>'produccción' and e.salEmp > 1000000 
+-- order by e.fecIncorporacion;
+
+-- 27.- Mostrar el nombre del último empleado de la lista por orden alfabético.
+
+
+
 
 
 

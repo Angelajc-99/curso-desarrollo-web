@@ -27,7 +27,7 @@ INSERT INTO productos (codigo, nombre, precio) VALUES ('a01', 'Afilador', 2.50);
 INSERT INTO productos (codigo, nombre, precio) VALUES ('s01', 'Silla mod. ZAZ', 20);
 INSERT INTO productos (codigo, nombre, precio) VALUES ('s02', 'Silla mod. XAX', 25);
 -- Comprobamos que los datos se hayan introducido correctamente
-SELECT * FROM productos;
+SELECT * FROM tienda.productos;
 
 -- Añadir una nueva columna con la categoría de los productos
 ALTER Table productos ADD COLUMN categoria VARCHAR(15);
@@ -47,10 +47,17 @@ select * FROM productos WHERE nombre LIKE 'S%';
 -- nombre y precio de los productos con un valor superior a 22
 select nombre, precio from productos WHERE precio > 22;
 -- Precio medio de las sillas
-SELECT;
--- Listas de categorías sin duplicados
-SELECT DISTINCT(categoria) FROM productos;
--- Cantidad de productos por categoría
+SELECT AVG(precio) FROM productos WHERE categoria = 'silla'; 
+    -- SELECT AVG(precio) FROM productos WHERE nombre LIKE 'silla%'; 
+    -- SELECT AVG(precio) FROM productos WHERE codigo LIKE 's%'; 
+    -- lista de categorías sin duplicados
+    SELECT DISTINCT(categoria) FROM productos;
+    -- cantidad de productos por categoría
+    SELECT COUNT(*), categoria FROM productos
+        GROUP BY categoria;
+    -- Productos cuyo valor es inferior a la media del precio de las sillas (sub-query)
+    SELECT nombre, precio FROM productos 
+        WHERE precio < (SELECT AVG(precio) FROM productos WHERE categoria = 'silla');
 
 
 
