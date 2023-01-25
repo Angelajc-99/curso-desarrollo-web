@@ -9,11 +9,12 @@
 <body>
     <form action="request_method.php" method="post">
         <h1>Indica que tipo de usuario eres</h1>
-        <select name="user" id="">
+        <select name="usertype" id="">
             <option value="user">Usuario</option>
             <option value="admin">Admin</option>
         </select>
-        <input type="sumbit" value="Enviar">
+        
+    <input type="submit" value="Enviar">
     </form>
 </body>
 </html>
