@@ -9,7 +9,7 @@ En login habrá un link para ir a registrarse si no tenemos usuario.
 En registro se nos llevará a login después de crear un usuario correctamente.
 
  # Cuarto: Cuando nos logeamos con éxito, iremos a la pagina principal, pero esta vez habrá una sección.
- Un panel de usuario en el que podremos modificar nuestros datos o cerrar sesión.
+ Un panel de usuario en el que podremos ver/modificar nuestros datos o cerrar sesión.
 
  # Bonus: Crear un panel de administración, al que sólo se puede acceder siendo admin.
  Desde aquí podremos agregar usuarios, convertirlos en admin, borrarlos o simplemente consultar sus datos (tabla).
