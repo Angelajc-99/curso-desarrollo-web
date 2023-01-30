@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark: #242323;
+    --light: #d0d0d0;
+    --boxBtn: 2px 2px 5px rgba(0, 0, 0, 0.596), 3px 3px 6px rgba(0, 0, 0, 0.15),
+        inset -2px -2px 5px rgba(255, 255, 255, 0.816), inset 3px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+body {
+    transition: background 0.5s;
+}
+nav .nav-right-section a {
+    margin-right: 10px;
+    color: black;
+  }
+  
+  header nav {
+    display: flex;
+    grid-template-columns: 3, 1fr;
+    grid-gap: 10px;
+    justify-content: flex-end;
+  }
+  
+  nav .nav-right-section img {
+    border-radius: 50%;
+    margin-left: 10px;
+    width: 30px;
+  }
+
+body.dark {
+    background: var(--dark);
+}
+
+/*--------boton de dark-------------*/
+.btn-dark .btn {
+
+    position: absolute;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 80%;
+    z-index: 1;
+    background: #fff;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: var(--boxBtn);
+    display: grid;
+    place-items: center;
+    font-size: 1.4rem;
+}
+
+.btn-dark .btn:hover {
+    transform: scale(0.9);
+}
+
+.btn-dark .btn::before {
+    content: '\f186';
+    font-family: fontAwesome;
+    color: #000;
+}
+
+body.dark .btn-dark .btn::before {
+    content: '\f185';
+    font-family: fontAwesome;
+}
+
+/*--------boton de dark-------------*/
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section .main {
+    width: 580px;
+    margin: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+section .main .searBox {
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+}
+
+section .main .searBox .qwerty {
+    width: 100%;
+    height: 44px;
+    padding: 13px;
+    border: 1px solid #ccc;
+    z-index: 3;
+    outline: none;
+    font-size: 16px;
+    border-radius: 24px;
+    padding-left: 45px;
+    padding-right: 45px;
+}
+
+section .main .searBox .qwerty:hover {
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+section .main .searBox .icons {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 20px;
+    align-items: center;
+    pointer-events: none;
+}
+
+section .main .searBox .icons img {
+    max-width: 100%;
+}
+
+.main .center {
+    display: flex;
+    padding-top: 20px;
+}
+
+
+.searBtn {
+    background-color: rgb(238, 240, 242);
+    border: 1px solid hsl(210deg, 17%, 98%);
+    border-radius: 4px;
+    color: hsl(206deg, 6%, 25%);
+    font-family: arial, sans-serif;
+    font-size: 14px;
+    margin: 11px 5px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+    min-width: 54px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.searBtn:hover {
+    box-shadow: 0 1px 1px rgb(0, 0, 0, 10%);
+    background-color: hsl(210deg, 17%, 98%);
+    border: 1px solid hsl(220deg, 9%, 87%);
+    color: hsl(225deg, 6%, 13%);
+}
