@@ -1,3 +1,15 @@
+<?php
+// es una forma de hacer que los datos estén disponibles en varias páginas de la web.
+session_start();
+
+if (isset($_POST['logout'])) {
+    // session_destroy destruye los datos
+    session_destroy();
+    // header localiza los datos de la pagina
+    header('Location: pagina-principal.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,18 +23,39 @@
             background-size: 100% 100%;
             margin: 0;
             padding: 0;
+            text-align: center; 
+            
         }
-        form {
+        btn {
             text-align: center;
+            height: 25%;
+            width: 25%;
         }
     </style>
 </head>
 <body>
-    <form action="form_login.php">
+    <div>
     <h1>Bienvenido</h1>
+        <?php
+            // Este if pregunta si el usuario está logeado
+            if (isset($_SESSION['logged'])) {
+                // aquí va el panel/botón/contenido del usuario
+                echo '<button>Ir a mi cuenta</button>';
+                echo "<form action='pagina-principal.php' method='post'>
+                <input type='submit' value='Cerrar sesión' name='logout'>
+                </form>";
+            } else {
+                // Si no está logeado, mostramos el botón de iniciar sesión
+                echo '<a href="form_login.php">
+                        <button>Iniciar sesión</button>
+                     </a>';
+            }
+            ?>
+    </div>
+    <div class="btn">
+        <!-- <button>Cuenta</button>
+        <button></button> -->
 
-    <button>Iniciar Sesión</button>
-
-    </form>
+    </div>
 </body>
 </html>

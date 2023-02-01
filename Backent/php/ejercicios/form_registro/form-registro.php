@@ -6,6 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrate</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: linear-gradient(0deg, rgba(8,9,14,1) 3%, rgba(53,115,184,1) 96%);
+            height: 100vh;
+            text-align: center;
+            display: flex-end;
+            float: center;
+            /* vertical-align: center; */
+
+        }
+    </style>
 </head>
 
 <body>

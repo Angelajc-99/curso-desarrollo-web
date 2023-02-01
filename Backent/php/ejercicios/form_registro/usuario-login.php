@@ -8,6 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] = 'POST') {
     $usuario = $_POST['usuario'];
     $correo = $_POST['correo'];
     $contrasena = $_POST['password'];
+    
 
 
     // Hacemos la query para buscar si existe un usuario con estos datos
@@ -20,23 +21,27 @@ if ($_SERVER['REQUEST_METHOD'] = 'POST') {
        echo "<p>Bienvenido $usuario.";
 
        $_SESSION['logged'] = true; 
+       while ($row = $result->fetch_assoc()) {
+         $_SESSION['id'] = $row['id'];
+         $_SESSION['usertype'] = $row['usertype'];
+       }
+
     //    redirigir 
-       echo '<a href="pag-principal.php">
+       echo '<a href="pagina-principal.php">
                     <button>Volver a página 
                      principal</button>
                  </a>';
      $conn->close();
-   }
-   //  else ($result->num_rows === 0){
 
-    } elseif ($result->num_rows === 0){
+   } elseif ($result->num_rows === 0){
       $_SESSION["fallo"] = true;
-      header("Location: form_login.php");
+      header("Location: form_login.php?fallo=true");
 
       // header('Location: form_login.php?fallo=true');
       
       exit();
       
+}
 }
 
 ?>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario login</title>
     <style>
-    form {
-    padding: 30px 20px;
-}
+        body {
+            background: linear-gradient(0deg, rgba(70,53,184,1) 3%, rgba(202,184,237,1) 96%);
+            height: 100vh;
+            text-align: center;
+            
+        }
+
+       
+        form {
+            
+            padding: 30px 20px;
+        }
+       
     </style>
 </head>
 <body>
@@ -24,15 +35,17 @@
         <input  type="submit" value="Acceder">
     </form>
     <?php
-    // if (isset($_GET['fallo'])) {
-    //     echo '<p>error, comprueba los datos<p>';
-    // }
 
-    if (isset($_SESSION['fallo'])) {
-        echo '<p>error, comprueba los datos<p>'
-        <a href="form-registro.php">Registrate ahora</a>
-        unset($_SESSION["fallo"]);
+// el get se limita enviar al url del navegador
+    if (isset($_GET['fallo'])) {
+        echo '<p>Error, comprueba los datos<p>';
     }
+
+    // if (isset($_SESSION['fallo'])) {
+    //     echo '<p>error, comprueba los datos<p>
+    //     <a href="form-registro.php">Registrate ahora</a>';
+    //     unset($_SESSION["fallo"]);
+    // }
     ?>
     <a href="form-registro.php">Registrate ahora</a>
 
