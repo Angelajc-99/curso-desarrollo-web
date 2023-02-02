@@ -20,3 +20,26 @@ if ($conn->query($sql) === TRUE) {
 $conn->close();
 
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body {
+         background-color: #8EC5FC;
+         background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+
+         height: 100vh;
+         text-align: center;
+
+      }
+      </style>
+</head>
+<body>
+    
+</body>
+</html>

@@ -26,7 +26,7 @@ if (isset($_POST['logout'])) {
             text-align: center; 
             
         }
-        btn {
+        .btn {
             text-align: center;
             height: 25%;
             width: 25%;
@@ -36,12 +36,15 @@ if (isset($_POST['logout'])) {
 <body>
     <div>
     <h1>Bienvenido</h1>
+
         <?php
             // Este if pregunta si el usuario está logeado
             if (isset($_SESSION['logged'])) {
                 // aquí va el panel/botón/contenido del usuario
-                echo '<button>Ir a mi cuenta</button>';
+                echo '<a href="panel-user.php"><button>Ir a mi cuenta</button></a>';
+                echo '<a href="panel-de-edicion.php"><button>Configuración</button></a>';
                 echo "<form action='pagina-principal.php' method='post'>
+                <br>
                 <input type='submit' value='Cerrar sesión' name='logout'>
                 </form>";
             } else {
@@ -57,5 +60,6 @@ if (isset($_POST['logout'])) {
         <button></button> -->
 
     </div>
+    
 </body>
 </html>
