@@ -4,10 +4,12 @@ include 'conn.php';
 
 if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
     $sql = 'SELECT * FROM user';
+    echo '<a href="panel-edi-admin.php"><button>Cambiar datos</button></a>';
 } elseif ($_SESSION['usertype'] == 'user') {
     $userid = $_SESSION['id'];
     // cuando se utiliza una variable siempre se pone con comillas dobles ""
     $sql = "SELECT * FROM user WHERE id = '$userid'";
+    echo '<a href="panel-de-edicion.php"><button>Cambiar datos</button></a>'; 
 }
 $result = $conn->query($sql);
 
@@ -46,8 +48,8 @@ $result = $conn->query($sql);
             border: 2px solid black;
             border-collapse: collapse;
             padding: 5px 2px;
-            height: 20%;
-            width: 20%;            
+            height: 25%;
+            width: 25%;            
         }
 
         th {
@@ -76,30 +78,19 @@ $result = $conn->query($sql);
             </tr>
             <?php
 
-            // if ($result->num_rows > 0) {
-            //     while ($row = $result->fetch_assoc()) {
-            //         echo"<tr> <td>" . $row['usuario'] . "</td>" .
-            //                  <td>" . $row['usuario'] . "</td>" .
-            //                  "<td>" . $row['correo'] . "</td> 
-            //             </tr>";
-
-            //     }
-            // }
-
             if ($result->num_rows > 0) {
+                            
                 while ($row = $result->fetch_assoc()) {
-            ?>
-                    <tr>
-                        <td><?php echo $row['id'] ?></td>
-                        <td><?php echo $row['usuario'] ?></td>
-                        <td> <?php echo $row['correo'] ?></td>
-                    </tr>
-            <?php }
+                    echo"<tr> <td>" . $row['id'] . "</td>" .
+                             "<td>" . $row['usuario'] . "</td>" .
+                             "<td>" . $row['correo'] . "</td></tr>";
+                }
             }
-            // header("Location: form_login.php?fallo=true");
-            // 
             ?>
 
+                      
+            
+             
         </table>
     </div>
 

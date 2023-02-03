@@ -1,0 +1,60 @@
+      linea 23 de panel-edi-admin.php
+        <?php
+            if ($result->num_rows > 0) {
+
+                while ($row = $result->fetch_assoc()) {
+                    echo"<tr> <td>" . $row['id'] . "</td>" .
+                             "<td>" . $row['usuario'] . "</td>" .
+                             "<td>" . $row['correo'] . "</td></tr>";
+
+                             if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                            ?>
+                                    <tr>
+                                        <td><?php echo $row['id'] ?></td>
+                                        <td><?php echo $row['usuario'] ?></td>
+                                        <td> <?php echo $row['correo'] ?></td>;
+                                    </tr>
+                                  <br>
+                            <?php }
+                            }
+
+                             echo "<form action='archivo-de-edicion.php' method='post'>
+                <h1> Edicion de datos</h1>
+               <input type='text' placeholder='Usuario' name='usuario' value='$usuario'>
+               <input type='text' placeholder='Email' name='correo' value='$correo'>
+               <input type='text' placeholder='Contraseña' name='contrasena' value='$contrasena'>
+               <input type='submit' value='Actualizar datos del usuario'>
+               </form>";
+               }
+
+            }
+            
+                
+        ?>
+ 
+  linea 79 de panel-user.php
+  // if ($result->num_rows > 0) {
+                            
+            //     while ($row = $result->fetch_assoc()) {
+            //         echo"<tr> <td>" . $row['id'] . "</td>" .
+            //                  "<td>" . $row['usuario'] . "</td>" .
+            //                  "<td>" . $row['correo'] . "</td></tr>";
+            //     }
+            // }
+
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+            ?>
+                    <tr>
+                        <td><?php echo $row['id'] ?></td>
+                        <td><?php echo $row['usuario'] ?></td>
+                        <td> <?php echo $row['correo'] ?></td>;
+                    </tr>
+                  <br>
+            <?php }
+            }
+            // header("Location: form_login.php?fallo=true");
+            // 
+            ?>
+

@@ -19,7 +19,7 @@ if (isset($_POST['logout'])) {
     <title>Bienvenido</title>
     <style>
         body{
-            background-image: linear-gradient(90deg, #ffffff 0, #cdcdf2 50%, #8e95ca 100%);
+            background-image: linear-gradient(90deg, #ffffff 0, #cdcdf2 25%, #8e95ca 50%);
             background-size: 100% 100%;
             margin: 0;
             padding: 0;
@@ -42,7 +42,6 @@ if (isset($_POST['logout'])) {
             if (isset($_SESSION['logged'])) {
                 // aquí va el panel/botón/contenido del usuario
                 echo '<a href="panel-user.php"><button>Ir a mi cuenta</button></a>';
-                echo '<a href="panel-de-edicion.php"><button>Configuración</button></a>';
                 echo "<form action='pagina-principal.php' method='post'>
                 <br>
                 <input type='submit' value='Cerrar sesión' name='logout'>
