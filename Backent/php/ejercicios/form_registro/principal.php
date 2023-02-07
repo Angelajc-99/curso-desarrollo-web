@@ -47,16 +47,6 @@ if (isset($_POST['logout'])) {
         }
     
 
-        h1 {
-            position: absolute;
-            z-index: -2;
-            top: 0;
-            width: 100%;
-            font-size: 50vh;
-            font-family: 'Sassy Frass', cursive;
-            margin-top: 0;
-            
-        }
         .boton{
             height: 80px;
             width: 100px;
@@ -79,8 +69,6 @@ if (isset($_POST['logout'])) {
 </head>
 
 <body>
-<h1>Bienvenido</h1>
-   
     <div class="btn">
    
 

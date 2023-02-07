@@ -30,6 +30,8 @@ $result = $conn->query($sql);
        <input type='text' placeholder='Contraseña' name='contrasena' value='$contrasena'>
        <input type='submit' value='actualizar'>
        </form>";
+       echo '<a href="panel-user.php"><button>Volver</button></a>';
+       
     }
     ?>
     

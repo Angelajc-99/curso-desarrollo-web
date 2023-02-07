@@ -33,7 +33,7 @@ $conn->close();
 <body>
     <div>
         <p>
-            <?php echo $admin;?>
+            <?php echo $_SESSION['name'];?>
             Actualizados con éxito!!
             <?php echo '<a href="pagina-principal.php"><button>Salir</button></a>'?>
         </p>

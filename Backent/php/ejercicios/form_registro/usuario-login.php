@@ -25,9 +25,9 @@ session_start();
       button {
          margin-right: 10px;
     color: rgb(73, 71, 71);
-    box-shadow: 0 1px 4px 0 #20212447;
-    border-color: #dfe1e500;
-    background-color:green;
+    box-shadow: 2px 2px 4px 3px #20212447;
+    border-color: #c4c5c6;
+    background-color:#8eaafc;
       }
    </style>
 </head>
@@ -58,12 +58,13 @@ if ($_SERVER['REQUEST_METHOD'] = 'POST') {
       $_SESSION['logged'] = true;
       while ($row = $result->fetch_assoc()) {
          $_SESSION['id'] = $row['id'];
+         $_SESSION['name'] = $row['usuario'];
          $_SESSION['usertype'] = $row['usertype'];
       }
 
       //    redirigir 
       echo '<a href="pagina-principal.php">
-                    <button class="btn">Volver a página 
+                    <button class="btn">Volver a la página 
                      principal</button>
                  </a>';
       $conn->close();
