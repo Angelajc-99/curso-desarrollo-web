@@ -1,9 +1,8 @@
+
 <?php
 session_start();
 
-
-
-?>
+?> 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -76,6 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] = 'POST') {
    }
 }
    ?>
+
 </body>
 
 </html>

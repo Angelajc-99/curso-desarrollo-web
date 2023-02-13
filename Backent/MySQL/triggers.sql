@@ -10,7 +10,6 @@ CREATE TABLE audit(
     new_user VARCHAR(50)
 );
 
-ALTER TABLE audit 
 ADD CONSTRAINT fk_audit
 Foreign Key (id_user) REFERENCES usuarios(id);
 

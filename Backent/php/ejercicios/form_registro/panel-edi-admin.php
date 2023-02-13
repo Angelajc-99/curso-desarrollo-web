@@ -59,10 +59,10 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
                             <input type='text' placeholder='usertype' name='usertype' value='$usertype'>
                             </td>
                             <td>
-                            <input type='submit' value='Actualizar datos del usuario'>
+                            <input type='submit' name='update' value='Actualizar datos del usuario'>
                             </td>
                             <td>
-                            <input type='submit' value='Borrar datos'>
+                            <input type='submit' name='delete' value='Borrar datos'>
                             </td>
                             </form>
                             </tr>";

@@ -28,10 +28,6 @@ if (isset($_POST['logout'])) {
             margin: 0;
             padding: 0;
             text-align: center;
-
-
-
-
         }
 
         .btn {
@@ -42,17 +38,15 @@ if (isset($_POST['logout'])) {
             justify-content: center;
             width: 100%;
             height: 90vh;
-            
-
         }
-    
 
         .boton{
             height: 80px;
             width: 100px;
             cursor: pointer;
-            /* border-radius: 8px; */
+          border-radius: 8px;
         }
+
         .inicio {
             background-color: #94bde6;
             cursor: pointer;
@@ -61,7 +55,7 @@ if (isset($_POST['logout'])) {
             align-items: center;
             justify-content: center;
             width: 100%;
-            height: 5vh;
+            height: 15vh;
             box-shadow: 2, 3 black;
             
         }
@@ -77,7 +71,7 @@ if (isset($_POST['logout'])) {
         if (isset($_SESSION['logged'])) {
             // aquí va el panel/botón/contenido del usuario
             echo '<a href="panel-user.php"><button class="boton">Ir a mi cuenta</button></a>';
-            echo "<form action='pagina-principal.php' method='post'>
+            echo "<form action='principal.php' method='post'>
                 <br>
                 <input class='boton' type='submit' value='Cerrar sesión' name='logout'>
                 </form>";
@@ -86,6 +80,10 @@ if (isset($_POST['logout'])) {
             echo '<a href="form_login.php">
                         <button class= "inicio">Iniciar sesión</button>
                      </a>';
+                    //  echo '<a href="form-registro.php">
+                    //  <button">Registrate</button>
+                        
+                    //  </a>';
         }
         ?>
     </div>
