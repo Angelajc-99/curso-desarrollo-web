@@ -26,6 +26,36 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="..//style.css">
+    <style>
+        .tabla {
+            justify-content: center;
+            display: flex;
+            position: absolute;
+                top: 35%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+        }
+
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px 2px;
+            height: 25%;
+            width: 25%;            
+        }
+
+        th {
+            background-color: #6c92b8;
+            border: 1px solid rgb(43, 42, 42);
+            padding: 2px 5px;
+        }
+
+        td {
+            border: 1px solid rgb(43, 42, 42);
+            padding: 2px 5px;
+
+        }
+    </style>
 </head>
 
 <body>

@@ -72,7 +72,6 @@ if (isset($_POST['logout'])) {
             // aquí va el panel/botón/contenido del usuario
             echo '<a href="panel-user.php"><button class="boton">Ir a mi cuenta</button></a>';
             echo "<form action='principal.php' method='post'>
-                <br>
                 <input class='boton' type='submit' value='Cerrar sesión' name='logout'>
                 </form>";
         } else {

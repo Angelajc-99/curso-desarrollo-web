@@ -40,7 +40,7 @@ $conn->close();
     <div>
         <p>
             <?php echo $_SESSION['name'];?>
-            Actualizados con éxito!!
+              Datos actualizados con éxito!!
             <?php echo '<a href="pagina-principal.php"><button>Salir</button></a>'?>
         </p>
     </div>

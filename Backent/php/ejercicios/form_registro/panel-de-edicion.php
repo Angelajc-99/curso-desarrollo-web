@@ -24,6 +24,7 @@ $result = $conn->query($sql);
             justify-content: center;
         }
         
+        
     </style>
 </head>
 <body>
@@ -40,7 +41,7 @@ $result = $conn->query($sql);
            <input type='text' placeholder='Email' name='correo' value='$correo'>
            <input type='text' placeholder='Contraseña' name='contrasena' value='$contrasena'>
            <input type='submit' value='actualizar'>
-           </form>";
+           </form> <br>";
            echo '<a href="panel-user.php"><button>Volver</button></a>';
            
         }
