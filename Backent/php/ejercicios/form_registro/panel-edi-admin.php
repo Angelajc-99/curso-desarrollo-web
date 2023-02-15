@@ -19,42 +19,84 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="..//style.css">
+    
     <style>
         table {
             border: none;
             border-collapse: collapse;
             padding: 5px 2px;
             height: 25%;
-            width: 25%;            
+            width: 25%;  
+            justify-content: center;
+            display: flex;
+            position: absolute;
+                top: 35%;
+                left: 50%;
+                transform: translate(-50%, -50%);          
         }
 
         th {
             background-color: #6c92b8;
             border: none;
             padding: 2px 5px;
+            /* cursor: pointer; */
         }
 
         td {
             border: none;
             padding: 2px 5px;
-
+            /* cursor: pointer; */
         }
         input {
             border: none;
-            background: ;
+            /* background: pack; */
+            /* cursor: pointer; */
         }
         tr {
             border: none;
+            /* cursor: pointer; */
+        }
+
+        .formulario {
+            justify-content: center;
+            display: flex;
+            position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+        }
+        .formulario1 {
+            /* height: 5%;*/
+            width: 5%;
+            cursor: pointer;
+            border-radius: 8px;
+            border: none;
+            font-size: medium;
+            justify-content: center;
+            display: flex;
+            box-shadow: 2, 3 darkmagenta;
+            position: absolute;
+                top: 80%;
+                left: 50%;
+                transform: translate(-50%, -50%);
         }
     </style>
 </head>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="intro.js"></script>
 
 <body>
-
+<br>
+    <!-- Creamos la cajita de búsqueda -->
+    <div class="search-box">
+        <input type="text" autocomplete="off" placeholder="Buscar usuario...">
+        <div class="display"></div>
+    </div>
+    
     <table>
         <?php
         if ($result->num_rows > 0) {
-            echo "<h1> Edicion de datos de usuarios</h1>
+            echo "<h1> Edición de datos de usuarios</h1>
                 <tr>
                    <th> Usuario</th>
                    <th> Correo</th>
@@ -108,6 +150,7 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
         }
         ?>
     </table>
+
     <br>
 
     <div class="formulario">
@@ -124,10 +167,13 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
     </div>
 
     <br>
-
+    
+    <div >
     <?php
-    echo '<a href="panel-user.php"><button>Atrás</button></a>';
+    echo '<a href="panel-user.php"><button class="formulario1">Atrás</button></a>';
     ?>
+    </div>
+    
 
 </body>
 

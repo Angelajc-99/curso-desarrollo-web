@@ -11,9 +11,9 @@ $(document).ready(function () {
         // longitud del texto
         if (text.length > 0) {
             // Si el valor del input no está vacío, llamamos al php
-            $.get("search.php", { term: text }).done(function (data) {
+            $.get("busqueda.php", { term: text }).done(function (data) {
                 // resultList.html(data);
-                $('.search-box input[type="text"]').css("color", data);
+                $('.search-box input[type="text"]').css("background", data);
             });
         } else {
             // Se vacía la lista

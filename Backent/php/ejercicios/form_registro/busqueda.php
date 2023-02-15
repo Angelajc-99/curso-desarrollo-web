@@ -7,6 +7,7 @@ require('conn.php');
 $text = $_REQUEST['term'];
 // $sql = "SELECT usuario FROM user WHERE usuario LIKE '$text' ORDER BY usuario ASC";
 $sql = "SELECT usuario FROM user WHERE usuario = '$text'";
+
 $result = $conn->query($sql);
 
 // Declaro un array en el que guardar la lista de los usuarios
