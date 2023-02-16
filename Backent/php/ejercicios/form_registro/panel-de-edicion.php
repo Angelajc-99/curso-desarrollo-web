@@ -23,8 +23,6 @@ $result = $conn->query($sql);
         .datos {
             justify-content: center;
         }
-        
-        
     </style>
 </head>
 <body>

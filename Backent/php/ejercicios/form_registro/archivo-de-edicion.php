@@ -33,7 +33,7 @@ if ($conn->query($sql) == TRUE) {
             Datos de los usuarios
             <?php echo $usuario;?>
             Actualizados con éxito
-            <?php echo '<a href="pagina-principal.php"><button>Salir</button></a>'?>
+            <?php echo '<a href="pagina-principal.php"><button>Volver</button></a>'?>
         </p>
 
         <?php

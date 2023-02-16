@@ -20,8 +20,8 @@ if ($result->num_rows > 0) {
     // }
 
    // en css ponemos el css en js y en el php ponemos el color que elijamos
-    echo "red";
-} else echo "green";
+    echo "#990000";
+} else echo "#66cc00";
     //{ se vacia la lista
     // resultList.empty(); }
 

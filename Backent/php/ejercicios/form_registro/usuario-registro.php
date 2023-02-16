@@ -14,7 +14,9 @@ if ($conn->query($sql) === TRUE) {
     echo '<p>Datos guardados con éxito</p>';
     echo '<p>Pulsa <a href="form_login.php">aquí</a> para iniciar sesión</p>';
 } else {
+    echo ("Este nombre ya esta siendo usado");
     echo "Error: " . $sql . "<br>" . $conn->error;
+    echo ("Este nombre ya esta siendo usado");
 }
 // Cerramos la conexión con la BD
 $conn->close();

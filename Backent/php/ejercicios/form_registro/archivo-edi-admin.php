@@ -41,7 +41,7 @@ $conn->close();
         <p>
             <?php echo $_SESSION['name'];?>
               Datos actualizados con éxito!!
-            <?php echo '<a href="pagina-principal.php"><button>Salir</button></a>'?>
+            <?php echo '<a href="pagina-principal.php"><button>Volver</button></a>'?>
         </p>
     </div>
 </body>

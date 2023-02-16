@@ -13,7 +13,7 @@ $(document).ready(function () {
             // Si el valor del input no está vacío, llamamos al php
             $.get("busqueda.php", { term: text }).done(function (data) {
                 // resultList.html(data);
-                $('.search-box input[type="text"]').css("background", data);
+                $('.search-box input[type="text"]').css("color", data);
             });
         } else {
             // Se vacía la lista
