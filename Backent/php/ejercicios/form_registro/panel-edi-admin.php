@@ -21,6 +21,7 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
     <link rel="stylesheet" href="..//style.css">
     
     <style>
+       
         table {
             border: none;
             border-collapse: collapse;
@@ -70,11 +71,11 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
             width: 5%;
             cursor: pointer;
             border-radius: 8px;
+            border-bottom: #6c92b8;
             border: none;
             font-size: medium;
             justify-content: center;
             display: flex;
-            box-shadow: 2, 3 darkmagenta;
             position: absolute;
                 top: 80%;
                 left: 50%;
@@ -170,7 +171,14 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
     
     <div >
     <?php
-    echo '<a href="panel-user.php"><button class="formulario1">Atrás</button></a>';
+    if (isset($_SESSION['logged'])){
+        if ($_SESSION['usertype'] == 'admin'){
+            echo '<a href="pagina-principal.php"><button class="formulario1">Atrás</button></a>';
+        }else{
+            echo '<a href="panel-user.php"><button class="formulario1">Atrás</button></a>';
+
+        }
+    }
     ?>
     </div>
     

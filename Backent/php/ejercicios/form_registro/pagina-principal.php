@@ -79,13 +79,30 @@ if (isset($_POST['logout'])) {
         <?php
         // Este if pregunta si el usuario está logeado
         if (isset($_SESSION['logged'])) {
-            // aquí va el panel/botón/contenido del usuario
-            echo '<h1>Bienvenido</h1>';
-            echo '<a href="panel-user.php"><button class="boton">Ir a mi cuenta</button></a>';
-            echo "<form action='pagina-principal.php' method='post'>
+
+            if ($_SESSION['usertype'] == 'admin'){
+                echo '<h1>Bienvenido</h1>';
+                echo '
+                <a href="panel-edi-admin.php"><button class="boton">Ir a mi cuenta</button>
+                </a>
+                ';
+                echo "<form action='pagina-principal.php' method='post'>
                
                 <input class='boton' type='submit' value='Cerrar sesión' name='logout'>
                 </form>";
+                
+            }else{
+                echo '<h1>Bienvenido</h1>';
+                echo '<a href="panel-user.php"><button class="boton">Ir a mi cuenta</button></a>';
+                echo "<form action='pagina-principal.php' method='post'>
+               
+                <input class='boton' type='submit' value='Cerrar sesión' name='logout'>
+                </form>";
+            }
+
+            // aquí va el panel/botón/contenido del usuario
+          
+          
         } else {
             // Si no está logeado, mostramos el botón de iniciar sesión
            
