@@ -34,6 +34,7 @@ $result = $conn->query($sql);
                 top: 35%;
                 left: 50%;
                 transform: translate(-50%, -50%);
+                border-radius: 8px;
         }
 
         table {
@@ -78,6 +79,13 @@ $result = $conn->query($sql);
                         "<td>" . $row['usuario'] . "</td>" .
                         "<td>" . $row['correo'] . "</td>" .
                         "<td>" . $row['contrasena'] . "</td></tr>";
+                        // "<td>" . $row['contrasena'] . "</td></tr>";
+                }
+            }
+
+            if (isset($_SESSION['logged'])){
+                if ($_SESSION['usertype'] == 'user'){
+                    // echo '<a href="pagina-principal.php"><button class="formulario1">Atrás</button></a>';
                 }
             }
             ?>

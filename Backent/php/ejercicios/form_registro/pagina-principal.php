@@ -23,22 +23,12 @@ if (isset($_POST['logout'])) {
     <link href="https://fonts.googleapis.com/css2?family=Sassy+Frass&display=swap" rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(0deg, rgba(221,237,237,1) 5%, rgba(53,181,184,1) 57%, rgba(202,184,237,1) 91%);
+            background: linear-gradient(0deg, rgba(221, 237, 237, 1) 5%, rgba(53, 181, 184, 1) 57%, rgba(202, 184, 237, 1) 91%);
             background-size: 100% 100%;
             margin: 0;
             padding: 0;
             text-align: center;
             height: 100vh;
-        }
-
-        .btn {
-            border: none;
-            display: flex;
-            grid-area: auto;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 90vh;
         }
 
         h1 {
@@ -56,6 +46,7 @@ if (isset($_POST['logout'])) {
             height: 50px;
             width: 40vh;
             cursor: pointer;
+            justify-content: center;
             text-align: center;
             box-shadow: 2, 3 black;
             position: relative;
@@ -67,52 +58,11 @@ if (isset($_POST['logout'])) {
             font-weight: bold;
             border-radius: 12px;
         }
-        input::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            /* z-index: -1; */
-            background: linear-gradient(45deg, rgb(189, 29, 29), rgb(95, 95, 180), rgb(78, 13, 48), rgb(43, 43, 245), rgb(219, 27, 27), rgb(24, 24, 223), rgb(219, 56, 143), rgb(27, 106, 151));
-            background-size: 800%;
-            border-radius: 10px;
-            filter: blur(8px);
-            animation: glowing 20s linear infinite;
-        }
-    
-        button::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: linear-gradient(45deg, rgb(189, 29, 29), rgb(95, 95, 180), rgb(78, 13, 48), rgb(43, 43, 245), rgb(219, 27, 27), rgb(24, 24, 223), rgb(219, 56, 143), rgb(27, 106, 151));
-            background-size: 800%;
-            border-radius: 10px;
-            filter: blur(8px);
-            animation: glowing 20s linear infinite;
-        }
-
-        @keyframes glowing {
-    0% {
-        background-position: 0 0;
-    }
-    50% {
-        background-position: 400% 0;
-    }
-    100% {
-        background-position: 0 0;
-    }
- }
     </style>
 </head>
 
 <body>
-    <h1>Bienvenido</h1>
+    
 
     <div class="btn">
 
@@ -120,17 +70,39 @@ if (isset($_POST['logout'])) {
         <?php
         // Este if pregunta si el usuario está logeado
         if (isset($_SESSION['logged'])) {
-            // aquí va el panel/botón/contenido del usuario
-            echo '<a href="panel-user.php"><button class="boton">Ir a mi cuenta</button></a>';
-            echo "<form action='pagina-principal.php' method='post'>
+
+            if ($_SESSION['usertype'] == 'admin'){
+                echo '<h1>Bienvenido</h1>';
+                echo '
+                <a href="panel-edi-admin.php"><button class="boton">Ir a mi cuenta</button>
+                </a>
+                ';
+                echo "<form action='pagina-principal.php' method='post'>
                
                 <input class='boton' type='submit' value='Cerrar sesión' name='logout'>
                 </form>";
+                
+            }else{
+                echo '<h1>Bienvenido</h1>';
+                echo '<a href="panel-user.php"><button class="boton">Ir a mi cuenta</button></a>';
+                echo "<form action='pagina-principal.php' method='post'>
+               
+                <input class='boton' type='submit' value='Cerrar sesión' name='logout'>
+                </form>";
+            }
+
+            // aquí va el panel/botón/contenido del usuario
+          
+          
         } else {
             // Si no está logeado, mostramos el botón de iniciar sesión
+           
             echo '<a href="form_login.php">
                         <button class= "inicio">Iniciar sesión</button>
                      </a>';
+            echo '<a href="form-registro.php">
+            <button class= "inicio">Registrarse</button>
+         </a>';
         }
         ?>
     </div>

@@ -9,6 +9,8 @@ include "conn.php";
         $usertype = $_POST['usertype'];
         $id = $_POST['id'];
 
+        // if (isset($_POST['update'])) {
+        // if (isset($_POST['update'])) {
         if (isset($_POST['update'])) {
             // todos estos datos quedan guardados en el id del usuario
             $sql = "UPDATE user SET usuario = '$usuario', correo = '$correo', contrasena = '$contrasena', usertype = '$usertype' WHERE id = '$id' ";
@@ -41,7 +43,7 @@ $conn->close();
         <p>
             <?php echo $_SESSION['name'];?>
               Datos actualizados con éxito!!
-            <?php echo '<a href="pagina-principal.php"><button>Salir</button></a>'?>
+            <?php echo '<a href="pagina-principal.php"><button>Volver</button></a>'?>
         </p>
     </div>
 </body>
