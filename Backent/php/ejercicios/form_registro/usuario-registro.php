@@ -21,12 +21,9 @@ $sql = "INSERT INTO user (usuario, correo, contrasena)
 if ($conn->query($sql) === TRUE) {
     echo '<p>Datos guardados con éxito</p>';
     echo '<p>Pulsa <a href="form_login.php">aquí</a> para iniciar sesión</p>';
-}
+} 
 // Cerramos la conexión con la BD
 $conn->close();
+
 }
-<<<<<<< HEAD
 ?>
-=======
-?>
->>>>>>> 48355b8bba62e0a28559facdc99c97d567d74a4a

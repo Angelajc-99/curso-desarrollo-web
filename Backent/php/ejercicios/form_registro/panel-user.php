@@ -1,7 +1,6 @@
 <?php
 session_start();
 include 'conn.php';
-
 if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
     $sql = 'SELECT * FROM user';
     echo '<a href="panel-edi-admin.php"><button>Cambiar datos</button></a>';
@@ -14,12 +13,9 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
     echo '<a href="pagina-principal.php"><button>Volver</button></a>';
 }
 $result = $conn->query($sql);
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,23 +40,18 @@ $result = $conn->query($sql);
             height: 25%;
             width: 25%;            
         }
-
         th {
             background-color: #6c92b8;
             border: 1px solid rgb(43, 42, 42);
             padding: 2px 5px;
         }
-
         td {
             border: 1px solid rgb(43, 42, 42);
             padding: 2px 5px;
-
         }
     </style>
 </head>
-
 <body>
-
     <h1>Tabla de usuarios en la BD</h1>
     <div class="tabla">
         <table>
@@ -71,15 +62,12 @@ $result = $conn->query($sql);
                 <th>Contraseña</th>
             </tr>
             <?php
-
             if ($result->num_rows > 0) {
-
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr> <td>" . $row['id'] . "</td>" .
                         "<td>" . $row['usuario'] . "</td>" .
                         "<td>" . $row['correo'] . "</td>" .
                         "<td>" . $row['contrasena'] . "</td></tr>";
-                        // "<td>" . $row['contrasena'] . "</td></tr>";
                 }
             }
 
@@ -91,11 +79,7 @@ $result = $conn->query($sql);
             ?>
 
 
-
-
         </table>
     </div>
-
 </body>
-
 </html>

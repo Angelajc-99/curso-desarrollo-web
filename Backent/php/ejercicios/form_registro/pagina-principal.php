@@ -1,7 +1,6 @@
 <?php
 // es una forma de hacer que los datos estén disponibles en varias páginas de la web.
 session_start();
-
 if (isset($_POST['logout'])) {
     // session_destroy destruye los datos
     session_destroy();
@@ -9,10 +8,8 @@ if (isset($_POST['logout'])) {
     header('Location: pagina-principal.php');
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,6 +27,15 @@ if (isset($_POST['logout'])) {
             text-align: center;
             height: 100vh;
         }
+        .btn {
+            border: none;
+            display: flex;
+            grid-area: auto;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 90vh;
+        }
         h1 {
             position: absolute;
             z-index: -2;
@@ -38,14 +44,11 @@ if (isset($_POST['logout'])) {
             font-size: 25vh;
             font-family: 'Sassy Frass', cursive;
             margin-top: 1;
-
         }
-
         .boton {
             height: 50px;
             width: 40vh;
             cursor: pointer;
-            justify-content: center;
             text-align: center;
             box-shadow: 2, 3 black;
             position: relative;
@@ -59,17 +62,13 @@ if (isset($_POST['logout'])) {
         }
     </style>
 </head>
-
 <body>
     
-
     <div class="btn">
-
-
         <?php
         // Este if pregunta si el usuario está logeado
         if (isset($_SESSION['logged'])) {
-
+            
             if ($_SESSION['usertype'] == 'admin'){
                 echo '<h1>Bienvenido</h1>';
                 echo '
@@ -80,7 +79,7 @@ if (isset($_POST['logout'])) {
                
                 <input class='boton' type='submit' value='Cerrar sesión' name='logout'>
                 </form>";
-                
+
             }else{
                 echo '<h1>Bienvenido</h1>';
                 echo '<a href="panel-user.php"><button class="boton">Ir a mi cuenta</button></a>';
@@ -91,11 +90,11 @@ if (isset($_POST['logout'])) {
             }
 
             // aquí va el panel/botón/contenido del usuario
-          
-          
+
+
         } else {
             // Si no está logeado, mostramos el botón de iniciar sesión
-           
+
             echo '<a href="form_login.php">
                         <button class= "inicio">Iniciar sesión</button>
                      </a>';
@@ -105,7 +104,5 @@ if (isset($_POST['logout'])) {
         }
         ?>
     </div>
-
 </body>
-
 </html>

@@ -1,27 +1,23 @@
 <?php
 session_start();
 include 'conn.php';
-
 $user = $_SESSION['id'];
-
 if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
-
     $sql = 'SELECT * FROM user';
     $result = $conn->query($sql);
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="..//style.css">
-    
+
     <style>
-       
+
         table {
             border: none;
             border-collapse: collapse;
@@ -35,14 +31,12 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
                 left: 50%;
                 transform: translate(-50%, -50%);          
         }
-
         th {
             background-color: #6c92b8;
             border: none;
             padding: 2px 5px;
             /* cursor: pointer; */
         }
-
         td {
             border: none;
             padding: 2px 5px;
@@ -57,7 +51,6 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
             border: none;
             /* cursor: pointer; */
         }
-
         .formulario {
             justify-content: center;
             display: flex;
@@ -76,6 +69,7 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
             font-size: medium;
             justify-content: center;
             display: flex;
+            box-shadow: 2, 3 darkmagenta;
             position: absolute;
                 top: 80%;
                 left: 50%;
@@ -85,7 +79,6 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
 </head>
 <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <script src="intro.js"></script>
-
 <body>
 <br>
     <!-- Creamos la cajita de búsqueda -->
@@ -106,7 +99,6 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
                    <th> Opciones</th>
                    <th> Borrar </th>
                 </tr>";
-
             while ($row = $result->fetch_assoc()) {
                 $id = $row['id'];
                 $usuario = $row['usuario'];
@@ -115,12 +107,10 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
                 $usertype = $row['usertype'];
                 $usertype1 = 'user';
                 $usertype2 = 'admin';
-
                 if ($usertype == 'admin') {
                     $usertype1 = 'admin';
                     $usertype2 = 'user';
                 }
-
                 echo "<form action='archivo-edi-admin.php' method='post'>
                             <tr>
                             <td>
@@ -151,27 +141,20 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
         }
         ?>
     </table>
-
     <br>
-
     <div class="formulario">
         <form action="usuario-registro.php" method="post">
-
             <input type="text" placeholder="Usuario" name="usuario" required>
-
             <input type="email" placeholder="Correo" name="correo" required>
-
             <input type="password" placeholder="Contraseña" name="contrasena" required>
-
             <input type="submit" value="Crear">
-            <!-- <input type="submit" value="Crear"> -->
         </form>
     </div>
-
     <br>
-    
+
     <div >
     <?php
+    // echo '<a href="panel-user.php"><button class="formulario1">Atrás</button></a>';
     if (isset($_SESSION['logged'])){
         if ($_SESSION['usertype'] == 'admin'){
             echo '<a href="pagina-principal.php"><button class="formulario1">Atrás</button></a>';
@@ -182,8 +165,6 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
     }
     ?>
     </div>
-    
 
 </body>
-
 </html>

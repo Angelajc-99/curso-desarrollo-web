@@ -7,19 +7,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario login</title>
     <style>
-        body {
-            background: linear-gradient(0deg, rgba(70, 53, 184, 1) 3%, rgba(202, 184, 237, 1) 96%);
-            height: 100vh;
-            text-align: center;
+       body {
+    background-image: linear-gradient(to bottom right, #262a2e, #798b9e);
 
-        }
+    /* viewport heigth/width (se ajusta al tamaño de la ventana o dispositivo) */
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+       
 
         form {
+            
 
             padding: 30px 20px;
             justify-items: flex-end;
         }
+
 
         /* .login {
             justify-content: center;
@@ -36,7 +48,6 @@
 <body>
     <div>
         <h2>Login</h2>
-        <!-- <form action="usuario-login.php" class="login" method="post"> -->
         <form action="usuario-login.php" class="login" method="post">
             <input name="usuario" type="text" placeholder="Usuario" required>
             <br>

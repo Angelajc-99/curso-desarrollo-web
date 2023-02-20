@@ -23,6 +23,7 @@ $sql = "UPDATE user SET usuario = '$usuario', correo = '$correo', contrasena = '
     <title>Document</title>
 </head>
 
+
 <body>
     <div>
         <?php
