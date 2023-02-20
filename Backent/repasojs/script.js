@@ -16,11 +16,45 @@ $(document).ready(function () {
   
               // activamos el cotón de registro
               $('input[type="submit"]').removeAttr('disabled');
-          } else alert('las contraseñas no coinciden'); 
-          
-    }
-
-    $('input[type="submit"]').attr('disabled');
-    jqattr
+          } else {
+            alert('las contraseñas no coinciden');  
+          }
+        }    
     })
+
+    // jqslider
+    // jqclick para qu eme de selector
+    $('#btnShow').click(function () { 
+       $('.container').toggle();        
+    });
+    $('#btnFade').click(function () { 
+        $('.container').fadeToggle();        
+     });
+     $('#btnSlide').click(function () { 
+        $('.container').slideToggle();        
+     });
+
+    //  $('.cambiar').click(function () { 
+    //     $('.cambiar').slideToggle();        
+    //  });
+
+     let contador = 0;
+     let pos = 'login';
+    $('.cambioForm').click(function () { 
+        if (contador < 1 || pos == 'login') {
+            $('.login').slideToggle(300, function () {
+                $('.signup').slideToggle (300); 
+            });
+            contador++;
+            pos = 'signup';
+        } else {
+            $('.signup').slideToggle(300, function () {
+                $('.login').slideToggle(300);
+            });
+            contador--;
+            pos = 'login';
+        }
+        
+        // $('.container').slideToggle(700);
+     });
 });
