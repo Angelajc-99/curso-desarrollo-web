@@ -30,7 +30,6 @@ if (isset($_POST['logout'])) {
             text-align: center;
             height: 100vh;
         }
-
         h1 {
             position: absolute;
             z-index: -2;

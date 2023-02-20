@@ -13,7 +13,11 @@ $(document).ready(function () {
             // Si el valor del input no está vacío, llamamos al php
             $.get("busqueda.php", { term: text }).done(function (data) {
                 // resultList.html(data);
+<<<<<<< HEAD
                 $('.search-box input[type="text"]').css("backgroundColor", data);
+=======
+                $('.search-box input[type="text"]').css("color", data);
+>>>>>>> 48355b8bba62e0a28559facdc99c97d567d74a4a
             });
         } else {
             // Se vacía la lista
@@ -25,4 +29,8 @@ $(document).ready(function () {
     /* function colorChange(color) {
         $('.search-box input[type="text"]').css("colorDelBorde", color)
     }*/
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 48355b8bba62e0a28559facdc99c97d567d74a4a

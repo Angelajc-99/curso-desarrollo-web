@@ -25,4 +25,8 @@ if ($conn->query($sql) === TRUE) {
 // Cerramos la conexión con la BD
 $conn->close();
 }
+<<<<<<< HEAD
 ?>
+=======
+?>
+>>>>>>> 48355b8bba62e0a28559facdc99c97d567d74a4a

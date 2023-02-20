@@ -1,3 +1,6 @@
+<?php
+include "conn.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,10 +10,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario login</title>
     <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
         body {
-            background: linear-gradient(0deg, rgba(70, 53, 184, 1) 3%, rgba(202, 184, 237, 1) 96%);
+            background: linear-gradient(0deg, rgba(8,9,14,1) 3%, rgba(53,115,184,1) 96%);
             height: 100vh;
             text-align: center;
+            display: flex-end;
+            float: center;
+            /* vertical-align: center; */
 
         }
 
@@ -35,16 +45,15 @@
 
 <body>
     <div>
-        <h2>Login</h2>
-        <!-- <form action="usuario-login.php" class="login" method="post"> -->
-        <form action="usuario-login.php" class="login" method="post">
-            <input name="usuario" type="text" placeholder="Usuario" required>
-            <br>
-            <input name="correo" type="email" placeholder="Correo" required>
-            <br>
-            <input name="password" type="password" placeholder="Contraseña" required>
-            <br>
-            <input type="submit" value="Acceder">
+        <form action="usuario-registro.php" method="post">
+
+            <input type="text" placeholder="Usuario" name="usuario" required>
+
+            <input type="email" placeholder="Correo" name="correo" required>
+
+            <input type="password" placeholder="Contraseña" name="contrasena" required>
+
+            <input type="submit" value="Enviar">
         </form>
         <?php
 

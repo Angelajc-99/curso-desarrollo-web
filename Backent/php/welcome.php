@@ -26,7 +26,7 @@ $conn->close();
     <title>Bienvenido</title>
 </head>
 <body>
-    <p>Bienvenido, <?php echo $_POST['name'];?>.</p>
+    <p>Bienvenido<?php echo $_POST['name'];?>.</p>
     <p>Tu email es <?php echo $_POST['email'];?>.</p>
     
 </body>
