@@ -18,6 +18,7 @@ $(document).ready(function () {
         } else {
             // Se vacía la lista
             resultList.empty();
+            // resultList.empty();
         }
     })
 

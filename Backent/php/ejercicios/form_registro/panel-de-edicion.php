@@ -21,6 +21,7 @@ $result = $conn->query($sql);
             height: 100vh;
         }
         .datos {
+            /* justify-content: center; */
             justify-content: center;
         }
     </style>

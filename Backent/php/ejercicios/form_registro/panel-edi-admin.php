@@ -164,6 +164,7 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
             <input type="password" placeholder="Contraseña" name="contrasena" required>
 
             <input type="submit" value="Crear">
+            <!-- <input type="submit" value="Crear"> -->
         </form>
     </div>
 

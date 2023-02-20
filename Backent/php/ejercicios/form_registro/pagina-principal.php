@@ -30,17 +30,9 @@ if (isset($_POST['logout'])) {
             text-align: center;
             height: 100vh;
         }
-
-        .btn {
-            border: none;
-            display: flex;
-            grid-area: auto;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 90vh;
-        }
-
+        /* .container.signup {
+    display: none;
+ } */
         h1 {
             position: absolute;
             z-index: -2;

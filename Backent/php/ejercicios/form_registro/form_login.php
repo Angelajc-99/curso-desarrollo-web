@@ -36,6 +36,7 @@
 <body>
     <div>
         <h2>Login</h2>
+        <!-- <form action="usuario-login.php" class="login" method="post"> -->
         <form action="usuario-login.php" class="login" method="post">
             <input name="usuario" type="text" placeholder="Usuario" required>
             <br>

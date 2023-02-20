@@ -47,6 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] = 'POST') {
 
    // Hacemos la query para buscar si existe un usuario con estos datos
    $sql = "SELECT * FROM user WHERE usuario = '$usuario' AND correo = '$correo' AND contrasena = '$contrasena'";
+   // $sql = "SELECT * FROM user WHERE usuario = '$usuario' AND correo = '$correo' AND contrasena = '$contrasena'";
    $result = $conn->query($sql);
 
    if ($result->num_rows > 0) {

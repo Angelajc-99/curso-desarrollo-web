@@ -79,6 +79,7 @@ $result = $conn->query($sql);
                         "<td>" . $row['usuario'] . "</td>" .
                         "<td>" . $row['correo'] . "</td>" .
                         "<td>" . $row['contrasena'] . "</td></tr>";
+                        // "<td>" . $row['contrasena'] . "</td></tr>";
                 }
             }
 

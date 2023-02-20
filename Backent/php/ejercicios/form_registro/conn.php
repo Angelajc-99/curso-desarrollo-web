@@ -6,6 +6,7 @@ $dbname = 'datos';
 
 // Crear la conexión a la BD
 $conn = new mysqli($servername, $username, $password, $dbname);
+// $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Comprobamos la conexión
 if ($conn->connect_error) {

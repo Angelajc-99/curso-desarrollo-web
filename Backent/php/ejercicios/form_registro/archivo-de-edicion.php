@@ -34,6 +34,7 @@ if ($conn->query($sql) == TRUE) {
             <?php echo $usuario;?>
             Actualizados con éxito
             <?php echo '<a href="pagina-principal.php"><button>Volver</button></a>'?>
+            <!-- <?php echo '<a href="pagina-p -->
         </p>
 
         <?php

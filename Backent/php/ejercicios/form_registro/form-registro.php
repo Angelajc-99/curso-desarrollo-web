@@ -51,6 +51,7 @@ require('../form_registro/usuario-registro.php');
 <body>
     <h2>Registrate</h2>
     <div>
+    <!-- <form action="form-registro.php" method="post"> -->
         <form action="form-registro.php" method="post">
 
             <input type="text" placeholder="Usuario" name="usuario" required>
