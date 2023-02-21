@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $('.search-box input[type="text"]').on("change", function () {
-    // $('.search-box input[type="text"]').on("change", function () {
+    
         // Cada vez que el value del imput cambie lo recogeremos
         let text = $(this).val();
 

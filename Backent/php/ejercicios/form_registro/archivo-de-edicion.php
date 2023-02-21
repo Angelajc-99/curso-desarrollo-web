@@ -27,24 +27,24 @@ $sql = "UPDATE user SET usuario = '$usuario', correo = '$correo', contrasena = '
 <body>
     <div>
         <?php
-if ($conn->query($sql) == TRUE) {
-
+         if ($conn->query($sql) == TRUE) {
+         
+                 ?>
+                 <p>
+                     Datos de los usuarios
+                     <?php echo $usuario;?>
+                     Actualizados con éxito
+                     <?php echo '<a    href="pagina-principal.           php"><button>Volver</button></a>'?>
+         
+                     <?php echo '<a    href="pagina-principal.           php"</p></a>'; ?>
+         
+                 <?php
+         } else {
+             echo 'error: ' . $sql . "<br>" .    $conn->error;
+         }
+         $conn->close();
+        
         ?>
-        <p>
-            Datos de los usuarios
-            <?php echo $usuario;?>
-            Actualizados con éxito
-            <?php echo '<a href="pagina-principal.php"><button>Volver</button></a>'?>
-
-            <?php echo '<a href="pagina-principal.php"</p></a>'; ?>
-
-        <?php
-} else {
-    echo 'error: ' . $sql . "<br>" . $conn->error;
-}
-$conn->close();
-
-?>
      </div>
 </body>
 </html>

@@ -1,6 +1,7 @@
 <?php
 // es una forma de hacer que los datos estén disponibles en varias páginas de la web.
 session_start();
+
 if (isset($_POST['logout'])) {
     // session_destroy destruye los datos
     session_destroy();
@@ -27,14 +28,17 @@ if (isset($_POST['logout'])) {
             text-align: center;
             height: 100vh;
         }
+        button {
+            
+        }
         .btn {
             border: none;
             display: flex;
             grid-area: auto;
             align-items: center;
             justify-content: center;
-            width: 100%;
-            height: 90vh;
+            /* width: 100%;
+            height: 90vh; */
         }
         h1 {
             position: absolute;
@@ -48,13 +52,17 @@ if (isset($_POST['logout'])) {
         .boton {
             height: 50px;
             width: 40vh;
+
+            position: relative;
             cursor: pointer;
             text-align: center;
+
             box-shadow: 2, 3 black;
-            position: relative;
+            
+            margin: 2px, 5px, 0, 5px ;
             background: rgb(169, 145, 196);
             border: none;
-            padding: 16px 32px;
+            padding: 32px;
             color: rgb(193, 217, 226);
             font-size: 15px;
             font-weight: bold;
@@ -73,19 +81,16 @@ if (isset($_POST['logout'])) {
                 echo '<h1>Bienvenido</h1>';
                 echo '
                 <a href="panel-edi-admin.php"><button class="boton">Ir a mi cuenta</button>
-                </a>
-                ';
-                echo "<form action='pagina-principal.php' method='post'>
-               
+                </a>';
+                echo "<form action='pagina-principal.php' method='post'>               
                 <input class='boton' type='submit' value='Cerrar sesión' name='logout'>
                 </form>";
 
             }else{
                 echo '<h1>Bienvenido</h1>';
                 echo '<a href="panel-user.php"><button class="boton">Ir a mi cuenta</button></a>';
-                echo "<form action='pagina-principal.php' method='post'>
-               
-                <input class='boton' type='submit' value='Cerrar sesión' name='logout'>
+
+                echo "<form action='pagina-principal.php' method='post'><input class='boton' type='submit' value='Cerrar sesión' name='logout'>
                 </form>";
             }
 

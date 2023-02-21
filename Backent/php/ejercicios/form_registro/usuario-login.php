@@ -20,13 +20,19 @@ session_start();
          text-align: center;
 
       }
-      button {
-         margin-right: 10px;
-    color: rgb(73, 71, 71);
-    box-shadow: 2px 2px 4px 3px #20212447;
-    border-color: #c4c5c6;
-    background-color:#8eaafc;
-      }
+      .divBtn button {
+    background-color: rgb(92, 122, 138);
+    color: white;
+    border-radius: 5px;
+    border: none;
+    transition: all .5s;
+    padding: 5px;
+}
+
+.divBtn button:hover {
+    box-shadow: inset 0 0 2px 2px rgb(220, 213, 217);
+    cursor: pointer;
+}
    </style>
 </head>
 
@@ -46,7 +52,6 @@ if ($_SERVER['REQUEST_METHOD'] = 'POST') {
 
    // Hacemos la query para buscar si existe un usuario con estos datos
    $sql = "SELECT * FROM user WHERE usuario = '$usuario' AND correo = '$correo' AND contrasena = '$contrasena'";
-   // $sql = "SELECT * FROM user WHERE usuario = '$usuario' AND correo = '$correo' AND contrasena = '$contrasena'";
    $result = $conn->query($sql);
 
    if ($result->num_rows > 0) {

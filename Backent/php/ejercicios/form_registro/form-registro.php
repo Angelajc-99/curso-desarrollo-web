@@ -1,7 +1,7 @@
 <?php
-
 include 'conn.php';
 require('../form_registro/usuario-registro.php');
+// require('../form_registro/usuario-registro.php');
 // if ($_POST) {
 //     $usuario = $_POST['usuario'];
 //     $correo = $_POST['correo'];
@@ -30,29 +30,32 @@ require('../form_registro/usuario-registro.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrate</title>
     <style>
-     
-        * {
+      * {
             margin: 0;
             padding: 0;
         }
-
         body {
-            background: linear-gradient(0deg, rgba(8,9,14,1) 3%, rgba(53,115,184,1) 96%);
-            background: linear-gradient(0deg, rgba(8, 9, 14, 1) 3%, rgba(53, 115, 184, 1) 96%);
-            height: 100vh;
-            text-align: center;
-            display: flex-end;
-            float: center;
-            font-size: medium;
-            /* vertical-align: center; */
+    background-image: linear-gradient(to bottom right, #262a2e, #798b9e);
 
-        }
+    /* viewport heigth/width (se ajusta al tamaño de la ventana o dispositivo) */
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
     </style>
 </head>
 <body>
     <h2>Registrate</h2>
     <div>
-        <form action="usuario-registro.php" method="post">
+        <!-- <form action="usuario-registro.php" method="post"> -->
         <form action="form-registro.php" method="post">
 
             <input type="text" placeholder="Usuario" name="usuario" required>
@@ -61,7 +64,7 @@ require('../form_registro/usuario-registro.php');
 
             <input type="password" placeholder="Contraseña" name="contrasena" required>
 
-            <input type="submit" value="Enviar">
+            <!-- <input type="submit" value="Enviar"> -->
             <input type="submit" name="envio" value="Enviar">
         </form>
         <p>Si ya estás registrado, pulsa <a href="form_login.php">aquí</a> para iniciar sesión</p>
@@ -69,3 +72,11 @@ require('../form_registro/usuario-registro.php');
 </body>
 </html>
 
+
+<!-- if ($result->num_rows > 0) {
+    echo '<p>Este usuario ya existe</p>';
+    if (isset($_SESSION['usertype']) && $_SESSION['usertype'] == 'admin') {
+        $link = "panel-edi-admin.php";
+    } else $link = "form-registro.php";
+    echo "<p> <a href='$link'>Regresar</a></p>";
+}else { -->

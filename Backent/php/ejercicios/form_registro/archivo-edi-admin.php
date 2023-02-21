@@ -9,8 +9,6 @@ include "conn.php";
         $usertype = $_POST['usertype'];
         $id = $_POST['id'];
 
-        // if (isset($_POST['update'])) {
-        // if (isset($_POST['update'])) {
         if (isset($_POST['update'])) {
             // todos estos datos quedan guardados en el id del usuario
             $sql = "UPDATE user SET usuario = '$usuario', correo = '$correo', contrasena = '$contrasena', usertype = '$usertype' WHERE id = '$id' ";

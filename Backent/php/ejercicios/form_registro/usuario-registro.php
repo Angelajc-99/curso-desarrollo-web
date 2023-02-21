@@ -9,10 +9,17 @@ $contrasena = $_POST['contrasena'];
 $sql = "SELECT * FROM user WHERE correo ='$correo'";
 $result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
-    echo '<p>Este usuario ya existe</p>';
-    echo '<p> <a href="panel-edi-admin.php">Regresar</a></p>';
-}else {
+// if ($result->num_rows > 0) {
+//     echo '<p>Este usuario ya existe</p>';
+//     echo '<p> <a href="panel-edi-admin.php">Regresar</a></p>';
+    if ($result->num_rows > 0) {
+        echo '<p>Este usuario ya existe</p>';
+        if (isset($_SESSION['usertype']) && $_SESSION['usertype'] == 'admin') {
+            $link = "panel-edi-admin.php";
+        } else $link = "form-registro.php";
+        echo "<p> <a href='$link'>Regresar</a></p>";
+    }else {
+// }else {
 // Creamos la query para guardar los datos 
 $sql = "INSERT INTO user (usuario, correo, contrasena)
      VALUES ('$usuario','$correo','$contrasena')";
