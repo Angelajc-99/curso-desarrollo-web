@@ -29,6 +29,8 @@ require('../form_registro/usuario-registro.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrate</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="intro.js"></script>
     <style>
       * {
             margin: 0;
@@ -37,16 +39,15 @@ require('../form_registro/usuario-registro.php');
         body {
     background-image: linear-gradient(to bottom right, #262a2e, #798b9e);
 
-    /* viewport heigth/width (se ajusta al tamaño de la ventana o dispositivo) */
     height: 100vh;
-    width: 100vw;
-    margin: 0;
+    width: 100vh;
 
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
+    
+    text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -55,7 +56,6 @@ require('../form_registro/usuario-registro.php');
 <body>
     <h2>Registrate</h2>
     <div>
-        <!-- <form action="usuario-registro.php" method="post"> -->
         <form action="form-registro.php" method="post">
 
             <input type="text" placeholder="Usuario" name="usuario" required>
@@ -64,11 +64,14 @@ require('../form_registro/usuario-registro.php');
 
             <input type="password" placeholder="Contraseña" name="contrasena" required>
 
-            <!-- <input type="submit" value="Enviar"> -->
             <input type="submit" name="envio" value="Enviar">
         </form>
         <p>Si ya estás registrado, pulsa <a href="form_login.php">aquí</a> para iniciar sesión</p>
     </div>
+    <div class="search-box">
+           <input type="text" autocomplete="off" placeholder="Buscar usuario...">
+           <div class="display"></div>
+       </div>
 </body>
 </html>
 

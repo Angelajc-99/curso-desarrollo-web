@@ -22,24 +22,17 @@ if (isset($_POST['logout'])) {
     <style>
         body {
             background: linear-gradient(0deg, rgba(221, 237, 237, 1) 5%, rgba(53, 181, 184, 1) 57%, rgba(202, 184, 237, 1) 91%);
-            background-size: 100% 100%;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            height: 100vh;
+             height: 100vh;
+             width: 100vw;
+             margin: 0;
+
+             display: flex;
+             justify-content: center;
+             flex-direction: column;
+
+             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
-        button {
-            
-        }
-        .btn {
-            border: none;
-            display: flex;
-            grid-area: auto;
-            align-items: center;
-            justify-content: center;
-            /* width: 100%;
-            height: 90vh; */
-        }
+
         h1 {
             position: absolute;
             z-index: -2;
@@ -49,9 +42,25 @@ if (isset($_POST['logout'])) {
             font-family: 'Sassy Frass', cursive;
             margin-top: 1;
         }
-        .boton {
-            height: 50px;
-            width: 40vh;
+
+        /* .btn {
+            border: none;
+            display: flex;
+            grid-area: auto;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 90vh;
+        } */
+        
+        .btn {
+            border: none;
+            display: flex;
+            grid-area: auto;
+            align-items: center;
+            justify-content: center;
+            height: 75px;
+            width: 50vw;
 
             position: relative;
             cursor: pointer;
@@ -80,7 +89,7 @@ if (isset($_POST['logout'])) {
             if ($_SESSION['usertype'] == 'admin'){
                 echo '<h1>Bienvenido</h1>';
                 echo '
-                <a href="panel-edi-admin.php"><button class="boton">Ir a mi cuenta</button>
+                <a href="panel-edi-admin.php"><button class="boton">Ir al panel de administración</button>
                 </a>';
                 echo "<form action='pagina-principal.php' method='post'>               
                 <input class='boton' type='submit' value='Cerrar sesión' name='logout'>

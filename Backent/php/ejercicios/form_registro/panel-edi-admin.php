@@ -1,8 +1,12 @@
 <?php
 session_start();
+
 include 'conn.php';
+
 $user = $_SESSION['id'];
+
 if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
+
     $sql = 'SELECT * FROM user';
     $result = $conn->query($sql);
 }
@@ -29,7 +33,9 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
             position: absolute;
                 top: 35%;
                 left: 50%;
-                transform: translate(-50%, -50%);          
+                transform: translate(-50%, -50%);  
+            /* display: none; */
+
         }
         th {
             background-color: #6c92b8;
@@ -50,6 +56,10 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
         tr {
             border: none;
             /* cursor: pointer; */
+        }
+
+        select {
+            width: 100%;
         }
         .formulario {
             justify-content: center;
@@ -75,20 +85,47 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
                 left: 50%;
                 transform: translate(-50%, -50%);
         }
+        .container {
+            
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+        
+        
     </style>
 </head>
-<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-    <script src="intro.js"></script>
+
 <body>
 <br>
     <!-- Creamos la cajita de búsqueda -->
-    <div class="search-box">
-        <input type="text" autocomplete="off" placeholder="Buscar usuario...">
-        <div class="display"></div>
+    <div>
+       
+       <div class="container">
+          <form action="">
+              <!-- <select name="" id=""></select> -->
+              <input type="text" name="user" onkeyup="showUser(this.value)">
+          </form>
+  
+          <div id="display">
+            <!-- <table>
+                <tr><th> Usuario</th>
+           <th> Correo</th>
+           <th> Contraseña</th>
+           <th> Usertype</th>
+           <th> Opciones</th>
+           <th> Borrar </th></tr>
+            </table></div>
+       </div>        -->
     </div>
     
-    <table>
+    <!-- <table>
         <?php
+        echo "<h1> Edición de datos de usuarios</h1>";
         if ($result->num_rows > 0) {
             echo "<h1> Edición de datos de usuarios</h1>
                 <tr>
@@ -140,7 +177,7 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
             }
         }
         ?>
-    </table>
+    </table> -->
     <br>
     <div class="formulario">
         <form action="usuario-registro.php" method="post">
@@ -167,4 +204,30 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
     </div>
 
 </body>
+<script>
+    function showUser(text) {
+        display = document.getElementById('display');
+
+        // Si el input está vacio , el div tb se vacía 
+        if (text == '') {
+                display.innerHTML = '';
+                return;
+            
+        } else {
+                let ajax = new XMLHttpRequest();
+                ajax.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        display.innerHTML = this.responseText;
+                    }
+                };
+                ajax.open('GET', 'tabla-getuser.php?q=' + text, true);
+                ajax.send();
+            }
+            // con el que estamos consiguiendo la variable, la q va a ser igual a los datos que se consiguen 
+        
+    }
+    // showUser('@', 'tabla-getuser.php')
+</script>
+
 </html>
+

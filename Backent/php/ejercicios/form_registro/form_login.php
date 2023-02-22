@@ -10,10 +10,8 @@
        body {
     background-image: linear-gradient(to bottom right, #262a2e, #798b9e);
 
-    /* viewport heigth/width (se ajusta al tamaño de la ventana o dispositivo) */
     height: 100vh;
-    width: 100vw;
-    margin: 0;
+    width: 100%;
 
     display: flex;
     justify-content: center;
@@ -23,8 +21,11 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-       
-
+       .container {
+        background: #798b9e;
+        height: 50%;
+        width: 50%;
+       }
         form {
             
 
@@ -46,7 +47,7 @@
 </head>
 
 <body>
-    <div>
+    <div class="container">
         <h2>Login</h2>
         <form action="usuario-login.php" class="login" method="post">
             <input name="usuario" type="text" placeholder="Usuario" required>
@@ -73,6 +74,10 @@
         <a href="form-registro.php">Registrate ahora</a>
 
     </div>
+
+    
 </body>
 
 </html>
+
+

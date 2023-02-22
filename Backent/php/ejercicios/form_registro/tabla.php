@@ -6,10 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabla con Ajax</title>
     <style>
-        body {
+        /* body {
             background: linear-gradient(to right, transparent, mistyrose);
-    /* url("critters.png"); */
-    /* viewport heigth/width (se ajusta al tamaño de la ventana o dispositivo) */
     height: 100vh;
     width: 100vw;
     margin: 0;
@@ -20,7 +18,7 @@
     flex-direction: column;
 
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
+} */
     </style>
 </head>
 <body>
@@ -56,5 +54,6 @@
             // con el que estamos consiguiendo la variable, la q va a ser igual a los datos que se consiguen 
         
     }
+    // Para que me muestre la tabla por defecto utilizo showUser('@', 'tabla-getuser.php')
 </script>
 </html>

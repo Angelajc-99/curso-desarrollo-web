@@ -38,23 +38,34 @@ $(document).ready(function () {
     //     $('.cambiar').slideToggle();        
     //  });
 
-     let contador = 0;
-     let pos = 'login';
+     
+    let contador = 0;
+    let pos = 'login';
     $('.cambioForm').click(function () { 
         if (contador < 1 || pos == 'login') {
             $('.login').slideToggle(300, function () {
-                $('.signup').slideToggle (300); 
-            });
-            contador++;
-            pos = 'signup';
+                $('.signup').slideToggle(300);
+              });
+              contador++;
+              pos = 'signup';
         } else {
             $('.signup').slideToggle(300, function () {
                 $('.login').slideToggle(300);
-            });
-            contador--;
-            pos = 'login';
+              });
+              contador--;
+              pos = 'login';
         }
-        
+        $('div#background').fadeToggle(1000);
+
         // $('.container').slideToggle(700);
-     });
+    });
+
+    $('#btnClass').click(function () {
+        $('body').toggleClass('cuerpo');
+        console.log('funciona');
+      });
+    $('#btnBG').click(function () {
+        $('div#background').fadeToggle(1000);
+        console.log('funciona');
+      });
 });

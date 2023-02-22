@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'conn.php';
 if ($_POST) {
 $usuario = $_POST['usuario'];
@@ -17,7 +18,7 @@ $result = $conn->query($sql);
         if (isset($_SESSION['usertype']) && $_SESSION['usertype'] == 'admin') {
             $link = "panel-edi-admin.php";
         } else $link = "form-registro.php";
-        echo "<p> <a href='$link'>Regresar</a></p>";
+        if(!isset($_POST['envio'])) echo "<p> <a href='$link'>Regresar</a></p>";
     }else {
 // }else {
 // Creamos la query para guardar los datos 

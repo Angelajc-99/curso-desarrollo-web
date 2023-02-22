@@ -1,6 +1,7 @@
 body {
     background-image: linear-gradient(to bottom right, #262a2e, #798b9e);
 
+    transition: all 1s;
     /* viewport heigth/width (se ajusta al tamaño de la ventana o dispositivo) */
     height: 100vh;
     width: 100vw;
@@ -10,9 +11,22 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 0;
 
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
+div#background {
+    background-image: linear-gradient(to bottom right, #100203, #e51613);;
+    width: 100vw;
+    height: 100vh;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -5;
+}
+
 
 div.divBtn {
     display: flex;
@@ -128,4 +142,8 @@ input[type='submit']:not(:disabled):hover {
 /* Eliminar el efecto interno de los navegadores */
 input:focus {
     /* transition: all 10000000000ms; */
+}
+.cuerpo {
+    background-image: linear-gradient(to bottom right, #e3e9ef, #07427d);
+    transition: all 1s;
 }
