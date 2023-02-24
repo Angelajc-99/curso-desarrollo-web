@@ -18,6 +18,8 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="intro.js"></script>
     <link rel="stylesheet" href="..//style.css">
 
     <style>
@@ -90,12 +92,17 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    width: 15%;
     
+    flex-direction: column;
     text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
-        
+        .tabla2 {
+            background: #6c92b8;
+            width: 100%;
+            height: 50vh;
+        }
         
     </style>
 </head>
@@ -107,84 +114,103 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
        
        <div class="container">
           <form action="">
-              <!-- <select name="" id=""></select> -->
-              <input type="text" name="user" onkeyup="showUser(this.value)">
-          </form>
+                <!-- <select name="" id=""></select> -->
+                <div>
+                  <input type="text" name="user" onkeyup="showUser  (this.value, 'usuario')" placeholder="Buscar   usuario o correo...">
+                </div>
+              
+              <select onchange="showUser(this.value, 'usertype')">
+                  <option value="" disabled selected>Filtrar por permisos</option>
+                  <option value="admin">Mostrar administradores</option>
+                  <option value="user">Mostrar usuarios</option>
+              </select>
+            </form>
   
-          <div id="display">
-            <!-- <table>
-                <tr><th> Usuario</th>
-           <th> Correo</th>
-           <th> Contraseña</th>
-           <th> Usertype</th>
-           <th> Opciones</th>
-           <th> Borrar </th></tr>
-            </table></div>
-       </div>        -->
+            <div id="display">
+                <!-- <table>
+                     <tr><th> Usuario</th>
+                <th> Correo</th>
+                <th> Contraseña</th>
+                <th> Usertype</th>
+                <th> Opciones</th>
+                 <th> Borrar </th></tr>
+                </table></div> -->
+            </div>        
     </div>
     
-    <!-- <table>
-        <?php
-        echo "<h1> Edición de datos de usuarios</h1>";
-        if ($result->num_rows > 0) {
-            echo "<h1> Edición de datos de usuarios</h1>
-                <tr>
-                   <th> Usuario</th>
-                   <th> Correo</th>
-                   <th> Contraseña</th>
-                   <th> Usertype</th>
-                   <th> Opciones</th>
-                   <th> Borrar </th>
-                </tr>";
-            while ($row = $result->fetch_assoc()) {
-                $id = $row['id'];
-                $usuario = $row['usuario'];
-                $correo = $row['correo'];
-                $contrasena = $row['contrasena'];
-                $usertype = $row['usertype'];
-                $usertype1 = 'user';
-                $usertype2 = 'admin';
-                if ($usertype == 'admin') {
-                    $usertype1 = 'admin';
-                    $usertype2 = 'user';
+    <div class="tabla2">
+        <table>
+            <?php
+            // echo "<h1> Edición de datos de usuarios</h1>";
+            if ($result->num_rows > 0) {
+                echo "<h1> Edición de datos de usuarios</h1>
+                    <tr>
+                       <th> Usuario</th>
+                       <th> Correo</th>
+                       <th> Contraseña</th>
+                       <th> Usertype</th>
+                       <th> Opciones</th>
+                       <th> Borrar </th>
+                    </tr>";
+                while ($row = $result->fetch_assoc()) {
+                    $id = $row['id'];
+                    $usuario = $row['usuario'];
+                    $correo = $row['correo'];
+                    $contrasena = $row['contrasena'];
+                    $usertype = $row['usertype'];
+                    $usertype1 = 'user';
+                    $usertype2 = 'admin';
+                    if ($usertype == 'admin') {
+                        $usertype1 = 'admin';
+                        $usertype2 = 'user';
+                    }
+                    echo "<form action='archivo-edi-admin.php' method='post'>
+                                <tr>
+                                <td>
+                                  <input type='text' placeholder='ID' name='id' hidden value='$id'>
+                                  <input type='text' placeholder='Usuario' name='usuario' value='$usuario'>
+                                </td>
+                                <td>
+                                  <input type='text' placeholder='Email' name='correo' value='$correo'>
+                                </td>
+                                <td>
+                                  <input type='text' placeholder='Contraseña' name='contrasena' value='$contrasena'>
+                                </td>
+                                <td>
+                                  <select  name='usertype'>
+                                     <option value='$usertype1'>$usertype1</option>
+                                     <option value='$usertype2'>$usertype2</option>
+                                  </select>
+                                </td>
+                                <td>
+                                   <input type='submit' name='update' value='Actualizar'>
+                                </td>
+                                <td>
+                                  <input type='submit' name='delete' value='Eliminar'>
+                                </td>
+                                </form>
+                                </tr>";
                 }
-                echo "<form action='archivo-edi-admin.php' method='post'>
-                            <tr>
-                            <td>
-                              <input type='text' placeholder='ID' name='id' hidden value='$id'>
-                              <input type='text' placeholder='Usuario' name='usuario' value='$usuario'>
-                            </td>
-                            <td>
-                              <input type='text' placeholder='Email' name='correo' value='$correo'>
-                            </td>
-                            <td>
-                              <input type='text' placeholder='Contraseña' name='contrasena' value='$contrasena'>
-                            </td>
-                            <td>
-                              <select  name='usertype'>
-                                 <option value='$usertype1'>$usertype1</option>
-                                 <option value='$usertype2'>$usertype2</option>
-                              </select>
-                            </td>
-                            <td>
-                               <input type='submit' name='update' value='Actualizar'>
-                            </td>
-                            <td>
-                              <input type='submit' name='delete' value='Eliminar'>
-                            </td>
-                            </form>
-                            </tr>";
             }
-        }
-        ?>
-    </table> -->
+            ?>
+        </table>
+    </div>
     <br>
     <div class="formulario">
         <form action="usuario-registro.php" method="post">
-            <input type="text" placeholder="Usuario" name="usuario" required>
-            <input type="email" placeholder="Correo" name="correo" required>
-            <input type="password" placeholder="Contraseña" name="contrasena" required>
-            <input type="submit" value="Crear">
+            <div class="search-box">            
+               <input type="text" autocomplete="off"  placeholder="Usuario" name="usuario" required>
+               <div class="display"></div>
+            </div>
+            <div>
+              <input type="email" placeholder="Correo" name="correo" required>
+            </div>
+            <div>
+              <input type="password" placeholder="Contraseña" name="contrasena" required>
+            </div>
+            <div>
+              <input type="submit" value="Crear">
+            </div>
         </form>
     </div>
     <br>
@@ -205,13 +231,14 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
 
 </body>
 <script>
-    function showUser(text) {
+    function showUser(text, filtro) {
         display = document.getElementById('display');
 
         // Si el input está vacio , el div tb se vacía 
-        if (text == '') {
-                display.innerHTML = '';
+        if (text == ' ') {
+                display.innerHTML = '@';
                 return;
+                // text = 'all';
             
         } else {
                 let ajax = new XMLHttpRequest();
@@ -220,7 +247,7 @@ if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
                         display.innerHTML = this.responseText;
                     }
                 };
-                ajax.open('GET', 'tabla-getuser.php?q=' + text, true);
+                ajax.open('GET', 'tabla-get.php?value=' + text + '&filtro=' + filtro, true);
                 ajax.send();
             }
             // con el que estamos consiguiendo la variable, la q va a ser igual a los datos que se consiguen 

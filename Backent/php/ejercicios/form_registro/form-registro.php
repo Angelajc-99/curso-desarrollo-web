@@ -51,27 +51,43 @@ require('../form_registro/usuario-registro.php');
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+.container {
+    background-color: #798b57;
+    justify-content: center;
+    /* display: flex; */
+    width: 25vw;
+    height: 25vh;
+}
     </style>
 </head>
 <body>
+    
+    <div class="container">
     <h2>Registrate</h2>
-    <div>
         <form action="form-registro.php" method="post">
+            <div class="search-box">            
+               <input type="text" autocomplete="off"  placeholder="Usuario" name="usuario" required>
+               <div class="display"></div>
+            </div>
 
-            <input type="text" placeholder="Usuario" name="usuario" required>
+            <div>
+               <input type="email" placeholder="Correo" name="correo" required>
+            </div>
 
-            <input type="email" placeholder="Correo" name="correo" required>
+            <div>   
+               <input type="password" placeholder="Contraseña" name="contrasena" required>
+            </div>
 
-            <input type="password" placeholder="Contraseña" name="contrasena" required>
-
-            <input type="submit" name="envio" value="Enviar">
+            <div>
+               <input type="submit" name="envio" value="Enviar">
+            </div>
         </form>
-        <p>Si ya estás registrado, pulsa <a href="form_login.php">aquí</a> para iniciar sesión</p>
+        <div>
+          <p>Si ya estás registrado, pulsa <a href="form_login.php">aquí</a> para iniciar sesión</p>
+        </div>
+        
     </div>
-    <div class="search-box">
-           <input type="text" autocomplete="off" placeholder="Buscar usuario...">
-           <div class="display"></div>
-       </div>
+       
 </body>
 </html>
 

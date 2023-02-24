@@ -22,33 +22,40 @@
     </style>
 </head>
 <body>
-    <div class="container">
+     <div class="container">
         <form action="">
-            <!-- <select name="" id=""></select> -->
-            <input type="text" name="user" onkeyup="showUser(this.value)">
+        <!-- <select name="" id=""></select> --> -->
+            <input type="text" name="user" onkeyup="showUser(this.value, 'usuario')" placeholder="Buscar usuario o correo...">
+            <select onchange="showUser(this.value, 'usertype')">
+                <option value="" disabled selected>Filtrar por permisos</option>
+                <option value="admin">Mostrar administradores</option>
+                <option value="user">Mostrar usuarios</option>
+            </select>
         </form>
 
         <div id="display">Los datos de las personas se mostrarán aquí...</div>
     </div>
-    
+     -->
 </body>
 <script>
-    function showUser(text) {
+    function showUser(text, filtro) {
         display = document.getElementById('display');
 
         // Si el input está vacio , el div tb se vacía 
         if (text == '') {
-                display.innerHTML = '';
-                return;
+                // display.innerHTML = '';
+                // return;
+                text = 'all';
             
-        } else {
+            } else {
                 let ajax = new XMLHttpRequest();
                 ajax.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
                         display.innerHTML = this.responseText;
                     }
                 };
-                ajax.open('GET', 'tabla-getuser.php?q=' + text, true);
+                ajax.open('GET', 'tabla-get.php?value=' + text
+                + '&filtro=' + filtro, true);
                 ajax.send();
             }
             // con el que estamos consiguiendo la variable, la q va a ser igual a los datos que se consiguen 

@@ -50,13 +50,21 @@
     <div class="container">
         <h2>Login</h2>
         <form action="usuario-login.php" class="login" method="post">
-            <input name="usuario" type="text" placeholder="Usuario" required>
-            <br>
-            <input name="correo" type="email" placeholder="Correo" required>
-            <br>
-            <input name="password" type="password" placeholder="Contraseña" required>
-            <br>
-            <input type="submit" value="Acceder">
+            <div>
+              <input name="usuario" type="text" placeholder="Usuario" required>
+            </div>
+
+            <div>
+              <input name="correo" type="email" placeholder="Correo" required>
+            </div>
+            
+            <div>
+              <input name="password" type="password" placeholder="Contraseña" required>
+            </div>
+            
+            <div>
+              <input type="submit" value="Acceder">
+            </div>  
         </form>
         <?php
 
