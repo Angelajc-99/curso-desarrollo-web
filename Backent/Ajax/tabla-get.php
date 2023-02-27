@@ -19,7 +19,7 @@
     $result = mysqli_query($conn,$sql);
 
     // Imprimimos los datos en una tabla
-    echo "<table>
+    echo "<table id='tabla'>
 <tr>
     <th>Nombre de usuario</th>
     <th>Email</th>
@@ -38,3 +38,21 @@ echo "</table>";
 
 mysqli_close($conn);
     ?>
+
+
+
+<script>
+   let boton = document.getElementById('tabla');
+//    let div = document.getElementById('div');
+//    let icono = document.getElementById('img6');
+   
+   boton.addEventListener('mouseover', function() {
+     div.style.display = "block"; //Puedes usar inline o cualquier    otro
+     icono.style.display = "none"; 
+   });
+   
+//    boton.addEventListener('mouseout', function() {
+//      div.style.display = "none";
+//      icono.style.display = "block"; 
+//    });
+</script>

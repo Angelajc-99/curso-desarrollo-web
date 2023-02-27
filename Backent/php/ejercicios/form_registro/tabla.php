@@ -24,8 +24,8 @@
 <body>
      <div class="container">
         <form action="">
-        <!-- <select name="" id=""></select> --> -->
-            <input type="text" name="user" onkeyup="showUser(this.value, 'usuario')" placeholder="Buscar usuario o correo...">
+        <!-- <select name="" id=""></select> -->
+        <input type="text" name="user" onkeyup="showUser(this.value, 'usuario')" placeholder="Buscar usuario o correo...">
             <select onchange="showUser(this.value, 'usertype')">
                 <option value="" disabled selected>Filtrar por permisos</option>
                 <option value="admin">Mostrar administradores</option>
@@ -35,15 +35,15 @@
 
         <div id="display">Los datos de las personas se mostrarán aquí...</div>
     </div>
-     -->
+    
 </body>
 <script>
     function showUser(text, filtro) {
         display = document.getElementById('display');
 
         // Si el input está vacio , el div tb se vacía 
-        if (text == '') {
-                // display.innerHTML = '';
+        if (text == ' ') {
+                display.innerHTML = '@';
                 // return;
                 text = 'all';
             
@@ -62,5 +62,6 @@
         
     }
     // Para que me muestre la tabla por defecto utilizo showUser('@', 'tabla-getuser.php')
+    dhowuser
 </script>
 </html>
