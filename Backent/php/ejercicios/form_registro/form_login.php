@@ -23,8 +23,8 @@
 
        .container {
         background: #798b9e;
-        height: 50%;
-        width: 50%;
+        height: 25%;
+        width: 25%;
        }
         form {
             

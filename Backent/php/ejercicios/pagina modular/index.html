@@ -8,8 +8,7 @@
     <style>
         body{
          margin:0;
-         /* font-family: ; */
-         /* position: relative; */
+         font-family: Georgia, 'Times New Roman', Times, serif;
          
         }
          header {
@@ -27,6 +26,7 @@
          header h1 {
              margin-bottom: 0;
              align-items: center;
+             object-fit: relative;
          }
 
          .navegacion {
@@ -63,7 +63,7 @@
             height: 100%;
             object-fit: cover;
             background: black;
-            /* justify-content: center; */
+            justify-content: center;
          }
          .lef-container {
             background: rgb(15, 10, 15);
@@ -73,9 +73,9 @@
         }
          
         .contact {
-            background: rgb(15, 10, 15);
-            display: flex;
-            margin: 0;
+        background: #798b9e;
+        height: 50%;
+        width: 50%;
         }
 
         
@@ -91,16 +91,17 @@
              width: 70%;
          }
  
-         /* footer {
+         footer {
              background-color: lightgray;
              text-align: center;
-             height: 75px; */
+             height: 75px; 
  
-             /* display:flex;
-              justify-content:center
-              align-items:center; 
-               text-align: center
-                 padding: 20px; }*/
+             display:flex;
+             justify-content:center;
+             align-items:center; 
+             text-align: center;
+             padding: 20px; 
+         }
      </style>
 </head>
 <body>
@@ -136,13 +137,7 @@
         <div class="lef-container">
             <img src="https://arqa.com/wp-content/uploads/2015/05/esfera-city-center-6.jpg"  alt="">
         </div>
-        <!-- <link href='https://fonts.googleapis.com/css?family=Exo:400,900' rel='stylesheet' type='text/css'>
-<div class="wrapper">
-  <div class="message">
-    <h1>Responsive background</h1>
-    <p>With thanks to http://sixrevisions.com/css/responsive-background-image/ and 500px</p>
-  </div>
-</div> -->
+        
     </section>
 
 
@@ -151,11 +146,11 @@
     <form class="contact" action="">
         <div>
             <div>
-                <input type="text" placeholder="Enter your name">
+                <input type="text" placeholder="Usuario">
                 <br>
-                <input type="text" placeholder="Enter a vaild email address">
+                <input type="text" placeholder="E-mail">
                 <br>
-                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <textarea name="" id="" cols="20" rows="10" placeholder="Comentario"></textarea>
             </div>
 
             <input type="submit" name="" id="" value="SUBMIT">
