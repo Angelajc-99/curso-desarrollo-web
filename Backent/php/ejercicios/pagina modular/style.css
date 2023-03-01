@@ -32,7 +32,7 @@ body {
 
   .navegacion {
     background: transparent;
-    color: white;
+    color: rgb(8, 7, 7);
 
     display: flex;
     justify-content: right;
@@ -43,10 +43,14 @@ body {
 
   .navegacion a {
     text-decoration: none;
-    color: rgb(220, 220, 220);
+    color: rgb(10, 9, 9);
+    background-color: rgb(71, 71, 71);
+    box-shadow: rgb(49, 47, 47);
+    border-radius: 5px;
 
     padding: 5px;
     justify-content: space-between;
+
   }
 
 
@@ -97,6 +101,7 @@ body {
   }
 
   .left-container {
+    font-family: Georgia, 'Times New Roman', Times, serif;
     height: 10vh;
     display: flex;
     justify-content: space-between;
@@ -110,6 +115,7 @@ body {
 
   .div-img {
     padding: 10px;
+    box-shadow: 5px;
   }
 
   .div-texto {
