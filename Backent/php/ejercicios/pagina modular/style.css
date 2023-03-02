@@ -1,6 +1,7 @@
 body {
     margin: 0%;
     background-color: rgba(1, 8, 12, 0.77);
+    color: white;
   }
 
 
@@ -8,18 +9,29 @@ body {
     width: 100%;
     height: 100vh;
     object-fit: cover;
+    box-shadow: 22px -20px 49px 12px rgba(125, 124, 124, 0.78);
+
   }
 
   .content-img {
     display: grid;
+    /* border-radius: 5px; */
     grid-template-columns: 1fr 1fr;
+    box-shadow: 22px -20px 49px 12px rgba(129, 128, 128, 0.78);
   }
 
   .content-img img {
     width: 100%;
     object-fit: cover;
     height: 442px;
+    padding: 2px;
+    box-shadow: 22px -20px 49px 12px rgba(100, 98, 98, 0.78);
+    
   }
+  img, svg {
+    vertical-align: middle;
+    border-radius: 26px;
+}
 
   .contenedor {
     display: flex;
@@ -31,27 +43,30 @@ body {
 
 
   .navegacion {
-    background: transparent;
-    color: rgb(8, 7, 7);
+    /* background: transparent; */
+    color: rgb(238, 237, 237);
 
     display: flex;
     justify-content: right;
-    /* justify-content: space-between; */
+    justify-content: space-between;
 
-    padding: 5px 0;
+    padding: 0 0 2px;
+    font-size: 23px;
   }
 
   .navegacion a {
     text-decoration: none;
-    color: rgb(10, 9, 9);
-    background-color: rgb(71, 71, 71);
-    box-shadow: rgb(49, 47, 47);
+    color: rgb(184, 156, 146);
     border-radius: 5px;
 
-    padding: 5px;
-    justify-content: space-between;
 
-  }
+    padding: 15px;
+    justify-content: space-between;
+    transition: all .4s;
+}
+.navegacion a:not(:disabled):hover {
+  box-shadow: 0px 0px 10px 3px #ffff;
+}
 
 
 
@@ -81,15 +96,12 @@ body {
 
   .container {
     border: 1px solid rgb(4, 5, 2);
+    
     text-align: center;
   }
 
   div {
     justify-content: center;
-  }
-
-  .navegacion {
-    cursor: pointer;
   }
 
   nav {
@@ -111,10 +123,12 @@ body {
 
   section .div-margen {
     margin: 0 auto;
+    z-index: -2;
   }
 
   .div-img {
     padding: 10px;
+    border-radius: 30px;
     box-shadow: 5px;
   }
 
@@ -126,6 +140,8 @@ body {
 
   .title2 {
     text-align: center;
+    padding: 40px;
+    color: rgb(199, 181, 181);
   }
 
   /* .cont {
@@ -139,12 +155,15 @@ body {
 
   .formulario {
     justify-content: center;
-    width: 60%;
+    width: 40%;
     margin: 0 auto;
     text-align: center;
     color: white;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    padding: 5px;
+    /* z-index: -3; */
+    padding: 15px;
+    box-shadow: 22px -23px 59px 12px rgba(128,124,128,0.78);
+    border-radius: 35px
   }
 
   .cont {
@@ -159,9 +178,36 @@ body {
     cursor: pointer;
     border-radius: 5px;
     padding: 2px;
-
-
+    
   }
+
+  input[type='text']:not(:disabled) {
+    border: 1px solid rgb(214, 212, 212);
+    color: #e9e9f1;
+    box-shadow: 0px 0px 4px 1px #775e5e;
+
+    transition: all .4s;
+}
+
+  input[type='text']:not(:disabled) :hover {
+    box-shadow: 0px 0px 10px 3px #ffff;
+    transition: all .4s;
+  }
+
+  
+  input[type='submit']:not(:disabled) {
+    width: 50%;
+    border: 2px solid rgb(214, 212, 212);
+    border-radius: 5px;
+    background-color: #bbb6b6;
+    color: #303032;
+    box-shadow: 0px 0px 4px 1px #775e5e;
+
+    transition: all .4s;
+}
+input[type='submit']:not(:disabled):hover {
+  box-shadow: 0px 0px 10px 3px #ffff;
+}
 
   .cont textarea {
     width: 100%;
@@ -174,4 +220,11 @@ body {
 
   .fr {
     height: 50vh;
+    
+  }
+
+  .container-fluid {
+    padding: 2rem!important;
+    font-size: 38px;
+
   }
