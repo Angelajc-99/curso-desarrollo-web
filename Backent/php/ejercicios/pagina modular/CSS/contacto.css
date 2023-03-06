@@ -1,0 +1,64 @@
+.formulario {
+    justify-content: center;
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* z-index: -3; */
+    padding: 15px;
+    box-shadow: 22px -23px 59px 12px rgba(128,124,128,0.78);
+    border-radius: 35px
+  }
+  .cont {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .cont input {
+    width: 100%;
+    background-color: transparent;
+    /* box-shadow: #ddd; */
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 2px;
+    
+  }
+
+  input[type='text']:not(:disabled) {
+    border: 1px solid rgb(214, 212, 212);
+    color: #e9e9f1;
+    box-shadow: 0px 0px 4px 1px #775e5e;
+
+    transition: all .4s;
+}
+
+  input[type='text']:not(:disabled) :hover {
+    box-shadow: 0px 0px 10px 3px #ffff;
+    transition: all .4s;
+  }
+
+  
+  input[type='submit']:not(:disabled) {
+    width: 50%;
+    border: 2px solid rgb(214, 212, 212);
+    border-radius: 5px;
+    background-color: #bbb6b6;
+    color: #303032;
+    box-shadow: 0px 0px 4px 1px #775e5e;
+
+    transition: all .4s;
+}
+input[type='submit']:not(:disabled):hover {
+  box-shadow: 0px 0px 10px 3px #ffff;
+}
+
+  .cont textarea {
+    width: 100%;
+    background-color: transparent;
+    border-radius: 5px;
+    border: none;
+
+
+  }
+

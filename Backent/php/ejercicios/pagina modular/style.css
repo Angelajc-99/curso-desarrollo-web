@@ -1,8 +1,54 @@
-body {
-    margin: 0%;
-    background-color: rgba(1, 8, 12, 0.77);
-    color: white;
-  }
+/* body {
+    tema oscuro
+    color: rgb(220, 220, 220);
+    background: rgb(40, 40, 40);
+}
+
+section {
+    height: 200px;
+    padding: 20px;
+    background: #161616;
+    text-align: center;
+}
+
+footer {
+
+}
+
+.parallax {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-attachment: fixed;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.parallax div {
+    background: #282828;
+    max-width: 250px;
+    padding: 5px 10px;
+}
+.parallax.uno {
+    background-image: url(https://arqa.com/wp-content/uploads/2015/05/esfera-city-center-6.jpg);
+}
+
+.parallax.dos {
+    background-image: url(../../../../recursos/pexels-david-besh-884788.jpg);
+}
+.parallax.tres {
+    background-image: url(../../../../recursos/pexels-stayhereforu-14455743.jpg);
+}
+@media screen and (min-width:720px) {
+    .parallax {
+        height: 900px;
+    }                        
+} */
+
+
 
 
   img.background {
@@ -12,6 +58,8 @@ body {
     box-shadow: 22px -20px 49px 12px rgba(125, 124, 124, 0.78);
 
   }
+
+
 
   .content-img {
     display: grid;
@@ -42,31 +90,7 @@ body {
   }
 
 
-  .navegacion {
-    /* background: transparent; */
-    color: rgb(238, 237, 237);
-
-    display: flex;
-    justify-content: right;
-    justify-content: space-between;
-
-    padding: 0 0 2px;
-    font-size: 23px;
-  }
-
-  .navegacion a {
-    text-decoration: none;
-    color: rgb(184, 156, 146);
-    border-radius: 5px;
-
-
-    padding: 15px;
-    justify-content: space-between;
-    transition: all .4s;
-}
-.navegacion a:not(:disabled):hover {
-  box-shadow: 0px 0px 10px 3px #ffff;
-}
+ 
 
 
 
@@ -94,32 +118,10 @@ body {
 
 
 
-  .container {
-    border: 1px solid rgb(4, 5, 2);
-    
-    text-align: center;
-  }
 
-  div {
-    justify-content: center;
-  }
 
-  nav {
-    position: fixed;
-    width: 100%;
-    z-index: 1;
-    background-color: rgb(13, 19, 19);
-    color: white;
-  }
 
-  .left-container {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    height: 10vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: auto;
-  }
+
 
   section .div-margen {
     margin: 0 auto;
@@ -148,10 +150,6 @@ body {
     justify-content: center;
   } */
 
-  .header-top {
-    justify-content: center;
-    display: flex;
-  }
 
   .formulario {
     justify-content: center;
