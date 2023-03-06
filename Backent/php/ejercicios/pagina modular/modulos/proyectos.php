@@ -5,7 +5,7 @@
       <div class="title2">
         <h1>PROYECTOS</h1>
       </div>
-      <div class="content-img">
+      <!-- <div class="content-img">
         <img
           src="https://images.pexels.com/photos/2901209/pexels-photo-2901209.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           alt="">
@@ -17,7 +17,7 @@
         <img
           src="https://images.pexels.com/photos/220769/pexels-photo-220769.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           alt="">
-      </div>
+      </div> -->
 
 
     </div>
@@ -43,6 +43,17 @@
             src="https://images.pexels.com/photos/13752348/pexels-photo-13752348.jpeg?auto=compress&cs=tinysrgb&w=1600"
             class="d-block w-100" alt="...">
         </div>
+        <div class="carousel-item">
+          <img
+            src="https://images.pexels.com/photos/2901209/pexels-photo-2901209.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://images.pexels.com/photos/5845554/pexels-photo-5845554.jpeg?auto=compress&cs=tinysrgb&w=1600"
+            class="d-block w-100" alt="...">
+        </div>
+
       </div>
     </div>
 
