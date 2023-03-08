@@ -1,12 +1,12 @@
 <?php
-// es una forma de hacer que los datos estén disponibles en varias páginas de la web.
+
 session_start();
 
 if (isset($_POST['logout'])) {
-    // session_destroy destruye los datos
+
     session_destroy();
-    // header localiza los datos de la pagina
-    header('Location: principal.php');
+
+    header('Location: pagina-principal.php');
 }
 ?>
 <!DOCTYPE html>
@@ -19,6 +19,8 @@ if (isset($_POST['logout'])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sassy+Frass&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../css/principal.css">
 
 </head>
 <body>
@@ -31,9 +33,9 @@ if (isset($_POST['logout'])) {
             if ($_SESSION['usertype'] == 'admin'){
                 echo '<h1>Bienvenido</h1>';
                 echo '
-                <a href="edi-admin.php"><button class="boton">Ir al panel de administración</button>
+                <a href="panel-edi-admin.php"><button class="boton">Ir al panel de administración</button>
                 </a>';
-                echo "<form action='principal.php' method='post'>               
+                echo "<form action='pagina-principal.php' method='post'>               
                 <input class='boton' type='submit' value='Cerrar sesión' name='logout'>
                 </form>";
 
@@ -51,12 +53,10 @@ if (isset($_POST['logout'])) {
         } else {
             // Si no está logeado, mostramos el botón de iniciar sesión
 
-            echo '<a href="login.php">
+            echo '<a href="form_login.php">
                         <button class= "inicio">Iniciar sesión</button>
                      </a>';
-            echo '<a href="registro.php">
-            <button class= "inicio">Registrarse</button>
-         </a>';
+            
         }
         ?>
     </div>
