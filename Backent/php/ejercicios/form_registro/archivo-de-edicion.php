@@ -34,10 +34,10 @@ $sql = "UPDATE user SET usuario = '$usuario', correo = '$correo', contrasena = '
                      Datos de los usuarios
                      <?php echo $usuario;?>
                      Actualizados con éxito
-                     <?php echo '<a    href="pagina-principal.           php"><button>Volver</button></a>'?>
+                     <?php echo '<a    href="pagina-principal.           php"><button>Volver</button></a>';?>
          
                      <?php echo '<a    href="pagina-principal.           php"</p></a>'; ?>
-         
+                 </p>
                  <?php
          } else {
              echo 'error: ' . $sql . "<br>" .    $conn->error;
