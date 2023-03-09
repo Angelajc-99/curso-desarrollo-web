@@ -1,0 +1,83 @@
+
+
+
+table {
+    border: none;
+    border-collapse: collapse;
+    padding: 5px 2px;
+    height: 25%;
+    width: 25%;  
+    justify-content: center;
+    display: flex;
+    position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);  
+    /* display: none; */
+
+}
+th {
+    background-color: #6c92b8;
+    border: none;
+    padding: 2px 5px;
+    /* cursor: pointer; */
+}
+td {
+    border: none;
+    padding: 2px 5px;
+    /* cursor: pointer; */
+}
+input {
+    border: none;
+    /* background: pack; */
+    /* cursor: pointer; */
+}
+tr {
+    border: none;
+    /* cursor: pointer; */
+}
+
+select {
+    width: 100%;
+}
+.formulario {
+    justify-content: center;
+    display: flex;
+    position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+}
+.formulario1 {
+    /* height: 5%;*/
+    width: 5%;
+    cursor: pointer;
+    border-radius: 8px;
+    border-bottom: #6c92b8;
+    border: none;
+    font-size: medium;
+    justify-content: center;
+    display: flex;
+    box-shadow: 2, 3 darkmagenta;
+    position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+}
+.container {
+    
+display: flex;
+justify-content: center;
+align-items: center;
+width: 15%;
+
+flex-direction: column;
+text-align: center;
+font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.tabla2 {
+    background: #6c92b8;
+    width: 100%;
+    height: 50vh;
+}
+

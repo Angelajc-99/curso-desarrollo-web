@@ -7,7 +7,7 @@ $user = $_SESSION['id'];
 
 if (isset($_SESSION['logged']) && $_SESSION['usertype'] == 'admin') {
 
-    $sql = 'SELECT * FROM user';
+    $sql = 'SELECT * FROM user';                        
     $result = $conn->query($sql);
 }
 ?>

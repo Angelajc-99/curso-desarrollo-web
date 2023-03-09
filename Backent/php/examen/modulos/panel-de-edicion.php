@@ -4,9 +4,9 @@ include 'conn.php';
 
 $user = $_SESSION['id'];
 
-$sql = "SELECT * FROM usuario WHERE Id = '$user";
+$sql = "SELECT * FROM usuarios WHERE Id = '$user";
 
-$result = $conn->query($sql);
+// $result = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -21,13 +21,14 @@ $result = $conn->query($sql);
     <div class="datos">
         <?php
             while ($row = $result->fetch_assoc()) {
-                $usuario = $row['email'];
+                $usuario = $row['usuario'];
                 $contrasena = $row['contrasena'];
 
                 echo "<form action='edicion.php' method='post'> <h1> Edición de datos</h1> <input type='text' placeholder='usuario' name='usuario' value='$email'
                 <input type='text' placeholder='Contraseña' name='contrasena' value='$contrasena'>
                 <input type='submit' value='actualizar'>
                 </form> <br>";
+                echo '<a href="panel-user.php"><button>Volver</button></a>';
                 
             }
         ?>

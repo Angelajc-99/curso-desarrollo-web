@@ -17,12 +17,12 @@ session_start();
             $usuario = $_POST['email'];
             $contrasena = $_POST['contrasena'];
 
-            $sql = "SELECT * FROM usuario WHERE usuario = '$email' AND contrasena = '$contrasena'";
+            $sql = "SELECT * FROM usuarios WHERE email = '$usuario' AND contrasena = '$contrasena'";
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
                 echo '<p>Has iniciado sesión con éxito</p>';
-                echo "Bienvenido $email.";
+                echo "Bienvenido $usuario.";
 
                 $_SESSION['logged'] = true;
                 while ($row = $result->fetch_assoc()) {
@@ -37,6 +37,10 @@ session_start();
                 </a>';
                 
              $conn->close();
+            } elseif ($result->num_rows === 0) {
+                $_SESSION["fallos"] = true;
+                header("Location: form_login.php?fallo=true");
+                exit();
             }
         }
     ?>

@@ -3,11 +3,11 @@
 
     include "conn.php";
 
-    $usuario = $_POST['email'];
+    $usuario = $_POST['usuario'];
     $contrasena = $_POST['contrasena'];
     $id = $_POST['id'];
 
-    $sql = "UPDATE usuario SET usuario = '$email', contrasena = '$contrasena' WHERE Id = '$id'";
+    $sql = "UPDATE usuarios SET email = '$usuario', contrasena = '$contrasena' WHERE Id = '$id'";
 ?>
 
 <!DOCTYPE html>
@@ -24,9 +24,9 @@
             if ($conn->query($sql) == TRUE) {
                  ?>
                 <p>
-                    Datos de los usuarios <?php echo $email;?> Actualizados con exito <?php echo '<a href="principal.php"><button>Volver</button></a>';?>
+                    Datos de los usuarios <?php echo $usuario;?> Actualizados con exito <?php echo '<a href="principal.php"><button>Volver</button></a>';?>
 
-                    <?php echo '<a    href="pagina-principal.           php"</p></a>'; ?>
+                    <?php echo '<a href="principal.php"</p></a>'; ?>
                 </p>
                 <?php
             } else {

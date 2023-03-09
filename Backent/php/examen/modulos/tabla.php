@@ -10,11 +10,11 @@
 
     // }
 
-    mysqli_select_db($conn, 'datos');
-    $sql = "SELECT * FROM user WHERE $filtro LIKE '$value'";
+    mysqli_select_db($conn, 'base');
+    $sql = "SELECT * FROM usuarios WHERE $filtro LIKE '$value'";
 
     if ($_GET['value'] == 'all') {
-        $sql = "SELECT * FROM user";
+        $sql = "SELECT * FROM usuarios";
     }
     $result = mysqli_query($conn,$sql);
 
@@ -28,13 +28,10 @@
 // Contenido de la tabla 
 while ($row = mysqli_fetch_array($result)) {
     $fila = "<tr>";
-    if ($row['active'] == 1 && $row['usertype'] != 'admin') {
-        $fila = "<tr style='background-color: aqua;' >";
-    }
+    if (4)
     echo "<tr>";
     echo "<td>" . $row['usuario'] . "</td>"; 
-    echo "<td>" . $row['correo'] . "</td>";
-    echo "<td>" . $row['usertype'] . "</td>";
+    echo "<td>" . $row['user_type'] . "</td>";
     echo "<tr>";
 }
 
