@@ -8,7 +8,7 @@ $contrasena = $_POST['contrasena'];
 $user_type = $_POST['user_type'];
 $id = $_POST['id'];
 
-    $sql = "UPDATE usuarios SET email = '$usuario', contrasena = '$contrasena', user_type = '$usertype'";
+    $sql = "UPDATE usuarios SET email = '$usuario', contrasena = '$contrasena', user_type = '$user_type'";
 
     
 if ($conn->query($sql)) {

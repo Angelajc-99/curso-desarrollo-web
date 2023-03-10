@@ -1,5 +1,8 @@
-
-
+body {
+    /* tema oscuro */
+    color: rgb(220, 220, 220);
+    background: rgb(40, 40, 40);
+}
 
 table {
     border: none;
@@ -17,7 +20,7 @@ table {
 
 }
 th {
-    background-color: #6c92b8;
+    background-color: #96a1ac;
     border: none;
     padding: 2px 5px;
     /* cursor: pointer; */
@@ -50,7 +53,6 @@ select {
 }
 .formulario1 {
     /* height: 5%;*/
-    width: 5%;
     cursor: pointer;
     border-radius: 8px;
     border-bottom: #6c92b8;
@@ -76,8 +78,23 @@ text-align: center;
 font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .tabla2 {
-    background: #6c92b8;
+    /* background: #6c92b8; */
     width: 100%;
     height: 50vh;
 }
 
+.td1{
+    background-color: rgb(0, 255, 187) !important;
+    display: flex;
+    gap: 0.3rem;
+}
+.td2{
+    background-color: rgb(210, 235, 21) !important;
+    display: flex;
+    gap: 0.3rem;
+}
+.td3{
+    background-color: rgb(186, 35, 35) !important;
+    display: flex;
+    gap: 0.3rem;
+}

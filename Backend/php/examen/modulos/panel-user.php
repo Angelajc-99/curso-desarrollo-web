@@ -6,14 +6,14 @@ if (isset($_SESSION['logged']) && $_SESSION['user_type'] == 'admin') {
     echo '<a href="panel-edi-admin.php"><button>Cambiar datos</button></a>';
     echo '<a href="principal.php"><button>Volver</button></a>';
 } elseif ($_SESSION['user_type'] == 'user') {
+    
     $userid = $_SESSION['id'];
-    // cuando se utiliza una variable siempre se pone con comillas dobles ""
     $sql = "SELECT * FROM usuarios WHERE id = '$userid'";
     echo '<a href="panel-de-edicion.php"><button>Cambiar datos</button></a>';
     echo '<a href="principal.php"><button>Volver</button></a>';
 }if ($_SESSION['user_type'] == 'colab') {
+
     $userid = $_SESSION['id'];
-    // cuando se utiliza una variable siempre se pone con comillas dobles ""
     $sql = "SELECT * FROM usuarios WHERE id = '$userid'";
     echo '<a href="panel-de-edicion.php"><button>Cambiar datos</button></a>';
     echo '<a href="principal.php"><button>Volver</button></a>';
