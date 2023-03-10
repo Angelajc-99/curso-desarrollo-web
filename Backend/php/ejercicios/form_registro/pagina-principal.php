@@ -1,7 +1,6 @@
 <?php
 // es una forma de hacer que los datos estén disponibles en varias páginas de la web.
 session_start();
-
 if (isset($_POST['logout'])) {
     // session_destroy destruye los datos
     session_destroy();
@@ -23,7 +22,7 @@ if (isset($_POST['logout'])) {
 </head>
 <body>
     
-    <div class="btn">
+<div class="btn">
         <?php
         // Este if pregunta si el usuario está logeado
         if (isset($_SESSION['logged'])) {
@@ -36,21 +35,15 @@ if (isset($_POST['logout'])) {
                 echo "<form action='pagina-principal.php' method='post'>               
                 <input class='boton' type='submit' value='Cerrar sesión' name='logout'>
                 </form>";
-
             }else{
                 echo '<h1>Bienvenido</h1>';
                 echo '<a href="panel-user.php"><button class="boton">Ir a mi cuenta</button></a>';
-
                 echo "<form action='pagina-principal.php' method='post'><input class='boton' type='submit' value='Cerrar sesión' name='logout'>
                 </form>";
             }
-
             // aquí va el panel/botón/contenido del usuario
-
-
         } else {
             // Si no está logeado, mostramos el botón de iniciar sesión
-
             echo '<a href="form_login.php">
                         <button class= "inicio">Iniciar sesión</button>
                      </a>';

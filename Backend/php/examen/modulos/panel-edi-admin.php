@@ -45,12 +45,9 @@ $result = $conn->query($sql);
                        <th> Mac_orden</th>
                        <th> Biometrica </th>
                        <th> User_type</th>
+                       <th> Estado</th>
                        <th> Actualizar</th>
-                       <th> Opciones</th>
                        <th> Borrar </th>
-                       
-                       
-
                        
                     </tr>";
                 while ($row = $result->fetch_assoc()) {
@@ -58,15 +55,15 @@ $result = $conn->query($sql);
                     $usuario = $row['email'];
                     $contrasena = $row['contrasena'];
                     $dni = $row['dni'];
-                    $mac_ordenardor = $row['mac_ordenardor'];
-                    $biometría = $row['biometría'];
+                    $mac_orden = $row['mac_orden'];
+                    $biometria = $row['biometria'];
                     $user_type = $row['user_type'];
                     $status = $row['status'];
 
                     $input = NULL;
 
                     if($status == 'correcto'){
-                        $input = "<td class='td1' type='submit' name='correcto'><i class='bi bi-clipboard-x'></i> ";
+                        $input = "<td class='td1' type='submit' name='completo'><i class='bi bi-clipboard-x'></i> ";
                     }elseif($status == 'incorrecto'){
                         $input = "<td class='td2' type='submit' name='incorrecto'><i class='bi bi-dash'></i>";
                     }elseif($status == 'incompleto'){
@@ -81,17 +78,17 @@ $result = $conn->query($sql);
                       <input type='text' placeholder='Usuario' name='usuario' value='$usuario'>
                     </td>
                     <td>
-                      <input type='text' placeholder='Email' name='contrasena' value='$contrasena'>
+                      <input type='text' placeholder='contrasena' name='contrasena' value='$contrasena'>
                     </td>
                     <td>
-                      <input type='text' placeholder='DNI' name='DNI' value='$dni'>
+                      <input type='text' placeholder='dni' name='dni' value='$dni'>
                     </td>
                     
                     <td>
-                      <input type='text' placeholder='Mac_orden' name='mac_ordenardor' value='$mac_ordenardor'>
+                      <input type='text' placeholder='Mac_orden' name='mac_orden' value='$mac_orden'>
                     </td>
                     <td>
-                      <input type='text' placeholder='Biometrica' name='biometría' value='$biometría'>
+                      <input type='text' placeholder='Biometria' name='biometria' value='$biometria'>
                     </td>
                     <td>
                       <select  name='user_type'>
@@ -102,23 +99,20 @@ $result = $conn->query($sql);
                          
                       </select>
                     </td>
-
                     $input
                       <select name='status'>
                          <option value='$status' disabled selected>$status </option>
-                         <option value='incompleto'>incompleto  <button></button></option>
-                         <option value='completo'>completo</option>
-                         <option value='incorrecto'>incorrecto</option>
+                         <option value=''></option>
+                         <option value=''></option>
+                         <option value=''></option>
                       </select>
-                    </td>
-
+                      </td>
                     <td>
                        <input type='submit' name='update' value='Actualizar'>
                     </td>
                     <td>
                       <input type='submit' name='delete' value='Eliminar'>
                     </td>
-
                     </form>
                     </tr>";
 
