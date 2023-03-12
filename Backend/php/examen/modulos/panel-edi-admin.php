@@ -11,8 +11,10 @@ if (isset($_SESSION['user_type']) == 'admin') {
     $sql = "SELECT * FROM usuarios WHERE Id = '$user'";
 } elseif (isset($_SESSION['user_type']) == 'colab') {
     $sql = "SELECT * FROM usuarios WHERE user_type != 'admin'";
+    $result = $conn->query($sql);
 }
-$result = $conn->query($sql);
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,7 +76,7 @@ $result = $conn->query($sql);
                     echo "<form action='edicion-admin.php' method='post'>
                     <tr>
                     <td>
-                      <input type='text' placeholder='ID' name='id' hidden value='$Id'>
+                      <input type='text' placeholder='ID' name='id' hidden value='$id'>
                       <input type='text' placeholder='Usuario' name='usuario' value='$usuario'>
                     </td>
                     <td>

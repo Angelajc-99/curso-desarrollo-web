@@ -18,6 +18,25 @@ if (isset($_POST['logout'])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sassy+Frass&display=swap" rel="stylesheet">
+    <style>
+        body {
+     background-color: rgba(1, 8, 12, 0.77);
+     color: white;
+      
+    
+    
+     height: 100vh;
+     width: 100vw;
+     margin: 0;
+     padding: 0;
+
+     display: flex;
+     justify-content: center;
+
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+    </style>
 
 </head>
 <body>
