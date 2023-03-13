@@ -2,7 +2,7 @@
     session_start();
     include 'conn.php';
 
-    $usuario = $_session['id'];
+    $user = $_SESSION['id'];
 
     $sql = "SELECT * FROM usuarios WHERE Id = '$user'";
     $result = $conn->query($sql);
@@ -24,7 +24,7 @@
       <?php
           if ($result->num_rows > 0) {
             echo "<table>
-              echo '<h1>Bienvenido user</h1>'
+              echo '<h1>Bienvenido Usuario</h1>'
               <tr>
                  
                  <th> Correo</th>
@@ -32,7 +32,6 @@
                  <th> DNI</th>
                  <th> Mac_orden</th>
                  <th> Biometrica </th>
-                 <th> Actualizar</th>
 
               </tr>";
 
@@ -40,7 +39,7 @@
                   $usuario = $row['email'];
                   $contrasena = $row['contrasena'];
                   $dni = $row['dni'];
-                  $biometria = $row['biometria'];
+                  $biometría = $row['biometría'];
                   $mac_ordenardor = $row['mac_ordenardor'];
 
 
@@ -50,7 +49,7 @@
                   <form action='arch-user.php' method='post'>
                   <tr>
                   <td>
-                    <input type='text' placeholder='Usuario' name='usuario' value='$usuario'>
+                    <input type='text' placeholder='Usuario' name='email' value='$usuario'>
                   </td>
                   <td>
                     <input type='password' placeholder='contrasena' hidden name='contrasena' value='$contrasena'>
@@ -64,9 +63,6 @@
                   <td>
                     <input type='text' placeholder='Foto del documento...' name='biometría' value='$biometría'>
                   </td>
-                  <td>
-                     <input class='btn' type='submit' name='update' value='Actualizar'>
-                  </td>
                   </form>
                   </tr>";
 
@@ -77,7 +73,7 @@
           ?>
     
      
-    <a href="principal.php"><input type="button" class="btn" value="inicio"></a>
+    <a href="principal.php"><input type="button" class="btn" value="Cerrar sesión"></a>
 </div>
     
 </body>

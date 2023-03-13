@@ -15,3 +15,14 @@ body {
 
      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+.cont {
+     background-color: rgb(45, 48, 48);
+     height: 25vh;
+     width: 25vw;
+     color: rgb(211, 220, 222);
+     text-align: center;
+     justify-content: center;
+     display: flex;
+     padding: 5px;
+     margin: 263px;
+}

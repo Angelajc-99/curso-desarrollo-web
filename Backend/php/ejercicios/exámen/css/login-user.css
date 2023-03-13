@@ -14,3 +14,15 @@ body {
 
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+.cont {
+    color: rgb(211, 220, 222);
+    text-align: center;
+    justify-content: center;
+    justify-content: space-around;
+    display: flex;
+    padding: 5px;
+    margin: 263px;
+}
+button {
+    color: aqua;
+}

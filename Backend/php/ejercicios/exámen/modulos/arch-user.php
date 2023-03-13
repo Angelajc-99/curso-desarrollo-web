@@ -2,7 +2,7 @@
     session_start();
     include 'conn.php';
 
-    $usuario = $_POST['usuario'];
+    $usuario = $_POST['email'];
     $contrasena = $_POST['contrasena'];
     $dni = $_POST['dni'];
     $biometría = $_POST['biometría'];
@@ -35,7 +35,7 @@
     <div class="cont">
         <p>Datos actualizados
             <?php 
-            echo $_POST['usuario'];
+            echo $_POST['email'];
             echo '<a href="user.php"><button>Atrás</button></a>';
             ?>
         </p>

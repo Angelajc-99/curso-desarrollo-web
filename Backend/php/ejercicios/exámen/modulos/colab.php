@@ -40,7 +40,7 @@
 
               while ($row = $result->fetch_assoc()) {
                   $Id = $row['Id'];
-                  $usuario = $row['usuario'];
+                  $usuario = $row['email'];
                   $dni = $row['dni'];
                   $mac_ordenardor = $row['mac_ordenardor'];
                   $biometría = $row['biometría'];
@@ -64,7 +64,7 @@
                     <input type='text' placeholder='ID' name='id' readonly value='$Id'>
                   </td>
                   <td>
-                  <input type='text' placeholder='Usuario' name='usuario' readonly value='$usuario'>
+                  <input type='text' placeholder='Usuario' name='email' readonly value='$usuario'>
                   </td>
                   <td>
                     <input type='text' placeholder='dni' name='dni' value='$dni'>
@@ -102,7 +102,7 @@
           ?>
     </table>
 
-    <a href="principal.php"><input type="button"     class="btn" value='Inicio'></a>
+    <a href="principal.php"><input type="button" class="btn" value='Cerrar sessión'></a>
 </div>
     
 </body>

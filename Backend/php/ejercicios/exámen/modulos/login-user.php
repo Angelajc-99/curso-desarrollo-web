@@ -15,11 +15,11 @@
 <body>
     <div class="cont">
         <?php 
-            if ($_SERVER['REQUEST_METHOD'] = 'POST') {
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-                $usuario = $_POST['usuario'];
+                $usuario = $_POST['email'];
                 $contrasena = $_POST['contrasena'];
-
+                
                 include 'conn.php';
 
                 $sql = "SELECT * FROM usuarios WHERE email = '$usuario' AND contrasena = '$contrasena'";

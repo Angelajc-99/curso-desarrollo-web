@@ -22,6 +22,8 @@
 </head>
 <body>
     <div>
+   
+    <br>
             <?php
                 if ($result->num_rows > 0) {
                     echo "<h1> Bienvenido Administrador </h1>
@@ -34,14 +36,13 @@
                            <th> Mac_orden</th>
                            <th> Biometrica </th>
                            <th> User_type</th>
-                           <th> Estado</th>
                            <th> Actualizar</th>
                            <th> Borrar </th>
                            
                         </tr>";
                     while ($row = $result->fetch_assoc()) {
                         $Id = $row['Id'];
-                        $usuario = $row['usuario'];
+                        $usuario = $row['email'];
                         $contrasena = $row['contrasena'];
                         $dni = $row['dni'];
                         $mac_ordenardor = $row['mac_ordenardor'];
@@ -51,8 +52,8 @@
                         echo "<form action='arch-admin.php' method='post'>
                         <tr>
                         <td>
-                          <input type='text' placeholder='ID' name='id' hidden value='$Id'>
-                          <input type='text' placeholder='Usuario' name='usuario' value='$usuario'>
+                          <input type='text' placeholder='ID' name='Id' hidden value='$Id'>
+                          <input type='text' placeholder='Usuario' name='email' value='$usuario'>
                         </td>
                         <td>
                           <input type='text' placeholder='contrasena' name='contrasena' value='$contrasena'>
@@ -92,7 +93,25 @@
 
                 mysqli_close($conn);
                 ?>
-            <a href="principal.php"><input type="button" class="btn" value='Regresar'></a>
+
+        <form action="registro.php" method="post">
+            <div>
+               <input type="email" placeholder="Correo" name="email" required>
+            </div>
+
+            <div>   
+               <input type="password" placeholder="Contraseña" name="contrasena" required>
+            </div>
+
+            <div>
+               <input type="submit" name="envio" value="Enviar">
+            </div>
+        </form>
+        
+        
+
+                
+            <a href="principal.php"><input type="button" class="btn" value='Cerra sesión'></a>
 
     </div>
     

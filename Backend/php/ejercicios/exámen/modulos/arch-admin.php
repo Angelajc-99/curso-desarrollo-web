@@ -18,7 +18,7 @@
     }
 
     if (isset($_POST['delete'])) {
-        $sql = "DELETE FROM usuarios WHERE id = '$Id'";
+        $sql = "DELETE FROM usuarios WHERE Id = '$Id'";
 
         echo '<div class="container">
         <p>Usuario eliminado<a href="admin.php"> 

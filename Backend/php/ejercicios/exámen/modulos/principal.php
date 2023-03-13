@@ -20,14 +20,13 @@
 <body>
 <!-- pagina del login -->
 <div class="cont">
-    <form action="login-user">
+    <form action="login-user.php" method="POST">
         <h1>Login</h1>
         <div>
             <input type="email" placeholder="Correo" name="email" required>
         </div>
         <div>
-              <input type="password" placeholder="Contraseña" 
-              name="contrasena" required>
+              <input type="password" placeholder="Contraseña" name="contrasena" required>
             </div>
         <div>
             <input type="submit" value="Enviar">
@@ -44,8 +43,7 @@
 
 // }
     if (isset($_SESSION['fallo'])) {
-        echo "Compruebe los datos.
-        Correo o contraseña incorrectos.";
+        echo "Datos incorrectos.";
 
 
         unset($_SESSION['fallo']);
