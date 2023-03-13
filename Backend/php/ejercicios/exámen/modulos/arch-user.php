@@ -5,12 +5,12 @@
     $usuario = $_POST['usuario'];
     $contrasena = $_POST['contrasena'];
     $dni = $_POST['dni'];
-    $biometria = $_POST['biometria'];
-    $mac_orden = $_POST['mac_orden'];
-    $id = $_SESSION['id'];
+    $biometría = $_POST['biometría'];
+    $mac_ordenardor = $_POST['mac_ordenardor'];
+    $Id = $_SESSION['Id'];
 
 
-    $sql = "UPDATE usuarios SET email = '$usuario', contrasena ='$contrasena', dni ='$dni', bometria = '$biometria', mac_orden = '$mac_orden', user_type = '$user_type' WHERE id = '$id'";
+    $sql = "UPDATE usuarios SET email = '$usuario', contrasena ='$contrasena', dni ='$dni', biometría = '$biometría', mac_ordenardor = '$mac_ordenardor', user_type = '$user_type' WHERE id = '$id'";
     $result = $conn->query($sql);
 
     if ($conn->query($sql)) {

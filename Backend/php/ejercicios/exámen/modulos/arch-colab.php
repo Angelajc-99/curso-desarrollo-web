@@ -5,7 +5,7 @@
     $id = $_POST['id'];
 
     if (isset($_POST['updatecolab'])) {
-        $sql = 'UPDATE usuarios SET status = ? WHERE id = ?';
+        $sql = 'UPDATE usuarios SET status = ? WHERE Id = ?';
 
         $stmt = $conn->prepare($sql);
         $stmt->bind_param('si',$status, $id); 

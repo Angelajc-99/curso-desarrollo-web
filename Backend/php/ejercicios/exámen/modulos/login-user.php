@@ -22,7 +22,7 @@
 
                 include 'conn.php';
 
-                $sql = "SELECT * FROM usuarios WHERE email = '$usuario' AND contrasena = 'contrasena'";
+                $sql = "SELECT * FROM usuarios WHERE email = '$usuario' AND contrasena = '$contrasena'";
                 $result = $conn->query($sql);
 
                 if ($result->num_rows > 0) {

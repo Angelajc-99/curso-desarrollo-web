@@ -2,7 +2,7 @@
     session_start();
     include 'conn.php';
 
-    $usuario = $_SESSION['id'];
+    $usuario = $_SESSION['Id'];
 
     if (isset($_SESSION['logged']) && $_SESSION['user_type'] == 'admin') {
         $sql = "SELECT * FROM usuarios";
@@ -44,8 +44,8 @@
                         $usuario = $row['usuario'];
                         $contrasena = $row['contrasena'];
                         $dni = $row['dni'];
-                        $mac_orden = $row['mac_orden'];
-                        $biometria = $row['biometria'];
+                        $mac_ordenardor = $row['mac_ordenardor'];
+                        $biometría = $row['biometría'];
                         $user_type = $row['user_type'];    
     
                         echo "<form action='arch-admin.php' method='post'>
@@ -62,10 +62,10 @@
                         </td>
                         
                         <td>
-                          <input type='text' placeholder='Mac_orden' name='mac_orden' value='$mac_orden'>
+                          <input type='text' placeholder='Mac_orden' name='mac_ordenardor' value='$mac_ordenardor'>
                         </td>
                         <td>
-                          <input type='text' placeholder='Biometria' name='biometria' value='$biometria'>
+                          <input type='text' placeholder='Biometria' name='biometría' value='$biometría'>
                         </td>
                         <td>
                           <select  name='user_type'>

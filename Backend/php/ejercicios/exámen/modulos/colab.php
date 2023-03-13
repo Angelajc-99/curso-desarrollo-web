@@ -2,7 +2,7 @@
     session_start();
     include 'conn.php';
 
-    $user = $_SESSION['id'];
+    $user = $_SESSION['Id'];
     if (isset($_SESSION['logged']) && $_SESSION['user_type'] == 'colab') {
         $sql = "SELECT * FROM usuarios";
         $result = $conn->query($sql);
@@ -39,11 +39,11 @@
               </tr>";
 
               while ($row = $result->fetch_assoc()) {
-                  $id = $row['id'];
+                  $Id = $row['Id'];
                   $usuario = $row['usuario'];
                   $dni = $row['dni'];
-                  $mac_orden = $row['mac_orden'];
-                  $biometria = $row['biometria'];
+                  $mac_ordenardor = $row['mac_ordenardor'];
+                  $biometría = $row['biometría'];
                   $status = $row['status'];
                   
                   $input = NULL;
@@ -61,7 +61,7 @@
 
                   <tr>
                   <td>
-                    <input type='text' placeholder='ID' name='id' readonly value='$id'>
+                    <input type='text' placeholder='ID' name='id' readonly value='$Id'>
                   </td>
                   <td>
                   <input type='text' placeholder='Usuario' name='usuario' readonly value='$usuario'>
@@ -71,10 +71,10 @@
                   </td>
                   
                   <td>
-                    <input type='text' placeholder='Mac_orden' name='mac_orden' value='$mac_orden'>
+                    <input type='text' placeholder='Mac_orden' name='mac_ordenardor' value='$mac_ordenardor'>
                   </td>
                   <td>
-                    <input type='text' placeholder='Biometrica' name='biometria' value='$biometria'>
+                    <input type='text' placeholder='Biometrica' name='biometría' value='$biometría'>
                   </td>
                   </td>
                   $input

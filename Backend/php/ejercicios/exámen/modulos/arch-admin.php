@@ -6,7 +6,7 @@
     $id= $_POST['id'];
 
     if (isset($_POST['update'])) {
-        $sql = "UPDATE usuarios SET user_type = '$user_type' WHERE id = '$id'";
+        $sql = "UPDATE usuarios SET user_type = '$user_type' WHERE Id = '$Id'";
         echo "
         <div class='cont'>
             <p>Usuario eliminado
@@ -18,7 +18,7 @@
     }
 
     if (isset($_POST['delete'])) {
-        $sql = "DELETE FROM usuarios WHERE id = '$id'";
+        $sql = "DELETE FROM usuarios WHERE id = '$Id'";
 
         echo '<div class="container">
         <p>Usuario eliminado<a href="admin.php"> 

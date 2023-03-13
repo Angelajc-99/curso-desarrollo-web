@@ -41,7 +41,7 @@
                   $contrasena = $row['contrasena'];
                   $dni = $row['dni'];
                   $biometria = $row['biometria'];
-                  $mac_orden = $row['mac_orden'];
+                  $mac_ordenardor = $row['mac_ordenardor'];
 
 
                   echo "<tr>
@@ -59,10 +59,10 @@
                     <input type='text' placeholder='dni' name='dni' value='$dni'>
                   </td>                 
                   <td>
-                    <input type='text' placeholder='Mac_orden' name='mac_orden' value='$mac_orden'>
+                    <input type='text' placeholder='Mac_orden' name='mac_ordenardor' value='$mac_ordenardor'>
                   </td>
                   <td>
-                    <input type='text' placeholder='Foto del documento...' name='biometria' value='$biometria'>
+                    <input type='text' placeholder='Foto del documento...' name='biometría' value='$biometría'>
                   </td>
                   <td>
                      <input class='btn' type='submit' name='update' value='Actualizar'>
