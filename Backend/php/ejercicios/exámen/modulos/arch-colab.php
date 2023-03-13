@@ -2,14 +2,14 @@
     session_start();
     include 'conn.php';
     $status = $_POST['status'];
-    $id = $_POST['id'];
+    $Id = $_POST['Id'];
 
     if (isset($_POST['updatecolab'])) {
         $sql = 'UPDATE usuarios SET status = ? WHERE Id = ?';
 
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param('si',$status, $id); 
-        $stmt->execute(); 
+        $status = $conn->prepare($sql);
+        $status->bind_param('si',$status, $Id); 
+        $status->execute(); 
         
     }
 ?>
@@ -21,7 +21,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/arch-colab.css">
+    <link rel="stylesheet" href="../css/general.css">
 
 </head>
 <body> 

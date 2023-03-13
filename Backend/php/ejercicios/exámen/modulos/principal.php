@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="../css/principal.css">
 </head>
 <body>
-<!-- pagina del login -->
+<!-- pagina para crear un usuario -->
 <div class="cont">
     <form action="login-user.php" method="POST">
         <h1>Login</h1>
@@ -33,17 +33,9 @@
         </div>
     </form>
  <?php
-//  if (isset($_SESSION['logged'])) {
-            
-//     if ($_SESSION['usertype'] == 'admin'){
-//         echo '<h1>Bienvenido</h1>';
 
-
-//     }
-
-// }
     if (isset($_SESSION['fallo'])) {
-        echo "Datos incorrectos.";
+        echo "Error, comprueba los datos.";
 
 
         unset($_SESSION['fallo']);

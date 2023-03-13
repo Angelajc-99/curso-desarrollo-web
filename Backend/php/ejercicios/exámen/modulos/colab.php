@@ -16,6 +16,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- icinos de bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../css/colab.css">
 
 </head>
@@ -45,10 +47,14 @@
                   $mac_ordenardor = $row['mac_ordenardor'];
                   $biometría = $row['biometría'];
                   $status = $row['status'];
+                  $status1 = 'completo';
+                  $status2 = 'incompleto';
+                  $status3 = 'incorrecto';
                   
                   $input = NULL;
 
-                  if($status == 'correcto'){
+                  // otra forma para poner con iconos
+                  if($status == 'completo'){
                       $input = "<td class='td1' type='submit' name='completo'><i class='bi bi-clipboard-x'></i> ";
                   }elseif($status == 'incorrecto'){
                       $input = "<td class='td2' type='submit' name='incorrecto'><i class='bi bi-dash'></i>";
@@ -79,12 +85,12 @@
                   </td>
                   $input
                     <select name='status'>
-                       <option value='$status' disabled selected>$status </option>
-                       <option value=''></option>
-                       <option value=''></option>
-                       <option value=''></option>
-                    </select>
-                    </td>
+                    name='usertype'>
+                                     <option value='$status1'>$status1</option>
+                                     <option value='$status2'>$status2</option>
+                                     <option value='$status3'>$status3</option>
+                                  </select>
+                                </td>
                   <td>
                      <input class='btn' type='submit' name='updatecolab' value='Actualizar'>
                   </td>

@@ -10,7 +10,7 @@
     $Id = $_SESSION['Id'];
 
 
-    $sql = "UPDATE usuarios SET email = '$usuario', contrasena ='$contrasena', dni ='$dni', biometría = '$biometría', mac_ordenardor = '$mac_ordenardor', user_type = '$user_type' WHERE id = '$id'";
+    $sql = "UPDATE usuarios SET email = '$usuario', contrasena ='$contrasena', dni ='$dni', biometría = '$biometría', mac_ordenardor = '$mac_ordenardor', user_type = '$user_type' WHERE Id = '$Id'";
     $result = $conn->query($sql);
 
     if ($conn->query($sql)) {
@@ -28,7 +28,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/arch-user.css">
+    <link rel="stylesheet" href="../css/general.css">
 
 </head>
 <body>

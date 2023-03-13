@@ -2,7 +2,7 @@
     session_start();
     include 'conn.php';
 
-    $user = $_SESSION['id'];
+    $user = $_SESSION['Id'];
 
     $sql = "SELECT * FROM usuarios WHERE Id = '$user'";
     $result = $conn->query($sql);
@@ -20,6 +20,7 @@
 </head>
 <body>
 
+<!-- página del usuario -->
 <div class="cont">
       <?php
           if ($result->num_rows > 0) {

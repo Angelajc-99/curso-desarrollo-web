@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/login-user.css">
+    <link rel="stylesheet" href="../css/general.css">
 
 </head>
 <body>
@@ -21,14 +21,13 @@
                 $contrasena = $_POST['contrasena'];
                 
                 include 'conn.php';
-
+// query para iniciar sesión ya seas usuario, admin o caloborador
                 $sql = "SELECT * FROM usuarios WHERE email = '$usuario' AND contrasena = '$contrasena'";
                 $result = $conn->query($sql);
 
                 if ($result->num_rows > 0) {
 
-                    echo"<p>Inicio de sesión exitosa</p>";
-                    echo"<p>Bienvenido $usuario</p>";
+                    echo" <br><p>Bienvenido $usuario</p>";
 
                     $_SESSION['logged'] = 'true';
                     while ($row = $result->fetch_assoc()) {
@@ -41,7 +40,7 @@
                     if ($_SESSION['user_type'] == 'colab') $link = 'colab.php';
 
                      echo " <a href='$link'>
-                                <button>Cuenta<button>
+                                Cuenta
                             </a>";
                      $conn->close();
                      

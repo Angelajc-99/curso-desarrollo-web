@@ -3,7 +3,7 @@
     include 'conn.php';
 
     $usuario = $_SESSION['Id'];
-
+// inicio de sesión para el admin
     if (isset($_SESSION['logged']) && $_SESSION['user_type'] == 'admin') {
         $sql = "SELECT * FROM usuarios";
         $result = $conn->query($sql);
@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="../css/admin.css">
 
 </head>
+<!-- tabla del administrador -->
 <body>
     <div>
    
@@ -47,7 +48,15 @@
                         $dni = $row['dni'];
                         $mac_ordenardor = $row['mac_ordenardor'];
                         $biometría = $row['biometría'];
-                        $user_type = $row['user_type'];    
+                        $user_type = $row['user_type'];
+                    $user_type1 = 'user';
+                    $user_type2 = 'admin';
+                    $user_type3 = 'colab';
+                    if ($user_type == 'admin') {
+                        $user_type1 = 'admin';
+                        $user_type2 = 'user';
+                        $user_type3 = 'colab';
+                    }  
     
                         echo "<form action='arch-admin.php' method='post'>
                         <tr>
@@ -69,14 +78,12 @@
                           <input type='text' placeholder='Biometria' name='biometría' value='$biometría'>
                         </td>
                         <td>
-                          <select  name='user_type'>
-                             <option value='$user_type'>$user_type</option>
-                             <option value='admin'></option>
-                             <option value='user'></option>
-                             <option value='colab'></option>
-                             
-                          </select>
-                        </td>
+                         <select  name='usertype'>
+                            <option value='$user_type1'>$user_type1</option>
+                            <option value='$user_type2'>$user_type2</option>
+                            <option value='$user_type3'>$user_type3</option>
+                         </select>
+                       </td>
                         <td>
                            <input type='submit' name='update' value='Actualizar'>
                         </td>
@@ -93,7 +100,9 @@
 
                 mysqli_close($conn);
                 ?>
+    <!-- formulario de registro -->
 
+    <div class="formulario">
         <form action="registro.php" method="post">
             <div>
                <input type="email" placeholder="Correo" name="email" required>
@@ -107,13 +116,11 @@
                <input type="submit" name="envio" value="Enviar">
             </div>
         </form>
-        
-        
-
-                
-            <a href="principal.php"><input type="button" class="btn" value='Cerra sesión'></a>
+             
 
     </div>
+
+    <a href="principal.php"><input type="button" class="btn" value='Cerrar sesión'></a>
     
 </body>
 </html>
