@@ -154,6 +154,160 @@ echo "</tr>";
 echo "</table>";
 
 
-// 9. Crear un programa de PHP que imprima un tablero de ajedrez
-// Pista: Usar una tabla con 270px de ancho y 30px como medida para las celdas
+echo "<h3>9. Crear un programa de PHP que imprima un tablero de ajedrezz
+Pista: Usar una tabla con 270px de ancho y 30px como medida para las celdas</h3>";
+
+$alcance = 8;
+$negra = "<td class='negro'></td>";
+$blanca = "<td></td>";
+
+echo "<table class= 'tablero'>";
+for ($fila = 1; $fila <= $alcance; $fila++) { 
+
+    echo "<tr>";
+    for ($celda = 1; $celda <= $alcance / 2; $celda++) { 
+        if ($fila % 2 == 0) {
+            echo $blanca;
+            echo $negra;
+        } else {
+            echo $negra;
+            echo $blanca;
+        }
+    }
+    echo "</tr>";
+}
+
+echo "</tr>";
+echo "</table>";
+
+
+
+// $negro = "<td class = 'negro'>";
+// echo "<table class='tablero'>";
+// for ($a = 1; $a <= 4; $a++) {
+//     echo "<tr>";
+//     for ($i = 1; $i <= 4; $i++) {
+//         echo "<td></td>";
+//         echo $negro;        
+//     }
+//     echo "</tr>";
+//     echo "<tr>";
+//     for ($j=1; $j < 4; $j++) { 
+//         echo $negro;
+//         echo "<td></td>";
+//     }
+//     echo "</tr>";
+// }
+
+// echo "</table>";
+
+echo "<h3> 11. Escribir un programa de PHP que itere los números del 1 al 50. Al imprimirlos, los múltiplos de 3 se sustituirán por 'Fizz', los múltiplos de 5 por 'Buzz' y los que sean múltiplos de 3 y 5 por FizzBuzz </h3>";
+ 
+for ($i = 1; $i <= 50; $i++) {
+
+    if ($i % 3 == 0 && $i % 5 == 0) {
+        echo "FizzBuzz";
+    } elseif ($i % 3 == 0) {
+        echo "Fizz";
+    } elseif ($i % 5 == 0) {
+        echo "Buzz";
+    } else echo $i;
+
+    echo "<br>";
+}
+
+echo "<hr>";
+
+// 11.3
+
+for ($i=1; $i <= 50; $i++) { 
+    switch ($i) {
+        case $i % 3 == 0 && $i % 5 == 0:
+            echo "FizzBuzz";
+            break;
+        case $i % 3 == 0:
+            echo "Fizz";
+            break;      
+        case $i % 5 == 0:
+            echo "Buzz";
+            break;  
+        default:
+            echo $i;
+            break;
+    }
+    echo "<br>";
+}
+
+echo "<hr>";
+
+echo "<h3> 12. Escribir un programa capaz de imprimir un triangulo de Floyd con tantas filas como le indiquemos</h3>";
+
+$alcance = 12;
+$contador = 1;
+$espacio = "&nbsp;&nbsp;";
+
+for ($fila=1; $fila <= $alcance; $fila++) { 
+
+    for ($col=1; $col <= $fila; $col++) { 
+        if ($contador < 10) echo 0;
+        echo $contador;
+        echo $espacio;
+        $contador++;
+    }
+    echo "<br>";
+}
+
+echo "<h3>13. Escribir un bucle de PHP que imprima una A</h3>";
+
+for ($i=1; $i <= 8; $i++) { 
+    if ($i <= 1) echo "&nbsp;&nbsp;&nbsp;* * *&nbsp;";
+    if ($i == 4) echo "* * * * *";
+    if ($i != 1 && $i !=4) echo "*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*";
+    echo "<br>";
+}
+
+echo "<hr>";
+//   * * *
+// *       *
+// *       *
+// * * * * *
+// *       *
+// *       *
+// *       *
+// *       *
+
+$espacios = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+echo "<pre>";
+for ($i=1; $i <= 8; $i++) { 
+    
+    if ($i != 1) {
+        echo "* ";
+    } else echo "&nbsp;&nbsp;";
+
+    if ($i == 1 || $i == 4) {
+        echo "* * *";
+    } else echo $espacios;
+
+    if ($i != 1) echo " *";
+    echo "<br>";
+}
+echo "</pre>";
+
+echo "<h3>14. Escribir un bucle de PHP que sea capaz de imprimir este patrón</h3>";
+// 1 5 9
+// 2 6 10
+// 3 7 11
+// 4 8 12
+
+
+$n = 5;
+
+for ($i = 1; $i <= $n; $i++) {
+    echo $i . " ";
+    for ($j = 1; $j < $n; $j++) {
+        echo ($i + $n * $j) . " ";
+    }
+    echo '<br>';
+}
+
 
