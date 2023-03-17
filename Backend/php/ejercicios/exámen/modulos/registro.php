@@ -2,7 +2,7 @@
 session_start();
 include 'conn.php';
 if ($_POST) {
-$usuario = $_POST['usuario'];
+$usuario = $_POST['email'];
 $contrasena = $_POST['contrasena'];
 
 // ejecutamos la query y comprobamos si ha sido exitosa
@@ -24,7 +24,7 @@ $sql = "INSERT INTO usuarios (email, contrasena)
 
 if ($conn->query($sql) == TRUE) {
     echo '<p>Datos guardados con éxito</p>';
-    echo '<p>Pulsa <a href="form_login.php">aquí</a> para iniciar sesión</p>';
+    // echo '<p>Pulsa <a href="login-user.php">aquí</a> para iniciar sesión</p>';
 } 
 // Cerramos la conexión con la BD
 $conn->close();

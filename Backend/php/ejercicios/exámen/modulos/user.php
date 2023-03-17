@@ -25,7 +25,7 @@
       <?php
           if ($result->num_rows > 0) {
             echo "<table>
-              echo '<h1>Bienvenido Usuario</h1>'
+               <h1>Bienvenido Usuario</h1>
               <tr>
                  
                  <th> Correo</th>
@@ -53,7 +53,7 @@
                     <input type='text' placeholder='Usuario' name='email' value='$usuario'>
                   </td>
                   <td>
-                    <input type='password' placeholder='contrasena' hidden name='contrasena' value='$contrasena'>
+                    <input type='text' placeholder='contrasena' name='contrasena' value='$contrasena'>
                   </td>
                   <td>
                     <input type='text' placeholder='dni' name='dni' value='$dni'>

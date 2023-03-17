@@ -286,6 +286,7 @@ for ($i=1; $i <= 8; $i++) {
 
     if ($i == 1 || $i == 4) {
         echo "* * *";
+       
     } else echo $espacios;
 
     if ($i != 1) echo " *";
@@ -300,7 +301,7 @@ echo "<h3>14. Escribir un bucle de PHP que sea capaz de imprimir este patrón</h
 // 4 8 12
 
 
-$n = 5;
+$n = 4;
 
 for ($i = 1; $i <= $n; $i++) {
     echo $i . " ";
@@ -309,5 +310,4 @@ for ($i = 1; $i <= $n; $i++) {
     }
     echo '<br>';
 }
-
 
