@@ -1,0 +1,7 @@
+body {
+    background-image: url("https://static.vecteezy.com/system/resources/previews/002/582/107/non_2x/poker-black-background-playing-card-symbols-pattern-blackjack-vector.jpg");
+    display: flex;
+}
+h1 {
+    justify-content: center;
+}
