@@ -1,3 +1,4 @@
+
 // Juego de la casa
 let puntosCasa = 0;
 let jugadaCasa = [];
@@ -8,8 +9,24 @@ let puntosJugador = 0;
 let jugadaJugador = [];
 let cartasJugador = [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"];
 
+// Identificamos los elementos de HTML, para las variables que vamos a imprimir en pantalla
+let manoCasa = document.getElementById('mano-casa');
+let manoJugador = document.getElementById('mano-jugador');
+let displayCasa = document.getElementById('puntos-casa');
+let displayJugador = document.getElementById('puntos-jugador');
+let resultado = document.getElementById('resultado');
+
+let fin = false;
+let timer = 0;
+
+
 // El juego empieza con dos cartas para la casa y dos cartas para el jugador
 function empezar() {
+    // Se resetean las cartas
+    jugadaCasa = [];
+    jugadaJugador = [];
+    fin = false;
+
     //Recogemos las dos cartas iniciales de la casa:
     jugar("casa");
     jugar("casa");
@@ -70,10 +87,18 @@ function empezar() {
              }
          }
 
+         
+    // Se imprime el estado de la partida por consola
          console.log("Cartas de la casa:" + jugadaCasa.join());
          console.log("Puntuación de la casa:" + puntosCasa);
          console.log("Cartas del jugador:" + jugadaJugador.join());
          console.log("Puntuación del jugador" + puntosJugador);
+
+        //  Variables que se imprimen en pantalla
+        manoCasa.innerHTML = jugadaCasa.join();
+        manoJugador.innerHTML = jugadaJugador.join();
+        displayCasa.innerHTML = puntosCasa;
+        displayJugador.innerHTML = puntosJugador;
          ganador();
     }
 
@@ -118,10 +143,26 @@ function empezar() {
                jugadaJugador.push(cartasJugador[Math.floor(Math.random() * cartasJugador.length)]);
                break;
        }
-    //    Empieza a contar los puntos del jugador y de la casa
+    //    Cuentas los puntos del jugador y de la casa
        if(jugadaCasa.length >= 2 && jugadaJugador.length >=2) calcularPuntos();
     }
 
+    function plantarse() {
+        if (puntosJugador > puntosCasa) {
+            jugar('casa');
+        } else fin = true;
+    
+        if (!fin) {
+            timer = setTimeout(() => {
+                plantarse();
+            }, 1500);
+        } else {
+            clearTimeout(timer);
+            timer = 0;
+        }
+        console.log(fin);
+    
+    }
 
 empezar();
 

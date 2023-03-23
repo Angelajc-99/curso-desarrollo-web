@@ -8,7 +8,34 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button><h1>Empezar el juego</h1></button>
+    
+    <div class="contenedor">    
+        <h1>Blackjack</h1>
+            
+        <div class="tab">
+            <div class="tab-casa">
+                <p>Cartas de la casa: <span id="mano-casa"></span></p>
+                <p>Puntos: <span id="puntos-casa"></span></p>
+            </div>
+            <div class="tab-jugador">
+                <p>Cartas del jugador: <span id="mano-jugador"></span></p>
+                <p>Puntos: <span id="puntos-jugador"></span></p>
+            </div>
+            <div class="tab-resultados">
+                <p id="resultado"></p>
+            </div>
+        </div>
+
+        <div class="controls">
+            <!-- <div class="boton btn-empezar" onclick="empezar()">Iniciar Partida</div>
+            <div class="boton btn-jugar" onclick="jugar('jugador')">Pedir carta</div>
+            <div class="boton btn-plantarse" onclick="plantarse()">Retirarse</div> -->
+            <button onclick="empezar()">Jugar</button>
+            <button onclick="jugar('jugador')">Pedir carta</button>
+            <button onclick="plantarse()">Retirarse</button>
+        </div>
+
+    </div>
 </body>
 <script src="script.js"></script>
 </html>
