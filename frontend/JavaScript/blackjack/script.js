@@ -95,11 +95,24 @@ function empezar() {
          console.log("Puntuación del jugador" + puntosJugador);
 
         //  Variables que se imprimen en pantalla
-        manoCasa.innerHTML = jugadaCasa.join();
-        manoJugador.innerHTML = jugadaJugador.join();
+            //  comentamos el join para hacer una funcion la cual me permita mostrar las cartas...
+        // manoCasa.innerHTML = jugadaCasa.join();
+        // manoJugador.innerHTML = jugadaJugador.join();
+        mostrarCartas();
         displayCasa.innerHTML = puntosCasa;
         displayJugador.innerHTML = puntosJugador;
          ganador();
+    }
+
+    function mostrarCartas() {
+        manoCasa.innerHTML = '';
+        manoJugador.innerHTML = '';
+        for (let i = 0; i < jugadaCasa.length; i++) {
+            manoCasa.innerHTML += "<div>" + jugadaCasa[i] + "</div>";            
+        }
+        for (let i = 0; i < jugadaJugador.length; i++) {
+            manoJugador.innerHTML += "<div>" + jugadaJugador[i] + "</div>";            
+        }
     }
 
     // Le damos la función al ganador, el ganador debe tener 21 puntos no pasarse de 21 puntos.
@@ -107,11 +120,13 @@ function empezar() {
         let fin = false;
         if (puntosJugador > 21) {
             console.log("El jugador se ha pasado de 21. Gana la casa");
+            resultado.innerHTML = "El jugador se ha pasado de 21. Gana la casa";
             fin = true;
             return;
 
         } else if (puntosCasa > 21) {
             console.log("La casa se ha pasado de 21. Gana el jugador");
+            resultado.innerHTML = "La casa se ha pasado de 21. Gana el jugador";
             fin = true;
             return;
         }
@@ -119,17 +134,20 @@ function empezar() {
         if (puntosJugador > puntosCasa && !fin) {
             console.log ("Va ganando el jugador");
             console.log("");
-            jugar("casa");
+            resultado.innerHTML = "Va ganando el jugador"
+            // jugar("casa");
             return;
         } else if (puntosCasa > puntosJugador && ! fin) {
             console.log("Va ganando la casa");
             console.log("");
-            jugar("jugador");
+            resultado.innerHTML = "Va ganando la casa"
+            // jugar("jugador");
             return;
         } else {
             console.log("Hay empate");
             console.log("");
-            jugar("jugador");
+            resultado.innerHTML = "Hay empate";
+            // jugar("jugador");
             return;
             
         }
@@ -150,9 +168,9 @@ function empezar() {
     function plantarse() {
         if (puntosJugador > puntosCasa) {
             jugar('casa');
-        } else fin = true;
+        // } else fin = true;
     
-        if (!fin) {
+        // if (!fin) {
             timer = setTimeout(() => {
                 plantarse();
             }, 1500);
@@ -160,7 +178,7 @@ function empezar() {
             clearTimeout(timer);
             timer = 0;
         }
-        console.log(fin);
+        // console.log(fin);
     
     }
 
