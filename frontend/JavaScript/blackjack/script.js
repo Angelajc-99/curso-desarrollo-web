@@ -104,14 +104,29 @@ function empezar() {
          ganador();
     }
 
+    let iconoDiamante = `<i class='bi bi-suit-diamond-fill'></i>`;
+    let iconoPica = `<i class="bi bi-suit-spade-fill"></i>`;
+
     function mostrarCartas() {
         manoCasa.innerHTML = '';
         manoJugador.innerHTML = '';
         for (let i = 0; i < jugadaCasa.length; i++) {
-            manoCasa.innerHTML += "<div>" + jugadaCasa[i] + "</div>";            
+                //  creamos los div para poder poner los iconos a las cartas
+            // manoCasa.innerHTML += "<div>" + jugadaCasa[i] + "</div>";
+            manoCasa.innerHTML += "<div class='carta'>" 
+            + "<div class='num top'>" + jugadaCasa[i] + "</div>"
+            + "<div class='palo'>" + iconoDiamante + "</div>"
+            + "<div class='num bot'>" + jugadaCasa[i] + "</div>"
+            + "</div>";            
+
         }
         for (let i = 0; i < jugadaJugador.length; i++) {
-            manoJugador.innerHTML += "<div>" + jugadaJugador[i] + "</div>";            
+            // manoJugador.innerHTML += "<div>" + jugadaJugador[i] + "</div>";
+            manoJugador.innerHTML += "<div class='carta'>"            
+            +"<div class='num top'>" + jugadaJugador[i] + "</div>"
+            +"<div class='palo'>" + iconoPica + "</div>"
+            +"<div class='num bot'>" + jugadaJugador[i] + "</div>"
+            +"</div>";
         }
     }
 
@@ -119,6 +134,7 @@ function empezar() {
     function ganador() {
         let fin = false;
         if (puntosJugador > 21) {
+            // esta variable mostrará el mensaje si es que la casa va ganando o no
             console.log("El jugador se ha pasado de 21. Gana la casa");
             resultado.innerHTML = "El jugador se ha pasado de 21. Gana la casa";
             fin = true;

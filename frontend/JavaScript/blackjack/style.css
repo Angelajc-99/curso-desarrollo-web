@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cousine&family=Rubik&display=swap');
+
+
 body {
     /* background-image: url("https://th.bing.com/th/id/R.67cce5890f1f62e98f780a654f9afff6?rik=lP5FwZIlIUuLEQ&pid=ImgRaw&r=0"); */
 
@@ -7,23 +11,122 @@ body {
     background-repeat: repeat;
     background-position: top left;
     display: flex;
-    color: white;
+    color: rgb(194, 158, 188);
     justify-content: center;
     height: 100vh;
     margin: 0;
 }
-h1.contenedor {
+h1 {
     justify-content: center;
-    color: white;
+    color: rgb(176 124 181);
+    font-family: 'Sassy Frass', cursive;
+    font-size: 83px;
+    margin: -21px;
+
 }
 
 .contenedor {
     background-image: url("https://static.vecteezy.com/system/resources/previews/002/582/107/non_2x/poker-black-background-playing-card-symbols-pattern-blackjack-vector.jpg");
-    height: 50vh;
+    padding: 50px;
+
+    height: 40vh;
     width: 25vw;
     margin: 165px;
+
     box-shadow: 26px 21px 70px -7px rgba(214,178,214,1);
-    padding: 5%;
     border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 20px;
+    
 } 
+
+.tab {
+    display: flex;
+    justify-content: space-around;
+}
+.tab > div {
+    margin: 15px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+}
+.controls button {
+    background-color: rgb(56, 58, 61);
+    color: rgb(151 179 221);
+    border-radius: 7px;
+    border: none;
+    transition: all .5s;
+    padding: 10px;
+    margin: 20px;
+}
+.controls button:hover {
+    box-shadow: 20px 19px 60px -7px rgb(42, 94, 149);
+    cursor: pointer;
+}
+button {
+    height: 6vh;
+    width: 8vw;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+    font-weight: bold;
+}
+p {
+    color: #3b91ab;;
+}
+p span {
+    display: flex;
+    justify-content: start;
+}
+p span div {
+    text-align: center;
+    margin: 1px;
+}
+p#resultado {
+    color: #909cb1;
+}
+span#mano-casa {
+    color: rgb(121, 34, 43);
+}
+span#mano-jugador {
+    color: rgb(31, 61, 177);
+}
+.carta {
+    background: #c1bebe;
+    border: 1px solid rgb(110, 97, 97);
+    height: 60px;
+    width: 40px;
+    border-radius: 2px;
+    position: relative;
+}
+.carta .num {
+    font-family: 'cousine', monospace;
+    position: absolute;
+    margin: 0 1px;
+    font-size: 0.65rem;
+}
+.carta .num.top {
+    top: 0;
+    left: 0;
+}
+.carta .num.bot {
+    bottom: 0;
+    right: 0;
+    transform: rotateZ(180deg);
+}
+.carta .palo {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+}
 
