@@ -3,25 +3,26 @@
 
 
 body {
-    /* background-image: url("https://th.bing.com/th/id/R.67cce5890f1f62e98f780a654f9afff6?rik=lP5FwZIlIUuLEQ&pid=ImgRaw&r=0"); */
 
     background-image: url("https://th.bing.com/th/id/OIP.TRRHTe3i4GjhrXyVuBufjwHaDt?w=470&h=200&c=7&r=0&o=5&pid=1.7");
-    /* background-image: url("https://static.vecteezy.com/system/resources/previews/002/582/107/non_2x/poker-black-background-playing-card-symbols-pattern-blackjack-vector.jpg"); */
-    /* background-size: auto; */
     background-repeat: repeat;
     background-position: top left;
     display: flex;
-    color: rgb(194, 158, 188);
     justify-content: center;
+
+    color: rgb(194, 158, 188);
+
     height: 100vh;
     margin: 0;
 }
 h1 {
     justify-content: center;
+    margin: -10px;
+
     color: rgb(176 124 181);
+
     font-family: 'Sassy Frass', cursive;
     font-size: 83px;
-    margin: -21px;
 
 }
 
@@ -29,8 +30,8 @@ h1 {
     background-image: url("https://static.vecteezy.com/system/resources/previews/002/582/107/non_2x/poker-black-background-playing-card-symbols-pattern-blackjack-vector.jpg");
     padding: 50px;
 
-    height: 40vh;
-    width: 25vw;
+    height: 45vh;
+    width: 35vw;
     margin: 165px;
 
     box-shadow: 26px 21px 70px -7px rgba(214,178,214,1);
@@ -78,18 +79,31 @@ button {
     font-weight: bold;
 }
 p {
-    color: #3b91ab;;
+    color: #66adf7;
+    font-size: 24px;
+    max-width: 150px;
 }
 p span {
     display: flex;
     justify-content: start;
+    font-family: 'Courgette', cursive;
 }
 p span div {
+    font-family: 'Sassy Frass', cursive;
     text-align: center;
     margin: 1px;
 }
 p#resultado {
     color: #909cb1;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 22px;
+
+    box-shadow: inset 0px 0px 10px 2px rgba(214,178,214);
+    border-radius: 7px;
+    max-width: 150px;
+
+    margin-top: 85px;
+    transition: all .5s;
 }
 span#mano-casa {
     color: rgb(121, 34, 43);
@@ -100,9 +114,9 @@ span#mano-jugador {
 .carta {
     background: #c1bebe;
     border: 1px solid rgb(110, 97, 97);
-    height: 60px;
-    width: 40px;
-    border-radius: 2px;
+    height: 85px;
+    width: 51px;
+    border-radius: 5px;
     position: relative;
 }
 .carta .num {
@@ -123,9 +137,12 @@ span#mano-jugador {
 .carta .palo {
     margin: 0;
     padding: 0;
+
     position: absolute;
+
     top: 50%;
     left: 50%;
+
     transform: translate(-50%, -50%);
     font-size: 1.2rem;
 }

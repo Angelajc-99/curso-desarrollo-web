@@ -19,6 +19,12 @@ let resultado = document.getElementById('resultado');
 let fin = false;
 let timer = 0;
 
+//funcion que vuelve a una tarjeta aleatoria
+var deal = function() {
+    cartas = Math.floor(Math.random()*52+1);
+    return cartas;
+  };
+
 
 // El juego empieza con dos cartas para la casa y dos cartas para el jugador
 function empezar() {
@@ -106,6 +112,10 @@ function empezar() {
 
     let iconoDiamante = `<i class='bi bi-suit-diamond-fill'></i>`;
     let iconoPica = `<i class="bi bi-suit-spade-fill"></i>`;
+
+                // iconos 
+    // let iconoCorazon = `<i class="bi bi-suit-heart-fill"></i>`;
+    // let iconoTrebol = `<i class="bi bi-suit-club-fill"></i>`;
 
     function mostrarCartas() {
         manoCasa.innerHTML = '';
@@ -197,6 +207,10 @@ function empezar() {
         // console.log(fin);
     
     }
+
+    // function resultado(){
+    //     if
+    // }
 
 empezar();
 
