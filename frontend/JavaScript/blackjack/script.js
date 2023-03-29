@@ -43,6 +43,9 @@ function empezar() {
     jugar("jugador");
 
 }
+function terminarJuego() {
+}
+
     // Le damos la función a clacularPuntos
     function calcularPuntos () {
         puntosCasa = 0;
@@ -156,7 +159,6 @@ function empezar() {
             fin = true;
             return;
         }
-
         if (puntosJugador > puntosCasa && !fin) {
             console.log ("Va ganando el jugador");
             console.log("");

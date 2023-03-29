@@ -4,15 +4,20 @@
 
 body {
 
-    background-image: url("https://th.bing.com/th/id/OIP.TRRHTe3i4GjhrXyVuBufjwHaDt?w=470&h=200&c=7&r=0&o=5&pid=1.7");
-    background-repeat: repeat;
-    background-position: top left;
+    background-image: url("https://cdn.wallpapersafari.com/73/85/MT3pbw.jpg");
+    /* background-image: url("https://static.vecteezy.com/system/resources/previews/002/582/107/non_2x/poker-black-background-playing-card-symbols-pattern-blackjack-vector.jpg"); */
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center; 
+    object-fit: 5px;
     display: flex;
     justify-content: center;
+    align-items: center;
 
     color: rgb(194, 158, 188);
 
     height: 100vh;
+    width:60%;
     margin: 0;
 }
 h1 {
@@ -27,17 +32,19 @@ h1 {
 }
 
 .contenedor {
+    /* background-image: url("https://cdn.shopify.com/s/files/1/1788/4029/products/64988-alt5_f989ca3b-d723-4d77-ade7-07c8d6252ded_grande.png?v=1576801247"); */
     background-image: url("https://static.vecteezy.com/system/resources/previews/002/582/107/non_2x/poker-black-background-playing-card-symbols-pattern-blackjack-vector.jpg");
     padding: 50px;
+    display: flex;
 
     height: 45vh;
     width: 35vw;
     margin: 165px;
 
-    box-shadow: 26px 21px 70px -7px rgba(214,178,214,1);
+    box-shadow: 15px 30px 64px 3px rgb(86 80 86);
     border-radius: 10px;
 
-    display: flex;
+    
     flex-direction: column;
     justify-content: center;
     align-items: center;
