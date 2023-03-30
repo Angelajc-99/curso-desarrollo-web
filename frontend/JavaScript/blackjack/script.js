@@ -1,4 +1,13 @@
 
+let picas = [
+    // "A" {
+
+    // }
+];
+// let diamantes = [];
+// let treboles = [];
+// let corazones = [];
+
 // Juego de la casa
 let puntosCasa = 0;
 let jugadaCasa = [];
@@ -10,21 +19,19 @@ let jugadaJugador = [];
 let cartasJugador = [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"];
 
 // Identificamos los elementos de HTML, para las variables que vamos a imprimir en pantalla
-let manoCasa = document.getElementById('mano-casa');
-let manoJugador = document.getElementById('mano-jugador');
-let displayCasa = document.getElementById('puntos-casa');
-let displayJugador = document.getElementById('puntos-jugador');
-let resultado = document.getElementById('resultado');
+const manoCasa = document.getElementById('mano-casa');
+const manoJugador = document.getElementById('mano-jugador');
+const displayCasa = document.getElementById('puntos-casa');
+const displayJugador = document.getElementById('puntos-jugador');
+const resultado = document.getElementById('resultado');
+const btnIniciar  = document.getElementById('btn-iniciar');
+const btnPedir = document.getElementById('btn-pedir');
+const btnPlantarse = document.getElementById('btn-plantarse');
+
+let jugadorPlantado = false;
 
 let fin = false;
 let timer = 0;
-
-//funcion que vuelve a una tarjeta aleatoria
-var deal = function() {
-    cartas = Math.floor(Math.random()*52+1);
-    return cartas;
-  };
-
 
 // El juego empieza con dos cartas para la casa y dos cartas para el jugador
 function empezar() {
@@ -32,18 +39,25 @@ function empezar() {
     jugadaCasa = [];
     jugadaJugador = [];
     fin = false;
+    activarBotones();
 
     //Recogemos las dos cartas iniciales de la casa:
-    jugar("casa");
-    jugar("casa");
+    darCarta("casa");
+    darCarta("casa");
 
 
     //Recogemos las dos cartas iniciales del jugador:
-    jugar("jugador");
-    jugar("jugador");
+    darCarta();
+    darCarta();
 
 }
-function terminarJuego() {
+function activarBotones() {
+    btnPedir.style['pointer-events'] = 'auto';
+    btnPlantarse.style['pointer-events'] = 'auto';
+}
+function desactivarBotones() {
+    btnPedir.style['pointer-events'] = 'none';
+    btnPlantarse.style['pointer-events'] = 'none';
 }
 
     // Le damos la función a clacularPuntos
@@ -145,74 +159,117 @@ function terminarJuego() {
 
     // Le damos la función al ganador, el ganador debe tener 21 puntos no pasarse de 21 puntos.
     function ganador() {
-        let fin = false;
-        if (puntosJugador > 21) {
-            // esta variable mostrará el mensaje si es que la casa va ganando o no
-            console.log("El jugador se ha pasado de 21. Gana la casa");
-            resultado.innerHTML = "El jugador se ha pasado de 21. Gana la casa";
-            fin = true;
-            return;
+        // Switch para comentar el estado actual del juego
+        switch (true) {
+            case puntosJugador > puntosCasa:
+                resultado.innerHTML = "Va ganando el jugador"
+                break;
+            case puntosCasa > puntosJugador:
+                resultado.innerHTML = "Va ganando la casa"
+                break;
+            case puntosCasa === puntosJugador:
+                resultado.innerHTML = "Empate"
+                break;
 
-        } else if (puntosCasa > 21) {
-            console.log("La casa se ha pasado de 21. Gana el jugador");
-            resultado.innerHTML = "La casa se ha pasado de 21. Gana el jugador";
-            fin = true;
-            return;
+            default: 
+                console.log("default switch 1");
+                break;
         }
-        if (puntosJugador > puntosCasa && !fin) {
-            console.log ("Va ganando el jugador");
-            console.log("");
-            resultado.innerHTML = "Va ganando el jugador"
-            // jugar("casa");
-            return;
-        } else if (puntosCasa > puntosJugador && ! fin) {
-            console.log("Va ganando la casa");
-            console.log("");
-            resultado.innerHTML = "Va ganando la casa"
-            // jugar("jugador");
-            return;
-        } else {
-            console.log("Hay empate");
-            console.log("");
-            resultado.innerHTML = "Hay empate";
-            // jugar("jugador");
-            return;
+        desactivarBotones();
+
+        // switch para determinar que ha finalizado la partida
+        switch (true) {
+            case (puntosCasa === 21 && puntosJugador === 21):
+                resultado.innerHTML = "Ambas partes tienen 21, la apuesta se recupera."                
+                break;
+            case (puntosCasa === 21 && puntosJugador != 21):
+                resultado.innerHTML = "La casa tiene el Blackjack. El jugador pierde la apuesta!"
+                break;
+            case (puntosCasa != 21 && puntosJugador === 21):
+                resultado.innerHTML = "El jugador tiene el Blackjack. Ha ganado!"
+                break;
+            case puntosJugador > 21:
+                resultado.innerHTML = "El jugador se ha pasado de 21. Gana la casa."
+                break;
+            case puntosCasa > 21:
+                resultado.innerHTML = "La casa se ha pasado de 21. Gana el jugador."
+                break;
+        
+            default:
+                console.log("default switch 2");
+                activarBotones();
+                break;
+        }
+
+        
+        // let fin = false;
+        // if (puntosJugador > 21) {
+        //     // esta variable mostrará el mensaje si es que la casa va ganando o no
+        //     console.log("El jugador se ha pasado de 21. Gana la casa");
+        //     resultado.innerHTML = "El jugador se ha pasado de 21. Gana la casa";
+        //     fin = true;
+        //     return;
+
+        // } else if (puntosCasa > 21) {
+        //     console.log("La casa se ha pasado de 21. Gana el jugador");
+        //     resultado.innerHTML = "La casa se ha pasado de 21. Gana el jugador";
+        //     fin = true;
+        //     return;
+        // }
+        // if (puntosJugador > puntosCasa && !fin) {
+        //     console.log ("Va ganando el jugador");
+        //     console.log("");
+        //     resultado.innerHTML = "Va ganando el jugador"
+        //     // jugar("casa");
+        //     return;
+        // } else if (puntosCasa > puntosJugador && ! fin) {
+        //     console.log("Va ganando la casa");
+        //     console.log("");
+        //     resultado.innerHTML = "Va ganando la casa"
+        //     // jugar("jugador");
+        //     return;
+        // } else {
+        //     console.log("Hay empate");
+        //     console.log("");
+        //     resultado.innerHTML = "Hay empate";
+        //     // jugar("jugador");
+        //     return;
             
-        }
+        // }
     }
-   function jugar(jugada) {
+   function darCarta(jugada) {
        switch (jugada) {
            case "casa":
                jugadaCasa.push(cartasCasa[Math.floor(Math.random() * cartasCasa.length)]);            
                break;
-           case "jugador":
+           default:
                jugadaJugador.push(cartasJugador[Math.floor(Math.random() * cartasJugador.length)]);
                break;
        }
     //    Cuentas los puntos del jugador y de la casa
-       if(jugadaCasa.length >= 2 && jugadaJugador.length >=2) calcularPuntos();
+       if(jugadaCasa.length >= 2 && jugadaJugador.length >=2) 
+       calcularPuntos();
     }
 
     function plantarse() {
+        jugadorPlantado = true;
+        desactivarBotones();
         if (puntosJugador > puntosCasa) {
-            jugar('casa');
-        // } else fin = true;
-    
-        // if (!fin) {
+            darCarta('casa');
             timer = setTimeout(() => {
                 plantarse();
-            }, 1500);
+            }, 1000);
         } else {
             clearTimeout(timer);
             timer = 0;
         }
-        // console.log(fin);
-    
+
     }
 
-    // function resultado(){
-    //     if
-    // }
-
 empezar();
+// Event listener
+// btnIniciar.addEventListener('click', empezar);
+// btnPedir.addEventListener('click', darCarta);
+// btnPlantarse.addEventListener('click', plantarse);
+
 
