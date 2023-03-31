@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,19 +8,20 @@
     <title>Backjack</title>
     <!-- Boootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-        <!-- CSS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
     <!-- Gooogle fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sassy+Frass&display=swap"rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sassy+Frass&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    
-    <div class="contenedor">    
+
+    <div class="contenedor">
         <h1>Blackjack</h1>
-            
-        <div class="tab">
+
+        <div id="tab">
             <div class="tab-casa">
                 <p>Cartas de la casa: <br><span id="mano-casa"></span></p>
                 <p>Puntos: <span id="puntos-casa"></span></p>
@@ -34,12 +36,13 @@
         </div>
 
         <div class="controls">
-            <button id="btn-iniciar" onclick="empezar()">Jugar</button>
+            <button id="v" onclick="jugar()">Jugar</button>
             <button id="btn-pedir" onclick="darCarta('jugador')">Pedir carta</button>
             <button id="btn-plantarse" onclick="plantarse()">Plantarse</button>
-     
+            
         </div>
     </div>
 </body>
 <script src="script.js"></script>
+
 </html>

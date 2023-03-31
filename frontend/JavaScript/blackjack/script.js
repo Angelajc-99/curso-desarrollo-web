@@ -1,9 +1,9 @@
 
-let picas = [
-    // "A" {
+// let picas = [
+//     "A" {
 
-    // }
-];
+//     }
+// ];
 // let diamantes = [];
 // let treboles = [];
 // let corazones = [];
@@ -27,6 +27,7 @@ const resultado = document.getElementById('resultado');
 const btnIniciar  = document.getElementById('btn-iniciar');
 const btnPedir = document.getElementById('btn-pedir');
 const btnPlantarse = document.getElementById('btn-plantarse');
+const tabContent = document.getElementById('tab');
 
 let jugadorPlantado = false;
 
@@ -51,6 +52,8 @@ function empezar() {
     darCarta();
 
 }
+
+
 function activarBotones() {
     btnPedir.style['pointer-events'] = 'auto';
     btnPlantarse.style['pointer-events'] = 'auto';
@@ -183,13 +186,13 @@ function desactivarBotones() {
                 resultado.innerHTML = "Ambas partes tienen 21, la apuesta se recupera."                
                 break;
             case (puntosCasa === 21 && puntosJugador != 21):
-                resultado.innerHTML = "La casa tiene el Blackjack. El jugador pierde la apuesta!"
+                resultado.innerHTML = "La casa tiene Blackjack. El jugador pierde la apuesta!"
                 break;
             case (puntosCasa != 21 && puntosJugador === 21):
-                resultado.innerHTML = "El jugador tiene el Blackjack. Ha ganado!"
+                resultado.innerHTML = "Has ganado!"
                 break;
             case puntosJugador > 21:
-                resultado.innerHTML = "El jugador se ha pasado de 21. Gana la casa."
+                resultado.innerHTML = "Gana la casa."
                 break;
             case puntosCasa > 21:
                 resultado.innerHTML = "La casa se ha pasado de 21. Gana el jugador."
@@ -266,10 +269,16 @@ function desactivarBotones() {
 
     }
 
+
+function jugar() {  
+    tabContent.style.display ="flex"
 empezar();
+
+}
+
+// esta es otro método de la función para los botones
 // Event listener
 // btnIniciar.addEventListener('click', empezar);
 // btnPedir.addEventListener('click', darCarta);
 // btnPlantarse.addEventListener('click', plantarse);
-
 
