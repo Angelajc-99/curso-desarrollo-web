@@ -28,11 +28,19 @@ const btnIniciar  = document.getElementById('btn-iniciar');
 const btnPedir = document.getElementById('btn-pedir');
 const btnPlantarse = document.getElementById('btn-plantarse');
 const tabContent = document.getElementById('tab');
+const reset = document.getElementById('reset');
+// .style.visibility = "visible";
 
 let jugadorPlantado = false;
 
 let fin = false;
 let timer = 0;
+
+
+// for (i = 0; i < 100; i++) {
+// 	carta.splice(Math.random() * 52, 0, carta[0]);
+// 	carta.shift();
+// }
 
 // El juego empieza con dos cartas para la casa y dos cartas para el jugador
 function empezar() {
@@ -57,6 +65,7 @@ function empezar() {
 function activarBotones() {
     btnPedir.style['pointer-events'] = 'auto';
     btnPlantarse.style['pointer-events'] = 'auto';
+    // reset.style['pointer-events'] = 'visiblity'
 }
 function desactivarBotones() {
     btnPedir.style['pointer-events'] = 'none';
@@ -162,6 +171,10 @@ function desactivarBotones() {
 
     // Le damos la función al ganador, el ganador debe tener 21 puntos no pasarse de 21 puntos.
     function ganador() {
+
+        // Puntos de la partida la cual se pone cuando se gana la partida (REVISAR)
+        // info.innerHTML = "Puntuación del jugador:" + puntosJugador + "<br>Puntuación de la casa: " + puntosCasa;
+
         // Switch para comentar el estado actual del juego
         switch (true) {
             case puntosJugador > puntosCasa:
@@ -255,6 +268,7 @@ function desactivarBotones() {
     }
 
     function plantarse() {
+    let info = document.getElementById("info");
         jugadorPlantado = true;
         desactivarBotones();
         if (puntosJugador > puntosCasa) {
@@ -282,3 +296,6 @@ empezar();
 // btnPedir.addEventListener('click', darCarta);
 // btnPlantarse.addEventListener('click', plantarse);
 
+function playagain() {
+    location.reload(true);
+}

@@ -36,11 +36,14 @@
         </div>
 
         <div class="controls">
-            <button id="v" onclick="jugar()">Jugar</button>
+            <button id="btn-iniciar" onclick="jugar()">Jugar</button>
+            <button id="reset" onclick="playagain()">Jugar de nuevo</button>            
             <button id="btn-pedir" onclick="darCarta('jugador')">Pedir carta</button>
             <button id="btn-plantarse" onclick="plantarse()">Plantarse</button>
-            
         </div>
+		<div id="info"></div>
+
+
     </div>
 </body>
 <script src="script.js"></script>
