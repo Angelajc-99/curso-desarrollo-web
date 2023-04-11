@@ -30,6 +30,7 @@ const btnPlantarse = document.getElementById('btn-plantarse');
 const tabContent = document.getElementById('tab');
 const reset = document.getElementById('reset');
 // .style.visibility = "visible";
+// const playAgain = document.getElementById('playagain');
 
 let jugadorPlantado = false;
 
@@ -72,7 +73,7 @@ function desactivarBotones() {
     btnPlantarse.style['pointer-events'] = 'none';
 }
 
-    // Le damos la función a clacularPuntos
+    // Le damos la función a calcularPuntos
     function calcularPuntos () {
         puntosCasa = 0;
         puntosJugador = 0;
@@ -192,6 +193,9 @@ function desactivarBotones() {
                 break;
         }
         desactivarBotones();
+        
+        // info.innerHTML = "Puntuación del jugador:" + puntosJugador + "<br>Puntuación de la casa: " + puntosCasa;
+
 
         // switch para determinar que ha finalizado la partida
         switch (true) {
@@ -286,6 +290,11 @@ function desactivarBotones() {
 
 function jugar() {  
     tabContent.style.display ="flex"
+    btnIniciar.style.display ="none"
+    reset.style.display="flex"
+    btnPedir.style.display ="flex"
+    btnPlantarse.style.display ="flex"
+    // resultado.style.display ="flex"
 empezar();
 
 }
@@ -298,4 +307,6 @@ empezar();
 
 function playagain() {
     location.reload(true);
+
+
 }
