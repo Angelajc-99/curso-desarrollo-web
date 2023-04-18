@@ -9,10 +9,24 @@
     background-size: 75px 75px;
     background-position: center center;
 
-    transition: all .6s;
 }
+.apuestas {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(220%, 75% );
 
-.ficha:before {
+
+}
+/* .apuestas  {
+    display: none; */
+/* } */
+/* #fichas {
+    display: none;
+} */
+/* .ficha:before {
     position: absolute;
     content: "";
     z-index: 1;
@@ -23,7 +37,7 @@
     left: 4px;   
     background-size: 75px 75px;
     background-position: center center;
-}
+} */
 .ficha:after {
     z-index: 2;
     position: absolute;
@@ -39,17 +53,17 @@
 }
 /* Colores */
 .azul {
-    background-image: linear-gradient(0deg, transparent 0, transparent 34px, #fff 34px, #fff 42px, transparent 42px, transparent 75px), linear-gradient(60deg, transparent 0, transparent 44px, #fff 44px, #fff 57px, transparent 57px, transparent 75px), linear-gradient(120deg, #000099 0, #000099 44px, #fff 44px, #fff 57px, #000099 57px, #000099 75px);
+    background-image: linear-gradient(0deg, transparent 0, transparent 34px, #fff 34px, #fff 42px, transparent 42px, transparent 75px), linear-gradient(60deg, transparent 0, transparent 44px, #fff 44px, #fff 57px, transparent 57px, transparent 75px), linear-gradient(120deg, #cb488e 0, #cb488e 44px, #fff 44px, #fff 57px, #cb488e 57px, #cb488e 75px);
 }
 .azul:before {
-    border: 5px solid #000099;
-    background-image: linear-gradient(0deg, transparent 0, transparent 35px, #EBEBEB 35px, #EBEBEB 41px, transparent 41px, transparent 75px), linear-gradient(30deg, transparent 0, transparent 49px, #EBEBEB 49px, #EBEBEB 55px, transparent 55px, transparent 75px), linear-gradient(60deg, transparent 0, transparent 49px, #EBEBEB 49px, #EBEBEB 55px, transparent 55px, transparent 75px), linear-gradient(90deg, transparent 0, transparent 35px, #EBEBEB 35px, #EBEBEB 41px, transparent 41px, transparent 75px), linear-gradient(120deg, transparent 0, transparent 49px, #EBEBEB 49px, #EBEBEB 55px, transparent 55px, transparent 75px), linear-gradient(150deg, #00016C 0, #00016C 49px, #EBEBEB 49px, #EBEBEB 55px, #00016C 55px, #00016C 75px);
+    border: 5px solid #cb488e;
+    background-image: linear-gradient(0deg, transparent 0, transparent 35px, #EBEBEB 35px, #EBEBEB 41px, transparent 41px, transparent 75px), linear-gradient(30deg, transparent 0, transparent 49px, #EBEBEB 49px, #EBEBEB 55px, transparent 55px, transparent 75px), linear-gradient(60deg, transparent 0, transparent 49px, #EBEBEB 49px, #EBEBEB 55px, transparent 55px, transparent 75px), linear-gradient(90deg, transparent 0, transparent 35px, #EBEBEB 35px, #EBEBEB 41px, transparent 41px, transparent 75px), linear-gradient(120deg, transparent 0, transparent 49px, #EBEBEB 49px, #EBEBEB 55px, transparent 55px, transparent 75px), linear-gradient(150deg, #cb488e 0, #cb488e 49px, #EBEBEB 49px, #EBEBEB 55px, #cb488e 55px, #cb488e 75px);
 }
 .azul:after {
     content: "10";
-    background: #EBEBEB;
-    color: #00016C;
-    border: 1px solid #00016C;
+    background: #cb488e;
+    color: whitesmoke;
+    border: 1px solid #cb488e;
 }
 .verde {
     background-image: linear-gradient(0deg, transparent 0, transparent 34px, #fff 34px, #fff 42px, transparent 42px, transparent 75px), linear-gradient(60deg, transparent 0, transparent 44px, #fff 44px, #fff 57px, transparent 57px, transparent 75px), linear-gradient(120deg, #008000 0, #008000 44px, #fff 44px, #fff 57px, #008000 57px, #008000 75px);
@@ -60,8 +74,8 @@
 }
 .verde:after {
     content: "25";
-    background: #EBEBEB;
-    color: #016C00;
+    background: #016C00;
+    color: whitesmoke;
     border: 1px solid #016C00;
 }
 .negra {
@@ -73,9 +87,9 @@
     
 }
 .negra:after {
-    content: "100";
-    background: #EBEBEB;
-    color: #000000;
+    content: "50";
+    background: #000000;
+    color: whitesmoke;
     border: 1px solid #000000;
 }
 

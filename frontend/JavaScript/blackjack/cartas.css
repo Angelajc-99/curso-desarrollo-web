@@ -1,16 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Cousine&family=Rubik&display=swap');
 
+:root {
+    --tiempo-anim: 3s;
+    --palo-negro: #069FC5;
+    --palo-rojo: #c52c06;
+}
 span#mano-casa {
-    color: rgb(121, 34, 43);
+    color: var(--palo-rojo);
+    text-shadow: 0 0 3px var(--palo-rojo);
 }
 span#mano-jugador {
-    color: rgb(31, 61, 177);
+    color: var(--palo-negro);
+    text-shadow: 0 0 3px var(--palo-negro);
 }
 .carta {
-    background: #c1bebe;
+    /* background: #c1bebe; */
     border: 1px solid rgb(110, 97, 97);
-    height: 85px;
-    width: 51px;
+    height: 90px;
+    width: 62px;
     border-radius: 5px;
     position: relative;
 }
@@ -27,7 +34,7 @@ span#mano-jugador {
 .carta .num.bot {
     bottom: 0;
     right: 0;
-    transform: rotateZ(180deg);
+    /* transform: rotateZ(180deg); */
 }
 .carta .palo {
     margin: 0;
@@ -42,10 +49,10 @@ span#mano-jugador {
     font-size: 1.2rem;
 }
 #mano-casa .carta {
-    border: 1px solid #c52c06;
-    box-shadow: 0 0 4px 2px #c52c06;
+    border: 1px solid #cb488e;
+    box-shadow: 0 0 4px 2px #d187e1;
 }
 #mano-jugador .carta {
-    border: 1px solid #6108e8;
-    box-shadow: 0 0 4px 2px #6108e8;
+    border: 1px solid #08cae8;
+    box-shadow: 0 0 4px 2px #086de8;
 }

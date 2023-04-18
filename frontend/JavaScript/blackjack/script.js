@@ -29,6 +29,8 @@ const btnPedir = document.getElementById('btn-pedir');
 const btnPlantarse = document.getElementById('btn-plantarse');
 const tabContent = document.getElementById('tab');
 const reset = document.getElementById('reset');
+const fichas = document.getElementById('fichas');
+// const apuestas =document.getElementsByClassName('apuestas');
 // .style.visibility = "visible";
 // const playAgain = document.getElementById('playagain');
 
@@ -294,12 +296,14 @@ function jugar() {
     reset.style.display="flex"
     btnPedir.style.display ="flex"
     btnPlantarse.style.display ="flex"
+    // fichas.style.display ="flex"
+    // apuestas.style.display = "flex"
     // resultado.style.display ="flex"
 empezar();
 
 }
 
-// esta es otro método de la función para los botones
+// este es otro método de la función para los botones
 // Event listener
 // btnIniciar.addEventListener('click', empezar);
 // btnPedir.addEventListener('click', darCarta);
