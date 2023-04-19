@@ -27,7 +27,8 @@ body {
 }
 h1 {
     justify-content: center;
-    margin: -10px;
+    margin: 5px;
+    /* padding: 30px; */
 
     color: rgb(36 169 191);
 
@@ -38,13 +39,12 @@ h1 {
 
 .contenedor {
     /* background-image: url("https://media.istockphoto.com/id/1315444058/es/foto/textura-del-antiguo-fondo-de-primer-plano-del-papel-azul-grunge-marino.jpg?s=612x612&w=0&k=20&c=hNit1OBFAVVfwb81glynRhV6x9sSg-aOqs0A8uKA1Vk="); */
-    
-    /* https://media.istockphoto.com/id/177147426/es/foto/de-fondo.jpg?s=612x612&w=0&k=20&c=p5m8DNSBNMB0lhlZjwlEmcvGXtzHjo3yY2YPXquD0YA= */
+       /* https://media.istockphoto.com/id/177147426/es/foto/de-fondo.jpg?s=612x612&w=0&k=20&c=p5m8DNSBNMB0lhlZjwlEmcvGXtzHjo3yY2YPXquD0YA= */
     /* background-image: url("https://static.vecteezy.com/system/resources/previews/002/582/107/non_2x/poker-black-background-playing-card-symbols-pattern-blackjack-vector.jpg"); */
     padding: 50px;
     display: flex;
 
-    height: 50vh;
+    height: 70vh;
     width: 50vw;
     margin: 165px;
 
@@ -102,6 +102,12 @@ h1 {
     cursor: pointer;
     font-size: 15px;
 }
+#cont-baraja {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 button {
     height: 6vh;
     width: 8vw;
@@ -135,7 +141,7 @@ p#resultado {
     border-radius: 7px;
     max-width: 110vh;
 
-    margin-top: -25px;
+    margin-top: 30px;
     transition: all .5s;
 }
 

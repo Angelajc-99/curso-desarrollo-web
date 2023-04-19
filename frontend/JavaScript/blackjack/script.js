@@ -1,5 +1,95 @@
+const contBaraja = document.getElementById('cont-baraja');
+// Iconos de las cartas
+let iconoDuda = `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQttJ7cCjpB5DEzDtAPwvHE3SEsQwCOl3ui36LPXtAkZ_lRk2bjRcI_Rregj2CQqX0aC7w&usqp=CAU">`;
+let iconoDiamantes = `<i class='bi bi-suit-diamond'></i>`;
+let iconoPicas = `<i class="bi bi-suit-spade"></i>`;
+let iconoCorazones = `<i class="bi bi-suit-heart"></i>`;
+let iconoTreboles = `<i class="bi bi-suit-club"></i>`;
 
-// let picas = [
+function crearBaraja(){
+    let baraja = new Array();
+    let palos = {
+        "D":"Diamantes",
+        "P":"Picas",
+        "C":"Corazones",
+        "T":"Treboles"        
+    }
+    let rangos = new Array("A", 2, 3, 4, 5, 6, 7, 8, 9, 0, "J", "Q", "K");
+
+     Object.keys(palos).forEach(function (value) {
+        for (let i = 0; i < rangos.length; i++) {
+            baraja.push(rangos[i] + value);
+            
+        }
+    })
+    console.log(baraja);
+
+    for (let i = 0; i < baraja.length; i++) {
+        let valor = baraja[i].charAt(0);
+        if(valor == 0) valor = 10;
+        let palo = baraja[i].charAt(1);
+        let print = '';
+        let color = '';
+        switch (palo){
+            case 'D':
+                print = iconoDiamantes;
+                color = '#c52c06';
+                break
+            case 'P':
+                 print = iconoPicas;
+                 color = '#069FC5';
+                 break
+             case 'C':
+                print = iconoCorazones;
+                color = '#c52c06';
+                break
+            case 'T':
+                print = iconoTreboles;
+                color = '#069FC5';
+                break
+          default:
+            break;
+        }
+        contBaraja.innerHTML += 
+        "<div class='carta baraja' style='color:"+ color +"'>"
+        + "<div class='num top'>" + valor + "</div>" 
+        + "<div class='palo'>" + print + "</div>"
+        + "<div class='num bot'>" + valor + "</div>" 
+        + "</div>";
+
+        let cartaTop = document.querySelectorAll('.baraja');
+        cartaTop[cartaTop.length - 1].style.zIndex = i;
+        // cartaTop[cartaTop.length - 1].style.boxShadow = "0 0 2px 1px #eff";
+        // cartaTop[cartaTop.length - 1].style.position = "absolute";
+        // cartaTop[cartaTop.length - 1].style.left = i/3+"px";
+        // cartaTop[cartaTop.length - 1].style.top = i+"px";
+    }
+}
+crearBaraja();
+let baraja = document.querySelectorAll('.baraja');
+let caraCartas = document.querySelectorAll('.baraja .carta-contenedor');
+let barajaTrasera = document.querySelectorAll('.trasera');
+let num = document.querySelectorAll('.baraja .num');
+let palos = document.querySelectorAll('.baraja .palo');
+
+function voltearBaraja() {
+
+    if (caraCartas[0].classList.contains('voltear')) {
+        for (let i = 0; i < caraCartas.length; i++) {
+            caraCartas[i].classList.remove('voltear');
+        }
+    } else {
+        for (let i = 0; i < caraCartas.length; i++) {
+            caraCartas[i].classList.add('voltear');
+        }
+    }
+}
+
+function juntar() {
+
+}
+
+// Juego de la casa
 //     "A" {
 
 //     }
@@ -30,14 +120,13 @@ const btnPlantarse = document.getElementById('btn-plantarse');
 const tabContent = document.getElementById('tab');
 const reset = document.getElementById('reset');
 const fichas = document.getElementById('fichas');
-// const apuestas =document.getElementsByClassName('apuestas');
-// .style.visibility = "visible";
-// const playAgain = document.getElementById('playagain');
 
 let jugadorPlantado = false;
 
 let fin = false;
 let timer = 0;
+
+let temporizador = 0;
 
 
 // for (i = 0; i < 100; i++) {
@@ -50,29 +139,42 @@ function empezar() {
     // Se resetean las cartas
     jugadaCasa = [];
     jugadaJugador = [];
-    fin = false;
+    // fin = false;
     activarBotones();
 
     //Recogemos las dos cartas iniciales de la casa:
     darCarta("casa");
-    darCarta("casa");
+    manoCasa.innerHTML += "<div class='carta duda'>"
+        + "<div class='palo'>" + iconoDuda + "</div>"
+        + "</div>";
 
 
     //Recogemos las dos cartas iniciales del jugador:
     darCarta();
     darCarta();
 
-}
+    // Recogemos la dos cartas iniciales de la casa:
+    darCarta("casa");
+    manoCasa.innerHTML += "<div class='carta duda'>" 
+    + "<div class='palo'>" + iconoDuda + "</div>"
+    + "</div>";
 
+    // Cada segundo los tiempos de la animación del parpadeo se randomizan
+    let tempParp = setInterval(parpadeo, 1000);
+
+}
 
 function activarBotones() {
     btnPedir.style['pointer-events'] = 'auto';
+    btnPedir.style['opacity'] = 1;
     btnPlantarse.style['pointer-events'] = 'auto';
-    // reset.style['pointer-events'] = 'visiblity'
+    btnPlantarse.style['opacity'] = 1;
 }
 function desactivarBotones() {
     btnPedir.style['pointer-events'] = 'none';
+    btnPedir.style['opacity'] = 0.7;
     btnPlantarse.style['pointer-events'] = 'none';
+    btnPlantarse.style['opacity'] = 0.7;
 }
 
     // Le damos la función a calcularPuntos
@@ -150,27 +252,24 @@ function desactivarBotones() {
     // let iconoTrebol = `<i class="bi bi-suit-club-fill"></i>`;
 
     function mostrarCartas() {
-        manoCasa.innerHTML = '';
-        manoJugador.innerHTML = '';
-        for (let i = 0; i < jugadaCasa.length; i++) {
-                //  creamos los div para poder poner los iconos a las cartas
-            // manoCasa.innerHTML += "<div>" + jugadaCasa[i] + "</div>";
-            manoCasa.innerHTML += "<div class='carta'>" 
-            + "<div class='num top'>" + jugadaCasa[i] + "</div>"
-            + "<div class='palo'>" + iconoDiamante + "</div>"
-            + "<div class='num bot'>" + jugadaCasa[i] + "</div>"
-            + "</div>";            
-
-        }
-        for (let i = 0; i < jugadaJugador.length; i++) {
-            // manoJugador.innerHTML += "<div>" + jugadaJugador[i] + "</div>";
-            manoJugador.innerHTML += "<div class='carta'>"            
-            +"<div class='num top'>" + jugadaJugador[i] + "</div>"
-            +"<div class='palo'>" + iconoPica + "</div>"
-            +"<div class='num bot'>" + jugadaJugador[i] + "</div>"
-            +"</div>";
-        }
+    manoCasa.innerHTML = '';
+    manoJugador.innerHTML = '';
+    for (let i = 0; i < jugadaCasa.length; i++) {
+       manoCasa.innerHTML += "<div class='carta'>"
+       + "<div class='num top'>" + jugadaCasa[i] + "</div>" 
+       + "<div class='palo'>" + iconoDiamantes + "</div>"
+       + "<div class='num bot'>" + jugadaCasa[i] + "</div>" 
+       + "</div>";
     }
+    for (let i = 0; i < jugadaJugador.length; i++) {
+       manoJugador.innerHTML += "<div class='carta'>"
+       + "<div class='num top'>" + jugadaJugador[i] + "</div>" 
+       + "<div class='palo'>" + iconoPicas + "</div>"
+       + "<div class='num bot'>" + jugadaJugador[i] + "</div>" 
+       + "</div>";
+    }
+}
+
 
     // Le damos la función al ganador, el ganador debe tener 21 puntos no pasarse de 21 puntos.
     function ganador() {
@@ -302,6 +401,7 @@ function jugar() {
 empezar();
 
 }
+
 
 // este es otro método de la función para los botones
 // Event listener

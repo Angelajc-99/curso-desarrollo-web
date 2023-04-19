@@ -16,7 +16,7 @@
     position: absolute;
     top: 0;
     left: 50%;
-    transform: translate(220%, 75% );
+    transform: translate(360%, 50% );
 
 
 }
@@ -26,7 +26,7 @@
 /* #fichas {
     display: none;
 } */
-/* .ficha:before {
+.ficha:before {
     position: absolute;
     content: "";
     z-index: 1;
@@ -37,7 +37,7 @@
     left: 4px;   
     background-size: 75px 75px;
     background-position: center center;
-} */
+}
 .ficha:after {
     z-index: 2;
     position: absolute;
@@ -52,31 +52,44 @@
     left: 10px;
 }
 /* Colores */
-.azul {
+.rosa {
     background-image: linear-gradient(0deg, transparent 0, transparent 34px, #fff 34px, #fff 42px, transparent 42px, transparent 75px), linear-gradient(60deg, transparent 0, transparent 44px, #fff 44px, #fff 57px, transparent 57px, transparent 75px), linear-gradient(120deg, #cb488e 0, #cb488e 44px, #fff 44px, #fff 57px, #cb488e 57px, #cb488e 75px);
 }
-.azul:before {
+.rosa:before {
     border: 5px solid #cb488e;
     background-image: linear-gradient(0deg, transparent 0, transparent 35px, #EBEBEB 35px, #EBEBEB 41px, transparent 41px, transparent 75px), linear-gradient(30deg, transparent 0, transparent 49px, #EBEBEB 49px, #EBEBEB 55px, transparent 55px, transparent 75px), linear-gradient(60deg, transparent 0, transparent 49px, #EBEBEB 49px, #EBEBEB 55px, transparent 55px, transparent 75px), linear-gradient(90deg, transparent 0, transparent 35px, #EBEBEB 35px, #EBEBEB 41px, transparent 41px, transparent 75px), linear-gradient(120deg, transparent 0, transparent 49px, #EBEBEB 49px, #EBEBEB 55px, transparent 55px, transparent 75px), linear-gradient(150deg, #cb488e 0, #cb488e 49px, #EBEBEB 49px, #EBEBEB 55px, #cb488e 55px, #cb488e 75px);
 }
-.azul:after {
+.rosa:after {
     content: "10";
     background: #cb488e;
     color: whitesmoke;
     border: 1px solid #cb488e;
 }
-.verde {
-    background-image: linear-gradient(0deg, transparent 0, transparent 34px, #fff 34px, #fff 42px, transparent 42px, transparent 75px), linear-gradient(60deg, transparent 0, transparent 44px, #fff 44px, #fff 57px, transparent 57px, transparent 75px), linear-gradient(120deg, #008000 0, #008000 44px, #fff 44px, #fff 57px, #008000 57px, #008000 75px);
+.azul {
+    background-image: linear-gradient(0deg, transparent 0, transparent 34px, #fff 34px, #fff 42px, transparent 42px, transparent 75px), linear-gradient(60deg, transparent 0, transparent 44px, #fff 44px, #fff 57px, transparent 57px, transparent 75px), linear-gradient(120deg, #08cae8 0, #08cae8 44px, #fff 44px, #fff 57px, #08cae8 57px, #08cae8 75px);
 }
-.verde:before {
-    border: 5px solid #008000;
-    background-image: linear-gradient(0deg, transparent 0, transparent 35px, #EBEBEB 35px, #EBEBEB 41px, transparent 41px, transparent 75px), linear-gradient(30deg, transparent 0, transparent 49px, #EBEBEB 49px, #EBEBEB 55px, transparent 55px, transparent 75px), linear-gradient(60deg, transparent 0, transparent 49px, #EBEBEB 49px, #EBEBEB 55px, transparent 55px, transparent 75px), linear-gradient(90deg, transparent 0, transparent 35px, #EBEBEB 35px, #EBEBEB 41px, transparent 41px, transparent 75px), linear-gradient(120deg, transparent 0, transparent 49px, #EBEBEB 49px, #EBEBEB 55px, transparent 55px, transparent 75px), linear-gradient(150deg, #016C00 0, #016C00 49px, #EBEBEB 49px, #EBEBEB 55px, #016C00 55px, #016C00 75px);
+.azul:before {
+    border: 5px solid #08cae8;
+    background-image: linear-gradient(0deg, transparent 0, transparent 35px, #EBEBEB 35px, #EBEBEB 41px, transparent 41px, transparent 75px), linear-gradient(30deg, transparent 0, transparent 49px, #EBEBEB 49px, #EBEBEB 55px, transparent 55px, transparent 75px), linear-gradient(60deg, transparent 0, transparent 49px, #EBEBEB 49px, #EBEBEB 55px, transparent 55px, transparent 75px), linear-gradient(90deg, transparent 0, transparent 35px, #EBEBEB 35px, #EBEBEB 41px, transparent 41px, transparent 75px), linear-gradient(120deg, transparent 0, transparent 49px, #EBEBEB 49px, #EBEBEB 55px, transparent 55px, transparent 75px), linear-gradient(150deg, #08cae8 0, #08cae8 49px, #EBEBEB 49px, #EBEBEB 55px, #08cae8 55px, #08cae8 75px);
 }
-.verde:after {
+.azul:after {
     content: "25";
-    background: #016C00;
+    background: #08cae8;
     color: whitesmoke;
-    border: 1px solid #016C00;
+    border: 1px solid #08cae8;
+}
+.lila {
+    background-image: linear-gradient(0deg, transparent 0, transparent 34px, #fff 34px, #fff 42px, transparent 42px, transparent 75px), linear-gradient(60deg, transparent 0, transparent 44px, #fff 44px, #fff 57px, transparent 57px, transparent 75px), linear-gradient(120deg, #7428ef 0, #7428ef 44px, #fff 44px, #fff 57px, #7428ef 57px, #7428ef 75px);
+}
+.lila:before {
+    border: 5px solid #7428ef;
+    background-image: linear-gradient(0deg, transparent 0, transparent 35px, #EBEBEB 35px, #EBEBEB 41px, transparent 41px, transparent 75px), linear-gradient(30deg, transparent 0, transparent 49px, #EBEBEB 49px, #EBEBEB 55px, transparent 55px, transparent 75px), linear-gradient(60deg, transparent 0, transparent 49px, #EBEBEB 49px, #EBEBEB 55px, transparent 55px, transparent 75px), linear-gradient(90deg, transparent 0, transparent 35px, #EBEBEB 35px, #EBEBEB 41px, transparent 41px, transparent 75px), linear-gradient(120deg, transparent 0, transparent 49px, #EBEBEB 49px, #EBEBEB 55px, transparent 55px, transparent 75px), linear-gradient(150deg, #7428ef 0, #7428ef 49px, #EBEBEB 49px, #EBEBEB 55px, #7428ef 55px, #7428ef 75px);
+}
+.lila:after {
+    content: "50";
+    background: #7428ef;
+    color: whitesmoke;
+    border: 1px solid #7428ef;
 }
 .negra {
     background-image: linear-gradient(0deg, transparent 0, transparent 34px, #fff 34px, #fff 42px, transparent 42px, transparent 75px), linear-gradient(60deg, transparent 0, transparent 44px, #fff 44px, #fff 57px, transparent 57px, transparent 75px), linear-gradient(120deg, #222222 0, #222222 44px, #fff 44px, #fff 57px, #222222 57px, #222222 75px);
@@ -87,7 +100,7 @@
     
 }
 .negra:after {
-    content: "50";
+    content: "100";
     background: #000000;
     color: whitesmoke;
     border: 1px solid #000000;

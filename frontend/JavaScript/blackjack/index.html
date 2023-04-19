@@ -21,9 +21,12 @@
 </head>
 
 <body>
+    
 
     <div class="contenedor">
         <h1>Blackjack</h1>
+
+        <div id="cont-baraja"></div>
 
         <div id="tab">
             <div class="tab-casa">
@@ -46,14 +49,19 @@
             <button id="btn-plantarse" onclick="plantarse()">Plantarse</button>
         </div>
         <div class="apuestas">
-            <div class="ficha azul" onclick="apostar(10)"></div>
-            <div class="ficha verde" onclick="apostar(25)"></div>
-            <div class="ficha negra" onclick="apostar(50)"></div>
+            <div class="ficha rosa" onclick="apostar(10)"></div>
+            <div class="ficha azul" onclick="apostar(25)"></div>
+            <div class="ficha lila" onclick="apostar(50)"></div>
+            <div class="ficha negra" onclick="apostar(100)"></div>
         </div>
 		<div id="info">
             <!-- <p>Puntos: <span id="puntos-casa"></span></p>
             <p>Puntos: <span id="puntos-jugador"></span></p> -->
         </div>
+        <button onclick="voltearBaraja()">Voltear cartas</button>
+        <button onclick="juntar()">Juntar cartas</button>
+        <button onclick="separar()">Separar cartas</button>
+        <button onclick="mezclar()">Mezclar cartas</button>
         
     </div>
 </body>
