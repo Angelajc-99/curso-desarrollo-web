@@ -167,13 +167,17 @@ span#mano-jugador {
     border: 1px solid var(--palo-negro);
     box-shadow: 0 0 2px 2px var(--palo-negro);
 }
-/*  alto y ancho de la imagen
+/*  alto y ancho de la imagen*/
 .carta img {
     height: 10vh;
-    width: 2vw;
+    width: 3vw;
+    background-size: cover;
+    
     border-radius: 2px;
+    justify-content: center;
+    display: flex;
     object-fit: cover;
-} */
+} 
 .duda, #mano-casa .duda {
     color: #eff;
     text-shadow: 0 0 3px #eff;

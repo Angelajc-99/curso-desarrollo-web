@@ -9,10 +9,10 @@ let iconoTreboles = `<i class="bi bi-suit-club"></i>`;
 function crearBaraja(){
     let baraja = new Array();
     let palos = {
-        "D":"Diamantes",
-        "P":"Picas",
-        "C":"Corazones",
-        "T":"Treboles"        
+        "D": "Diamantes",
+        "P": "Picas",
+        "C": "Corazones",
+        "T": "Treboles"        
     }
     let rangos = new Array("A", 2, 3, 4, 5, 6, 7, 8, 9, 0, "J", "Q", "K");
 
@@ -50,12 +50,18 @@ function crearBaraja(){
           default:
             break;
         }
-        contBaraja.innerHTML += 
-        "<div class='carta baraja' style='color:"+ color +"'>"
-        + "<div class='num top'>" + valor + "</div>" 
+        contBaraja.innerHTML +=
+        "<div id='" + baraja[i] + "' class='carta baraja'>"
+        + "<div class='carta-contenedor'>"
+        + "<div class='frontal " + color + "'>"
+        + "<div class='num top'>" + valor + "</div>"
         + "<div class='palo'>" + print + "</div>"
-        + "<div class='num bot'>" + valor + "</div>" 
-        + "</div>";
+        + "<div class='num bot'>" + valor + "</div>"
+        + "</div>"
+
+        + "<div class='duda trasera'><div class='palo'>" + iconoDuda + "</div></div>"
+            + "</div>"
+            + "</div>";
 
         let cartaTop = document.querySelectorAll('.baraja');
         cartaTop[cartaTop.length - 1].style.zIndex = i;
