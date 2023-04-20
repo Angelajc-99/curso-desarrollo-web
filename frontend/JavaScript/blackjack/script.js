@@ -1,10 +1,10 @@
 const contBaraja = document.getElementById('cont-baraja');
 // Iconos de las cartas
-let iconoDuda = `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM0orMxiFqjl1Isfc-g_XlOrY56_KJvHg9Ag&usqp=CAU">`;
-let iconoDiamantes = `<i class='bi bi-suit-diamond'></i>`;
-let iconoPicas = `<i class="bi bi-suit-spade"></i>`;
-let iconoCorazones = `<i class="bi bi-suit-heart"></i>`;
-let iconoTreboles = `<i class="bi bi-suit-club"></i>`;
+let iconoDuda = `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpnNpqBKiuXKwoadqpErhb029NkX1Z3jmH0Q&usqp=CAU">`;
+let iconoDiamantes = `<i class="bi bi-suit-diamond-fill"></i>`;
+let iconoPicas = `<i class="bi bi-suit-spade-fill"></i>`;
+let iconoCorazones = `<i class="bi bi-suit-heart-fill"></i>`;
+let iconoTreboles = `<i class="bi bi-suit-club-fill"></i>`;
 
 function crearBaraja(){
     let baraja = new Array();

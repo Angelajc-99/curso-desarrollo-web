@@ -175,6 +175,9 @@ span#mano-jugador {
     border: 1px solid var(--palo-rojo);
     box-shadow: 0 0 2px 2px var(--palo-rojo);
 }
+/* .carta .duda {
+    border: #c506bc;
+} */
 .carta-roja {
     color: var(--palo-rojo);
     text-shadow: 0 0 15px var(--palo-rojo);
