@@ -65,6 +65,11 @@ span#mano-jugador {
     --tiempo-anim: 3s;
     --palo-negro: #069FC5;
     --palo-rojo: #c52c06;
+} 
+.cartas-mesa {
+    display: flex;
+    justify-content: center;
+    /* flex-wrap: wrap; */
 }
 span#mano-casa {
     color: var(--palo-rojo);
@@ -77,8 +82,14 @@ span#mano-jugador {
 .carta {
     height: 90px;
     width: 60px;
-    border: 1px solid rgb(110, 97, 97);
-    border-radius: 5px;
+    min-width: 60px;
+    /* border: 1px solid rgb(97, 105, 110); */
+    /* box-shadow: 0 0 3px 2px var(--palo-negro); */
+
+    /* border-radius: 5px; */
+    
+    margin: 5px;
+    padding: 3px;
 
     /* perspective: 500px; */
 
@@ -105,10 +116,10 @@ span#mano-jugador {
 }
 
 .carta * {
-    text-shadow: 0 0 8px;
+    text-shadow: 0 0 8px 3;
 }
 .frontal, .trasera {
-    background: #161515cc;
+    /* background: #5b2424cc; */
     border-radius: 2.5px;
     position: absolute;
     height: 100%;
@@ -126,6 +137,15 @@ span#mano-jugador {
 .oculta {
     display: none !important;
 }
+.carta-negra {
+    color: var(--palo-negro);
+    text-shadow: 0 0 3px var(--palo-negro);
+}
+.carta-roja {
+    color: #069FC5;
+
+    color: var(--palo-rojo);
+}
 .carta .num {
     font-family: 'Cousine', monospace;
     /* font-family: 'Rubik', sans-serif; */
@@ -133,10 +153,10 @@ span#mano-jugador {
     margin: 0 2px;
     font-size: 1.3rem;
 }
-.carta .num.top {
+/* .carta .num.top {
     top: 0;
     left: 0;
-}
+} */
 .carta .num.bot {
     bottom: 0;
     right: 0;
@@ -157,23 +177,23 @@ span#mano-jugador {
 }
 .carta-roja {
     color: var(--palo-rojo);
-    text-shadow: 0 0 3px var(--palo-rojo);
+    text-shadow: 0 0 15px var(--palo-rojo);
     border: 1px solid var(--palo-rojo);
     box-shadow: 0 0 2px 2px var(--palo-rojo);
 }
 .carta-negra {
     color: var(--palo-negro);
-    text-shadow: 0 0 3px var(--palo-negro);
+    text-shadow: 0 0 15px var(--palo-negro);
     border: 1px solid var(--palo-negro);
     box-shadow: 0 0 2px 2px var(--palo-negro);
 }
 /*  alto y ancho de la imagen*/
 .carta img {
-    height: 10vh;
-    width: 3vw;
+    height: 100%;
+    width: 100%;
     background-size: cover;
-    
-    border-radius: 2px;
+
+    border-radius: 7px;
     justify-content: center;
     display: flex;
     object-fit: cover;
@@ -181,8 +201,8 @@ span#mano-jugador {
 .duda, #mano-casa .duda {
     color: #eff;
     text-shadow: 0 0 3px #eff;
-    border: 1px solid #eff;
-    box-shadow: 0 0 2px 2px #eff;
+    border: 1px solid #069FC5;
+    box-shadow: 0 0 2px 2px rgb(20, 149, 189);
     transform-origin: center center;
     /* transform: rotateY(180deg); */
     transition: all .4s;
@@ -191,19 +211,7 @@ span#mano-jugador {
     align-items: center;
     /* animation: flicker-shadow var(--tiempo-anim) linear; */
 }
-.duda .bi-question-lg::before {
-    /* transform: rotateY(180deg); */
-}
-#mano-casa .carta.duda .palo {
-    /* animation: flicker var(--tiempo-anim) linear; */
-}
-.carta:hover {
-    /* animation: flicker-shadow var(--tiempo-anim) linear infinite; */
-}
-.carta:hover div {
-    /* animation: flicker 3s linear infinite;
-    animation: flicker var(--tiempo-anim) linear; */
-}
+
 #mano-jugador .carta .carta-contenedor {
     border: 1px solid var(--palo-negro);
     box-shadow: 0 0 2px 2px var(--palo-negro);

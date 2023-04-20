@@ -1,6 +1,6 @@
 const contBaraja = document.getElementById('cont-baraja');
 // Iconos de las cartas
-let iconoDuda = `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQttJ7cCjpB5DEzDtAPwvHE3SEsQwCOl3ui36LPXtAkZ_lRk2bjRcI_Rregj2CQqX0aC7w&usqp=CAU">`;
+let iconoDuda = `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM0orMxiFqjl1Isfc-g_XlOrY56_KJvHg9Ag&usqp=CAU">`;
 let iconoDiamantes = `<i class='bi bi-suit-diamond'></i>`;
 let iconoPicas = `<i class="bi bi-suit-spade"></i>`;
 let iconoCorazones = `<i class="bi bi-suit-heart"></i>`;
@@ -33,19 +33,19 @@ function crearBaraja(){
         switch (palo){
             case 'D':
                 print = iconoDiamantes;
-                color = '#c52c06';
+                color = 'carta-roja';
                 break
             case 'P':
                  print = iconoPicas;
-                 color = '#069FC5';
+                 color = 'carta-negra';
                  break
              case 'C':
                 print = iconoCorazones;
-                color = '#c52c06';
+                color = 'carta-roja';
                 break
             case 'T':
                 print = iconoTreboles;
-                color = '#069FC5';
+                color = 'carta-negra';
                 break
           default:
             break;
@@ -59,7 +59,7 @@ function crearBaraja(){
         + "<div class='num bot'>" + valor + "</div>"
         + "</div>"
 
-        + "<div class='duda trasera'><div class='palo'>" + iconoDuda + "</div></div>"
+        + "<div class='duda trasera'>" + iconoDuda + "</div>"
             + "</div>"
             + "</div>";
 
@@ -92,8 +92,48 @@ function voltearBaraja() {
 }
 
 function juntar() {
+    for (let i = 0; i < baraja.length; i++) {
+        baraja[i].style.marginLeft = '-59.85px';
+
+    }
+
+    // contenedorBaraja.style.flexWrap = 'nowrap';
 
 }
+function separar() {
+    for (let i = 0; i < baraja.length; i++) {
+        baraja[i].style.marginLeft = '0';
+
+    }
+
+    // contenedorBaraja.style.flexWrap = 'wrap';
+}
+function mezclar() {
+    let listado = [];
+    for (let i = 0; i < baraja.length; i++) {
+        listado[i] = i;
+    }
+    let currentIndex = listado.length,  randomIndex;
+
+    // While there remain elements to shuffle.
+    while (currentIndex != 0) {
+
+      // Pick a remaining element.
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      // And swap it with the current element.
+      [listado[currentIndex], listado[randomIndex]] = [
+        listado[randomIndex], listado[currentIndex]];
+    }
+
+    for (let i = 0; i < baraja.length; i++) {
+        baraja[i].style.order = listado[i];
+        baraja[i].style.zIndex = listado[i];
+
+    }
+  }
+
 
 // Juego de la casa
 //     "A" {
@@ -261,18 +301,18 @@ function desactivarBotones() {
     manoCasa.innerHTML = '';
     manoJugador.innerHTML = '';
     for (let i = 0; i < jugadaCasa.length; i++) {
-       manoCasa.innerHTML += "<div class='carta'>"
-       + "<div class='num top'>" + jugadaCasa[i] + "</div>" 
-       + "<div class='palo'>" + iconoDiamantes + "</div>"
-       + "<div class='num bot'>" + jugadaCasa[i] + "</div>" 
-       + "</div>";
+        manoCasa.innerHTML += "<div class='carta'>"
+            + "<div class='num top'>" + jugadaCasa[i] + "</div>"
+            + "<div class='palo'>" + iconoDiamantes + "</div>"
+            + "<div class='num bot'>" + jugadaCasa[i] + "</div>"
+            + "</div>";
     }
     for (let i = 0; i < jugadaJugador.length; i++) {
-       manoJugador.innerHTML += "<div class='carta'>"
-       + "<div class='num top'>" + jugadaJugador[i] + "</div>" 
-       + "<div class='palo'>" + iconoPicas + "</div>"
-       + "<div class='num bot'>" + jugadaJugador[i] + "</div>" 
-       + "</div>";
+        manoJugador.innerHTML += "<div class='carta'>"
+            + "<div class='num top'>" + jugadaJugador[i] + "</div>"
+            + "<div class='palo'>" + iconoPicas + "</div>"
+            + "<div class='num bot'>" + jugadaJugador[i] + "</div>"
+            + "</div>";
     }
 }
 
@@ -420,3 +460,55 @@ function playagain() {
 
 
 }
+// German
+
+let cartas = document.querySelectorAll('.card');
+
+for (let i = 0; i < cartas.length; i++) {
+    cartas[i].classList.remove('card');
+
+}
+
+
+function juntar() {
+    for (let i = 0; i < baraja.length; i++) {
+        baraja[i].style.marginLeft = '-59.85px';
+
+    }
+
+    // contenedorBaraja.style.flexWrap = 'nowrap';
+
+}
+function separar() {
+    for (let i = 0; i < baraja.length; i++) {
+        baraja[i].style.marginLeft = '0';
+
+    }
+
+    // contenedorBaraja.style.flexWrap = 'wrap';
+}
+function mezclar() {
+    let listado = [];
+    for (let i = 0; i < baraja.length; i++) {
+        listado[i] = i;
+    }
+    let currentIndex = listado.length,  randomIndex;
+
+    // While there remain elements to shuffle.
+    while (currentIndex != 0) {
+
+      // Pick a remaining element.
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      // And swap it with the current element.
+      [listado[currentIndex], listado[randomIndex]] = [
+        listado[randomIndex], listado[currentIndex]];
+    }
+
+    for (let i = 0; i < baraja.length; i++) {
+        baraja[i].style.order = listado[i];
+        baraja[i].style.zIndex = listado[i];
+
+    }
+  }
