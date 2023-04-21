@@ -1,138 +1,139 @@
+// funcion para la baraja que creamos
 const contBaraja = document.getElementById('cont-baraja');
 // Iconos de las cartas
 let iconoDuda = `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpnNpqBKiuXKwoadqpErhb029NkX1Z3jmH0Q&usqp=CAU">`;
-let iconoDiamantes = `<i class="bi bi-suit-diamond-fill"></i>`;
-let iconoPicas = `<i class="bi bi-suit-spade-fill"></i>`;
-let iconoCorazones = `<i class="bi bi-suit-heart-fill"></i>`;
+let iconoDiamantes = `<i class="bi bi-suit-diamond"></i>`;
+let iconoPicas = `<i class="bi bi-suit-diamond"></i>`;
+let iconoCorazones = `<i class="bi bi-suit-heart"></i></i>`;
 let iconoTreboles = `<i class="bi bi-suit-club-fill"></i>`;
 
-function crearBaraja(){
-    let baraja = new Array();
-    let palos = {
-        "D": "Diamantes",
-        "P": "Picas",
-        "C": "Corazones",
-        "T": "Treboles"        
-    }
-    let rangos = new Array("A", 2, 3, 4, 5, 6, 7, 8, 9, 0, "J", "Q", "K");
+// function crearBaraja(){
+//     let baraja = new Array();
+//     let palos = {
+//         "D": "Diamantes",
+//         "P": "Picas",
+//         "C": "Corazones",
+//         "T": "Treboles"        
+//     }
+//     let rangos = new Array("A", 2, 3, 4, 5, 6, 7, 8, 9, 0, "J", "Q", "K");
 
-     Object.keys(palos).forEach(function (value) {
-        for (let i = 0; i < rangos.length; i++) {
-            baraja.push(rangos[i] + value);
+//      Object.keys(palos).forEach(function (value) {
+//         for (let i = 0; i < rangos.length; i++) {
+//             baraja.push(rangos[i] + value);
             
-        }
-    })
-    console.log(baraja);
+//         }
+//     })
+//     console.log(baraja);
 
-    for (let i = 0; i < baraja.length; i++) {
-        let valor = baraja[i].charAt(0);
-        if(valor == 0) valor = 10;
-        let palo = baraja[i].charAt(1);
-        let print = '';
-        let color = '';
-        switch (palo){
-            case 'D':
-                print = iconoDiamantes;
-                color = 'carta-roja';
-                break
-            case 'P':
-                 print = iconoPicas;
-                 color = 'carta-negra';
-                 break
-             case 'C':
-                print = iconoCorazones;
-                color = 'carta-roja';
-                break
-            case 'T':
-                print = iconoTreboles;
-                color = 'carta-negra';
-                break
-          default:
-            break;
-        }
-        contBaraja.innerHTML +=
-        "<div id='" + baraja[i] + "' class='carta baraja'>"
-        + "<div class='carta-contenedor'>"
-        + "<div class='frontal " + color + "'>"
-        + "<div class='num top'>" + valor + "</div>"
-        + "<div class='palo'>" + print + "</div>"
-        + "<div class='num bot'>" + valor + "</div>"
-        + "</div>"
+//     for (let i = 0; i < baraja.length; i++) {
+//         let valor = baraja[i].charAt(0);
+//         if(valor == 0) valor = 10;
+//         let palo = baraja[i].charAt(1);
+//         let print = '';
+//         let color = '';
+//         switch (palo){
+//             case 'D':
+//                 print = iconoDiamantes;
+//                 color = 'carta-roja';
+//                 break
+//             case 'P':
+//                  print = iconoPicas;
+//                  color = 'carta-negra';
+//                  break
+//              case 'C':
+//                 print = iconoCorazones;
+//                 color = 'carta-roja';
+//                 break
+//             case 'T':
+//                 print = iconoTreboles;
+//                 color = 'carta-negra';
+//                 break
+//           default:
+//             break;
+//         }
+//         contBaraja.innerHTML +=
+//         "<div id='" + baraja[i] + "' class='carta baraja'>"
+//         + "<div class='carta-contenedor'>"
+//         + "<div class='frontal " + color + "'>"
+//         + "<div class='num top'>" + valor + "</div>"
+//         + "<div class='palo'>" + print + "</div>"
+//         + "<div class='num bot'>" + valor + "</div>"
+//         + "</div>"
 
-        + "<div class='duda trasera'>" + iconoDuda + "</div>"
-            + "</div>"
-            + "</div>";
+//         + "<div class='duda trasera'>" + iconoDuda + "</div>"
+//             + "</div>"
+//             + "</div>";
 
-        let cartaTop = document.querySelectorAll('.baraja');
-        cartaTop[cartaTop.length - 1].style.zIndex = i;
-        // cartaTop[cartaTop.length - 1].style.boxShadow = "0 0 2px 1px #eff";
-        // cartaTop[cartaTop.length - 1].style.position = "absolute";
-        // cartaTop[cartaTop.length - 1].style.left = i/3+"px";
-        // cartaTop[cartaTop.length - 1].style.top = i+"px";
-    }
-}
-crearBaraja();
-let baraja = document.querySelectorAll('.baraja');
-let caraCartas = document.querySelectorAll('.baraja .carta-contenedor');
-let barajaTrasera = document.querySelectorAll('.trasera');
-let num = document.querySelectorAll('.baraja .num');
-let palos = document.querySelectorAll('.baraja .palo');
+//         let cartaTop = document.querySelectorAll('.baraja');
+//         cartaTop[cartaTop.length - 1].style.zIndex = i;
+//         // cartaTop[cartaTop.length - 1].style.boxShadow = "0 0 2px 1px #eff";
+//         // cartaTop[cartaTop.length - 1].style.position = "absolute";
+//         // cartaTop[cartaTop.length - 1].style.left = i/3+"px";
+//         // cartaTop[cartaTop.length - 1].style.top = i+"px";
+//     }
+// }
+// crearBaraja();
+// let baraja = document.querySelectorAll('.baraja');
+// let caraCartas = document.querySelectorAll('.baraja .carta-contenedor');
+// let barajaTrasera = document.querySelectorAll('.trasera');
+// let num = document.querySelectorAll('.baraja .num');
+// let palos = document.querySelectorAll('.baraja .palo');
 
-function voltearBaraja() {
+// function voltearBaraja() {
 
-    if (caraCartas[0].classList.contains('voltear')) {
-        for (let i = 0; i < caraCartas.length; i++) {
-            caraCartas[i].classList.remove('voltear');
-        }
-    } else {
-        for (let i = 0; i < caraCartas.length; i++) {
-            caraCartas[i].classList.add('voltear');
-        }
-    }
-}
+//     if (caraCartas[0].classList.contains('voltear')) {
+//         for (let i = 0; i < caraCartas.length; i++) {
+//             caraCartas[i].classList.remove('voltear');
+//         }
+//     } else {
+//         for (let i = 0; i < caraCartas.length; i++) {
+//             caraCartas[i].classList.add('voltear');
+//         }
+//     }
+// }
 
-function juntar() {
-    for (let i = 0; i < baraja.length; i++) {
-        baraja[i].style.marginLeft = '-59.85px';
+// function juntar() {
+//     for (let i = 0; i < baraja.length; i++) {
+//         baraja[i].style.marginLeft = '-59.85px';
 
-    }
+//     }
 
     // contenedorBaraja.style.flexWrap = 'nowrap';
 
-}
-function separar() {
-    for (let i = 0; i < baraja.length; i++) {
-        baraja[i].style.marginLeft = '0';
+// }
+// function separar() {
+//     for (let i = 0; i < baraja.length; i++) {
+//         baraja[i].style.marginLeft = '0';
 
-    }
+//     }
 
-    // contenedorBaraja.style.flexWrap = 'wrap';
-}
-function mezclar() {
-    let listado = [];
-    for (let i = 0; i < baraja.length; i++) {
-        listado[i] = i;
-    }
-    let currentIndex = listado.length,  randomIndex;
+//     // contenedorBaraja.style.flexWrap = 'wrap';
+// }
+// function mezclar() {
+//     let listado = [];
+//     for (let i = 0; i < baraja.length; i++) {
+//         listado[i] = i;
+//     }
+//     let currentIndex = listado.length,  randomIndex;
 
-    // While there remain elements to shuffle.
-    while (currentIndex != 0) {
+//     // While there remain elements to shuffle.
+//     while (currentIndex != 0) {
 
-      // Pick a remaining element.
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
+//       // Pick a remaining element.
+//       randomIndex = Math.floor(Math.random() * currentIndex);
+//       currentIndex--;
 
-      // And swap it with the current element.
-      [listado[currentIndex], listado[randomIndex]] = [
-        listado[randomIndex], listado[currentIndex]];
-    }
+//       // And swap it with the current element.
+//       [listado[currentIndex], listado[randomIndex]] = [
+//         listado[randomIndex], listado[currentIndex]];
+//     }
 
-    for (let i = 0; i < baraja.length; i++) {
-        baraja[i].style.order = listado[i];
-        baraja[i].style.zIndex = listado[i];
+//     for (let i = 0; i < baraja.length; i++) {
+//         baraja[i].style.order = listado[i];
+//         baraja[i].style.zIndex = listado[i];
 
-    }
-  }
+//     }
+//   }
 
 
 // Juego de la casa
@@ -165,7 +166,7 @@ const btnPedir = document.getElementById('btn-pedir');
 const btnPlantarse = document.getElementById('btn-plantarse');
 const tabContent = document.getElementById('tab');
 const reset = document.getElementById('reset');
-const fichas = document.getElementById('fichas');
+const apuestas = document.querySelector('.apuestas');
 
 let jugadorPlantado = false;
 
@@ -174,6 +175,16 @@ let timer = 0;
 
 let temporizador = 0;
 
+// function apostar(){
+//     switch (key) {
+//         case value:
+            
+//             break;
+    
+//         default:
+//             break;
+//     }
+// }
 
 // for (i = 0; i < 100; i++) {
 // 	carta.splice(Math.random() * 52, 0, carta[0]);
@@ -185,14 +196,14 @@ function empezar() {
     // Se resetean las cartas
     jugadaCasa = [];
     jugadaJugador = [];
+    console.log(jugadaCasa)
+    console.log(jugadaJugador)
     // fin = false;
     activarBotones();
 
     //Recogemos las dos cartas iniciales de la casa:
     darCarta("casa");
-    manoCasa.innerHTML += "<div class='carta duda'>"
-        + "<div class='palo'>" + iconoDuda + "</div>"
-        + "</div>";
+   
 
 
     //Recogemos las dos cartas iniciales del jugador:
@@ -201,12 +212,10 @@ function empezar() {
 
     // Recogemos la dos cartas iniciales de la casa:
     darCarta("casa");
-    manoCasa.innerHTML += "<div class='carta duda'>" 
-    + "<div class='palo'>" + iconoDuda + "</div>"
-    + "</div>";
+   
 
     // Cada segundo los tiempos de la animación del parpadeo se randomizan
-    let tempParp = setInterval(parpadeo, 1000);
+    // let tempParp = setInterval(parpadeo, 1000);
 
 }
 
@@ -274,11 +283,7 @@ function desactivarBotones() {
          }
 
          
-    // Se imprime el estado de la partida por consola
-         console.log("Cartas de la casa:" + jugadaCasa.join());
-         console.log("Puntuación de la casa:" + puntosCasa);
-         console.log("Cartas del jugador:" + jugadaJugador.join());
-         console.log("Puntuación del jugador" + puntosJugador);
+  
 
         //  Variables que se imprimen en pantalla
             //  comentamos el join para hacer una funcion la cual me permita mostrar las cartas...
@@ -290,8 +295,8 @@ function desactivarBotones() {
          ganador();
     }
 
-    let iconoDiamante = `<i class='bi bi-suit-diamond-fill'></i>`;
-    let iconoPica = `<i class="bi bi-suit-spade-fill"></i>`;
+    // let iconoDiamante = `<i class='bi bi-suit-diamond-fill'></i>`;
+    // let iconoPica = `<i class="bi bi-suit-spade-fill"></i>`;
 
                 // iconos 
     // let iconoCorazon = `<i class="bi bi-suit-heart-fill"></i>`;
@@ -301,19 +306,35 @@ function desactivarBotones() {
     manoCasa.innerHTML = '';
     manoJugador.innerHTML = '';
     for (let i = 0; i < jugadaCasa.length; i++) {
-        manoCasa.innerHTML += "<div class='carta'>"
+        if(i == 0){
+            manoCasa.innerHTML += "<div class='carta duda'>"
+        + "<div class='palo'>" + iconoDuda + "</div>"
+        + "</div>";
+        }else{
+            manoCasa.innerHTML += "<div class='carta'>"
             + "<div class='num top'>" + jugadaCasa[i] + "</div>"
             + "<div class='palo'>" + iconoDiamantes + "</div>"
             + "<div class='num bot'>" + jugadaCasa[i] + "</div>"
             + "</div>";
+        }
     }
     for (let i = 0; i < jugadaJugador.length; i++) {
         manoJugador.innerHTML += "<div class='carta'>"
             + "<div class='num top'>" + jugadaJugador[i] + "</div>"
-            + "<div class='palo'>" + iconoPicas + "</div>"
+            + "<div class='palo'>" + iconoCorazones + "</div>"
             + "<div class='num bot'>" + jugadaJugador[i] + "</div>"
             + "</div>";
     }
+}
+// fichas de apuestas
+function juntar() {
+    for (let i = 0; i < apostar.length; i++) {
+        apostar[i].style.marginLeft = '-59.85px';
+
+    }
+
+    apuestas.style.flexWrap = 'nowrap';
+
 }
 
 
@@ -441,8 +462,7 @@ function jugar() {
     reset.style.display="flex"
     btnPedir.style.display ="flex"
     btnPlantarse.style.display ="flex"
-    // fichas.style.display ="flex"
-    // apuestas.style.display = "flex"
+    apuestas.style.display ="flex";
     // resultado.style.display ="flex"
 empezar();
 
@@ -457,58 +477,55 @@ empezar();
 
 function playagain() {
     location.reload(true);
-
-
-}
-// German
-
-let cartas = document.querySelectorAll('.card');
-
-for (let i = 0; i < cartas.length; i++) {
-    cartas[i].classList.remove('card');
-
 }
 
+// let cartas = document.querySelectorAll('.card');
 
-function juntar() {
-    for (let i = 0; i < baraja.length; i++) {
-        baraja[i].style.marginLeft = '-59.85px';
+// for (let i = 0; i < cartas.length; i++) {
+//     cartas[i].classList.remove('card');
 
-    }
+// }
 
-    // contenedorBaraja.style.flexWrap = 'nowrap';
 
-}
-function separar() {
-    for (let i = 0; i < baraja.length; i++) {
-        baraja[i].style.marginLeft = '0';
+// function juntar() {
+//     for (let i = 0; i < baraja.length; i++) {
+//         baraja[i].style.marginLeft = '-59.85px';
 
-    }
+//     }
 
-    // contenedorBaraja.style.flexWrap = 'wrap';
-}
-function mezclar() {
-    let listado = [];
-    for (let i = 0; i < baraja.length; i++) {
-        listado[i] = i;
-    }
-    let currentIndex = listado.length,  randomIndex;
+//     // contenedorBaraja.style.flexWrap = 'nowrap';
 
-    // While there remain elements to shuffle.
-    while (currentIndex != 0) {
+// }
+// function separar() {
+//     for (let i = 0; i < baraja.length; i++) {
+//         baraja[i].style.marginLeft = '0';
 
-      // Pick a remaining element.
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
+//     }
 
-      // And swap it with the current element.
-      [listado[currentIndex], listado[randomIndex]] = [
-        listado[randomIndex], listado[currentIndex]];
-    }
+//     // contenedorBaraja.style.flexWrap = 'wrap';
+// }
+// function mezclar() {
+//     let listado = [];
+//     for (let i = 0; i < baraja.length; i++) {
+//         listado[i] = i;
+//     }
+//     let currentIndex = listado.length,  randomIndex;
 
-    for (let i = 0; i < baraja.length; i++) {
-        baraja[i].style.order = listado[i];
-        baraja[i].style.zIndex = listado[i];
+//     // While there remain elements to shuffle.
+//     while (currentIndex != 0) {
 
-    }
-  }
+//       // Pick a remaining element.
+//       randomIndex = Math.floor(Math.random() * currentIndex);
+//       currentIndex--;
+
+//       // And swap it with the current element.
+//       [listado[currentIndex], listado[randomIndex]] = [
+//         listado[randomIndex], listado[currentIndex]];
+//     }
+
+//     for (let i = 0; i < baraja.length; i++) {
+//         baraja[i].style.order = listado[i];
+//         baraja[i].style.zIndex = listado[i];
+
+//     }
+//   }

@@ -1,14 +1,16 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Cousine&family=Rubik&display=swap');
 
-
+* {
+    box-sizing: border-box;
+}
 body {
 
     /* background-image: url("https://static.vecteezy.com/system/resources/previews/002/582/107/non_2x/poker-black-background-playing-card-symbols-pattern-blackjack-vector.jpg"); 
     background-image: url("https://thumbs.dreamstime.com/b/banner-del-casino-cartas-de-apuestas-club-p%C3%B3quer-aprobaci%C3%B3n-fondo-negro-juego-lujo-en-blanco-entretenimiento-vip-victoria-ricos-260655557.jpg"); */
-    background-image: url("https://img.freepik.com/vector-premium/carta-juego-fichas-casino-mano-poquer-ganadoras-que-vuelan-fichas-realistas-apostar-dinero-efectivo-ruleta-o-poquer_29865-2741.jpg");
-    /* background-size: auto");
-    /* background-image: url("https://static.vecteezy.com/system/resources/previews/002/582/107/non_2x/poker-black-background-playing-card-symbols-pattern-blackjack-vector.jpg"); */
+    /* background-image: url("https://img.freepik.com/vector-premium/carta-juego-fichas-casino-mano-poquer-ganadoras-que-vuelan-fichas-realistas-apostar-dinero-efectivo-ruleta-o-poquer_29865-2741.jpg"); */
+    /* background-size: auto");*/
+    background-image: url("https://static.vecteezy.com/system/resources/previews/002/582/107/non_2x/poker-black-background-playing-card-symbols-pattern-blackjack-vector.jpg");
     background-repeat: no-repeat; 
     background-size: cover; 
     background-position: center; 
@@ -41,6 +43,7 @@ h1 {
     /* background-image: url("https://media.istockphoto.com/id/1315444058/es/foto/textura-del-antiguo-fondo-de-primer-plano-del-papel-azul-grunge-marino.jpg?s=612x612&w=0&k=20&c=hNit1OBFAVVfwb81glynRhV6x9sSg-aOqs0A8uKA1Vk="); */
        /* https://media.istockphoto.com/id/177147426/es/foto/de-fondo.jpg?s=612x612&w=0&k=20&c=p5m8DNSBNMB0lhlZjwlEmcvGXtzHjo3yY2YPXquD0YA= */
     /* background-image: url("https://static.vecteezy.com/system/resources/previews/002/582/107/non_2x/poker-black-background-playing-card-symbols-pattern-blackjack-vector.jpg"); */
+    background-image: url("https://media.istockphoto.com/id/1315444058/es/foto/textura-del-antiguo-fondo-de-primer-plano-del-papel-azul-grunge-marino.jpg?s=612x612&w=0&k=20&c=hNit1OBFAVVfwb81glynRhV6x9sSg-aOqs0A8uKA1Vk=");
     padding: 50px;
     display: flex;
 

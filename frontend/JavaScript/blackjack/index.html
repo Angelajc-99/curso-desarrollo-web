@@ -8,26 +8,26 @@
     <title>Backjack</title>
     <!-- Boootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <!-- CSS -->
+    <!-- CSS general -->
     <link rel="stylesheet" href="style.css">
     <!-- CSS de las cartas -->
     <link rel="stylesheet" href="cartas.css">
     <!-- CSS de las fichas -->
     <link rel="stylesheet" href="fichas.css">
-    <!-- Gooogle fonts -->
+    <!-- Gooogle fonts página del tipo de letra-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sassy+Frass&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    
-
     <div class="contenedor">
+        <!-- Título
+         -->
         <h1>Blackjack</h1>
+        <!-- <div id="cont-baraja"></div> -->
 
-        <div id="cont-baraja"></div>
-
+            <!-- Contenedor de las cartas y de los puntos -->
         <div id="tab">
             <div class="tab-casa">
                 <p>Cartas de la casa: <br><span class="cartas-mesa" id="mano-casa"></span></p>
@@ -38,16 +38,20 @@
                 <p>Puntos: <span id="puntos-jugador"></span></p>
             </div>
         </div>
+        <!-- Contenedor del resultado -->
         <div class="tab-resultados">
             <p id="resultado"></p>
         </div>
 
+        <!-- Contenedor de los botones -->
         <div class="controls">
             <button id="btn-iniciar" onclick="jugar()">Jugar</button>
             <button id="reset" onclick="playagain()">Jugar de nuevo</button>            
             <button id="btn-pedir" onclick="darCarta('jugador')">Pedir carta</button>
             <button id="btn-plantarse" onclick="plantarse()">Plantarse</button>
         </div>
+
+        <!-- Contenedor d elas fichas para apuestas -->
         <div class="apuestas">
             <div class="ficha rosa" onclick="apostar(10)"></div>
             <div class="ficha azul" onclick="apostar(25)"></div>
@@ -58,15 +62,16 @@
             <!-- <p>Puntos: <span id="puntos-casa"></span></p>
             <p>Puntos: <span id="puntos-jugador"></span></p> -->
         </div>
-        <div class="btn">
+        <!-- <div class="btn">
             <button onclick="voltearBaraja()">Voltear cartas</button>
             <button onclick="juntar()">Juntar cartas</button>
             <button onclick="separar()">Separar cartas</button>
             <button onclick="mezclar()">Mezclar cartas</button>
-        </div>
+        </div> -->
         
     </div>
 </body>
+<!-- Script -->
 <script src="script.js"></script>
 
 </html>

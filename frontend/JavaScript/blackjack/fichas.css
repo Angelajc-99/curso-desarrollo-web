@@ -9,14 +9,18 @@
     background-size: 75px 75px;
     background-position: center center;
 
+    
 }
 .apuestas {
     display: flex;
+    /* float: right; */
+
     flex-direction: column;
     position: absolute;
     top: 0;
     left: 50%;
-    transform: translate(360%, 50% );
+    transform: translate(323%, 31% );
+
 
 
 }
@@ -37,6 +41,7 @@
     left: 4px;   
     background-size: 75px 75px;
     background-position: center center;
+    
 }
 .ficha:after {
     z-index: 2;
@@ -109,4 +114,9 @@
 .ficha:hover {
     transform: scale(1.05);
     cursor: pointer;
+}
+
+.apuestas{
+    display: none;
+    overflow: auto;
 }
