@@ -173,8 +173,24 @@ let jugadorPlantado = false;
 let fin = false;
 let timer = 0;
 
-let temporizador = 0;
+// se crea una función para que se escoja las cartas aleatoriamente
+function empezar(){
+    puntosCasa = 0;
+    manoCasa = [];
 
+    puntosJugador = 0;
+    manoJugador = [];
+
+    resultJuego.innerHTML = "Apuesta";
+
+    if(manoCasa.length == 0 && manoJugador.length == 0) {
+        jugar("casa");
+        jugar("casa");
+
+        jugar("jugador");
+        jugar("jugador");
+    }
+}
 // function apostar(){
 //     switch (key) {
 //         case value:

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Blackjack</h1>
+        <div class="contenido"> 
+            <div class="card"></div>
+            <div id="info">
+                <div class="cont-casa" id="mano-casa" ><span id="puntos-casa"></span></div>
+                <div class="cont-jugador" id="mano-jugador"><span id="puntos-jugador"></span></div>
+                <div class="tab-resultados">
+                    <p id="resultado"></p>
+                </div>
+            </div>
+
+             <!-- Contenedor de los botones -->
+        <div class="controles">
+            <button id="btn-iniciar" onclick="jugar()">Jugar</button>
+            <button id="reset" onclick="playagain()">Jugar de nuevo</button>            
+            <button id="btn-pedir" onclick="darCarta('jugador')">Pedir carta</button>
+            <button id="btn-plantarse" onclick="plantarse()">Plantarse</button>
+        </div>
+
+        <div class="apuestas">
+            <div id="ficha rosa" class="apuesta" onclick="apostar(10)"></div>
+            <div id="ficha azul" class="apuesta" onclick="apostar(25)"></div>
+            <div id="ficha lila" class="apuesta" onclick="apostar(50)"></div>
+            <div id="ficha negra" class="apuesta"  onclick="apostar(100)"></div>
+        </div>
+        <div class="dinero">
+            <p>Saldo restante:</p>
+            <p><span id="total"></span>€</p>
+            <div id="message"></div>
+        </div>
+            
+        </div>        
+    </div>
+    
+</body>
+<script src="script.js"></script>
+</html>
