@@ -69,7 +69,6 @@ h1 {
 
 #tab {
     display: flex;
-    justify-content: space-between;
     display: none;
     /* height: 50%; */
     width: 50%;
@@ -77,6 +76,9 @@ h1 {
 }
 #tab > div {
     margin: 25px;
+    justify-content: center;
+    gap: 15px;
+
 }
 
 .controls {

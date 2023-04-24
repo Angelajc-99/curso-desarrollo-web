@@ -6,7 +6,8 @@ let iconoDiamantes = `<i class="bi bi-suit-diamond"></i>`;
 let iconoPicas = `<i class="bi bi-suit-diamond"></i>`;
 let iconoCorazones = `<i class="bi bi-suit-heart"></i></i>`;
 let iconoTreboles = `<i class="bi bi-suit-club-fill"></i>`;
-let coins = [10, 25, 50, 100]
+let coins = [10, 25, 50, 100] ;
+// let coin =`<i class="bi bi-cash-coin"></i>`;
 
 // Juego de la casa
 let puntosCasa = 0;
@@ -62,8 +63,13 @@ function empezar() {
 
     // Recogemos la dos cartas iniciales de la casa:
     darCarta("casa");
-    cotent.style.display = "block"
-    tabContent.style.display = "block"
+    cotent.style.display = "flex"
+    tabContent.style.display = "flex"
+    btnApostar.style.display = "none"
+    btnPlantarse.style.display ="flex"
+    reset.style.display ="flex"
+
+    btnPedir.style.display ="flex"
 }
 function play() {
     empezar();
@@ -237,7 +243,7 @@ function darCarta(jugada) {
 }
 
 function plantarse() {
-    let info = document.getElementById("info");
+    // let info = document.getElementById("info");
     jugadorPlantado = true;
     desactivarBotones();
     if (puntosJugador > puntosCasa) {
@@ -263,6 +269,7 @@ function jugar() {
 
 function playagain() {
     location.reload(true);
+    console.log(playagain);
 }
 
 function mostrarMonedas() {
