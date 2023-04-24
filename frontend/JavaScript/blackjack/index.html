@@ -22,53 +22,46 @@
 
 <body>
     <div class="contenedor">
-        <!-- Título
-         -->
-        <h1>Blackjack</h1>
-        <!-- <div id="cont-baraja"></div> -->
 
-            <!-- Contenedor de las cartas y de los puntos -->
-        <div id="tab">
-            <div class="tab-casa">
-                <p>Cartas de la casa: <br><span class="cartas-mesa" id="mano-casa"></span></p>
-                <p>Puntos: <span id="puntos-casa"></span></p>
-            </div>
-            <div class="tab-jugador">
-                <p>Cartas del jugador: <span class="cartas-mesa" id="mano-jugador"></span></p>
-                <p>Puntos: <span id="puntos-jugador"></span></p>
-            </div>
-        </div>
-        <!-- Contenedor del resultado -->
-        <div class="tab-resultados">
-            <p id="resultado"></p>
-        </div>
+        <div class="cotent">
+            <h1>Blackjack</h1>
 
+            <div id="tab">
+                <div class="tab-casa">
+                    <p>Cartas de la casa: <br><span class="cartas-mesa" id="mano-casa"></span></p>
+                    <p>Puntos: <span id="puntos-casa"></span></p>
+                </div>
+                <div class="tab-jugador">
+                    <p>Cartas del jugador: <span class="cartas-mesa" id="mano-jugador"></span></p>
+                    <p>Puntos: <span id="puntos-jugador"></span></p>
+                </div>
+            </div>
+            <!-- Contenedor del resultado -->
+            <div class="tab-resultados">
+                <p id="resultado"></p>
+            </div>
+
+
+
+            <div id="info">
+                <!-- <p>Puntos: <span id="puntos-casa"></span></p>
+            <p>Puntos: <span id="puntos-jugador"></span></p> -->
+            </div>
+
+        </div>
         <!-- Contenedor de los botones -->
         <div class="controls">
             <button id="btn-iniciar" onclick="jugar()">Jugar</button>
-            <button id="reset" onclick="playagain()">Jugar de nuevo</button>            
+            <button id="reset" onclick="playagain()">Jugar de nuevo</button>
             <button id="btn-pedir" onclick="darCarta('jugador')">Pedir carta</button>
             <button id="btn-plantarse" onclick="plantarse()">Plantarse</button>
         </div>
 
-        <!-- Contenedor d elas fichas para apuestas -->
+        <!-- Contenedor de las fichas para las apuestas -->
         <div class="apuestas">
-            <div class="ficha rosa" onclick="apostar(10)"></div>
-            <div class="ficha azul" onclick="apostar(25)"></div>
-            <div class="ficha lila" onclick="apostar(50)"></div>
-            <div class="ficha negra" onclick="apostar(100)"></div>
+
         </div>
-		<div id="info">
-            <!-- <p>Puntos: <span id="puntos-casa"></span></p>
-            <p>Puntos: <span id="puntos-jugador"></span></p> -->
-        </div>
-        <!-- <div class="btn">
-            <button onclick="voltearBaraja()">Voltear cartas</button>
-            <button onclick="juntar()">Juntar cartas</button>
-            <button onclick="separar()">Separar cartas</button>
-            <button onclick="mezclar()">Mezclar cartas</button>
-        </div> -->
-        
+        <button id="btn-apostar" onclick="empezar()">Apostar</button>
     </div>
 </body>
 <!-- Script -->

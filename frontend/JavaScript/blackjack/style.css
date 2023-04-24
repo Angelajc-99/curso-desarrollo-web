@@ -54,7 +54,6 @@ h1 {
     box-shadow: 12px 15px 54px 3px rgb(35, 86, 71);
     border-radius: 120px;
 
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -150,5 +149,37 @@ p#resultado {
     margin-top: 30px;
     transition: all .5s;
 }
+#btn-apostar {
+    display: none;
+    height: 6vh;
+    width: 8vw;
 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+
+    background-color: rgb(38, 47, 60);
+    color: rgb(36 169 191);
+
+    border-radius: 21px;
+    border: none;
+
+    transition: all .7s;
+
+    padding: 10px;
+    margin: 20px;
+}
+
+#btn-apostar:hover {
+    box-shadow: 20px 19px 60px -7px rgb(6, 183, 214);
+    cursor: pointer;
+    font-size: 15px;
+}
+
+
+
+.cotent{
+    display: none;
+}
 
