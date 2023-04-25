@@ -4,41 +4,74 @@
     /* justify-content: space-between; */
     justify-content: center;
     gap: 50px;
-    font-size: 50px;
+    font-size: 40px;
 
     display: none;
-    overflow: auto;
+    /* overflow: auto; */
+    align-items: center;
+    padding: 50px;
+
+    /* position: relative; */
 
 }
 
+.apuestas div div{
+    display: flex;
+    background-color: rgb(111, 114, 120);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 200px 200px 200px 200px;
+    box-shadow: 0 5px 26px -1px  rgb(36 169 191);
+    height: 60px;
+    width: 60px;
+    z-index: 1;
+}
+.apuestas i{
+    position: absolute;
+    opacity: 0.;
+    font-size: 60px;
+}
 
-.coin_10 {
-    background-color: rgb(195, 166, 210);
+/* .coin_10 {
+    background-color: rgb(111, 114, 120);
     justify-content: center;
     border-radius: 50%;
+    box-shadow: 0 5px 26px -1px  rgb(36 169 191);
+    height: 82px;
+    width: 113px;
 
 
 }
 .coin_25 {
-    background-color: rgb(195, 166, 210);
+    background-color: rgb(111, 114, 120);
     justify-content: center;
     border-radius: 50%;
+    box-shadow: 0 5px 26px -1px  rgb(36 169 191);
+    height: 82px;
+    width: 113px;
 
 
 }
 .coin_50 {
-    background-color: rgb(195, 166, 210);
+    background-color: rgb(111, 114, 120);
     justify-content: center;
     border-radius: 50%;
+    box-shadow: 0 5px 26px -1px  rgb(36 169 191);
+    height: 82px;
+    width: 113px;
 
 
 }
 .coin_100 {
-    background-color: rgb(195, 166, 210);
+    background-color: rgb(111, 114, 120);
     justify-content: center;
     border-radius: 50%;
+    box-shadow: 0 5px 26px -1px  rgb(36 169 191);
+    height: 82px;
+    width: 113px;
 
 
-}
+} */
 
 

@@ -6,8 +6,8 @@ let iconoDiamantes = `<i class="bi bi-suit-diamond"></i>`;
 let iconoPicas = `<i class="bi bi-suit-diamond"></i>`;
 let iconoCorazones = `<i class="bi bi-suit-heart"></i></i>`;
 let iconoTreboles = `<i class="bi bi-suit-club-fill"></i>`;
+
 let coins = [10, 25, 50, 100] ;
-// let coin =`<i class="bi bi-cash-coin"></i>`;
 
 // Juego de la casa
 let puntosCasa = 0;
@@ -50,6 +50,9 @@ function empezar() {
     // Se resetean las cartas
     jugadaCasa = [];
     jugadaJugador = [];
+    // me ayuda a ocultar las monedas
+    apuestas.style.display = "none";
+
     activarBotones();
 
     //Recogemos las dos cartas iniciales de la casa:
@@ -268,8 +271,9 @@ function jugar() {
 }
 
 function playagain() {
-    location.reload(true);
-    console.log(playagain);
+    cotent.style.display='none';
+    controls.style.display='none';
+    apuestas.style.display='flex';
 }
 
 function mostrarMonedas() {
@@ -297,6 +301,7 @@ function mostrarMonedas() {
         <div>
             <div class="${style_coins}" onclick="apostar(${coin})">$${coin}</div>
         </div>
+        
        `
     })
 
@@ -314,3 +319,12 @@ function apostar(coin) {
     btnApostar.style.display = "flex";
  }
 
+//  otra manera de las monedas
+/* <div>
+     <div class="${style_coins}" onclick="apostar(${coin})"><i class="bi bi-coin"></i>${coin}</div>
+  </div> */
+  
+//   la manera que me enseño román
+//   <div>
+//             <div class="${style_coins}" onclick="apostar(${coin})">$${coin}</div>
+//         </div>
