@@ -1,13 +1,19 @@
 // funcion para la baraja que creamos
 const contBaraja = document.getElementById('cont-baraja');
-// Iconos de las cartas
-let iconoDuda = `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpnNpqBKiuXKwoadqpErhb029NkX1Z3jmH0Q&usqp=CAU">`;
+// Iconos e imagen de las cartas
+let iconoDuda = `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-tPBbSLcRO8Sm7CtdMhObCGBTD9_iX4PcbrIGVtZy2uuEW6HKmUQuWcj0tIdjyI4IboE&usqp=CAU">`;
 let iconoDiamantes = `<i class="bi bi-suit-diamond"></i>`;
 let iconoPicas = `<i class="bi bi-suit-diamond"></i>`;
 let iconoCorazones = `<i class="bi bi-suit-heart"></i></i>`;
 let iconoTreboles = `<i class="bi bi-suit-club-fill"></i>`;
-
+// Array para el valor de las monedas de apuestas
 let coins = [10, 25, 50, 100] ;
+
+ // Variables que nos ayudaran hacer apuestas
+//  let total = 100;
+//  let totalDisplay = document.getElementById("total");
+//  let apuestaDisplay = document.getElementById("mensaje");
+//  let apuesta = 0;
 
 // Juego de la casa
 let puntosCasa = 0;
@@ -73,6 +79,8 @@ function empezar() {
     reset.style.display ="flex"
 
     btnPedir.style.display ="flex"
+
+
 }
 function play() {
     empezar();
@@ -146,6 +154,8 @@ function calcularPuntos() {
     mostrarCartas();
     displayCasa.innerHTML = puntosCasa;
     displayJugador.innerHTML = puntosJugador;
+    // resultadoJuego.innerHTML = "Apuestas";
+
     ganador();
 }
 
@@ -299,7 +309,7 @@ function mostrarMonedas() {
         }
        return `
         <div>
-            <div class="${style_coins}" onclick="apostar(${coin})">$${coin}</div>
+            <div class="${style_coins}" onclick="apostar(${coin})">${coin}€</div>
         </div>
         
        `
@@ -312,12 +322,32 @@ function mostrarMonedas() {
 
 mostrarMonedas()
 
+// totalDisplay.innerHTML = total;
 
 function apostar(coin) { 
     monedasJugador.push(coin)
     console.log(monedasJugador)
     btnApostar.style.display = "flex";
- }
+  
+//     console.log(total);
+        
+//     if ((total - apuesta < 0)) {
+ 
+//        btnIniciar.disabled = true;
+//        let resultado = window.confirm('¡No tienes suficientes fondos!, ¿Quieres volver a iniciar la partida?');
+ 
+//        if (resultado === true) {
+//            total = 50;
+//        }
+//        return true;
+//    } else {
+//     console.log(total);
+//     totalDisplay.innerHTML = total - apuesta;
+
+//     apuestaDisplay.innerHTML = apuesta + " € " + "Apuesta realizada!";
+//     btnIniciar.disabled = false;
+//     }
+}
 
 //  otra manera de las monedas
 /* <div>

@@ -28,6 +28,7 @@ span#mano-jugador {
     height: 90px;
     width: 60px;
     min-width: 60px;
+    box-shadow: rgb(6, 183, 214);
     /* border: 1px solid rgb(97, 105, 110); */
 
     border-radius: 5px;
@@ -48,8 +49,7 @@ span#mano-jugador {
 
 
 .carta .carta-contenedor {
-    /* background: #161515; */
-    /* border-radius: 4px; */
+
     position: relative;
     width: 100%;
     height: 100%;
