@@ -25,10 +25,8 @@ body {
     margin: 0;
 }
 h1 {
-    justify-content: center;
-
     color: rgb(36 169 191);
-
+    text-align: center;
     font-family: 'Sassy Frass', cursive;
     font-size: 83px;
 
@@ -42,9 +40,9 @@ h1 {
     padding: 50px;
     display: flex;
 
-    height: 70vh;
+    height: 90vh;
     width: 50vw;
-    margin: 165px;
+    margin: 0;
 
     box-shadow: 6px 6px 26px -1px  rgb(36 169 191);
     border-radius: 120px;
@@ -119,7 +117,7 @@ button {
 p {
     color: #66adf7;
     font-size: 24px;
-    max-width: 150px;
+    max-width: 100px;
 }
 p span {
     display: flex;
@@ -141,8 +139,7 @@ p#resultado {
     border-radius: 7px;
     max-width: 260vh;
 
-    margin-top: 281px;
-    transition: all .5s;
+margin-bottom: 60px;    transition: all .5s;
 }
 #btn-apostar {
     display: none;
@@ -178,5 +175,6 @@ p#resultado {
     display: block;
     margin: -232px;
     padding: 198px;
+    flex-direction: column;
 }
 

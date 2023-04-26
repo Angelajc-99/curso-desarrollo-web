@@ -13,7 +13,12 @@
 .cartas-mesa {
     display: flex;
     justify-content: center;
+    transition: all 1s;
     /* flex-wrap: wrap; */
+}
+.cartaOculta{
+    transform: translateX(-100px);
+    opacity: 0;
 }
 span#mano-casa {
     color: var(--palo-rojo);
@@ -24,12 +29,12 @@ span#mano-jugador {
     text-shadow: 0 0 3px var(--palo-negro);
 }
 .carta {
-    background: #e2e2e9;
+    /* background: #e2e2e9; */
     height: 90px;
     width: 60px;
     min-width: 60px;
-    box-shadow: rgb(6, 183, 214);
-    /* border: 1px solid rgb(97, 105, 110); */
+    box-shadow: rgb(21, 139, 160);
+    border: 1px solid rgb(97, 105, 110);
 
     border-radius: 5px;
     

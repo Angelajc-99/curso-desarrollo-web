@@ -35,7 +35,7 @@ const btnIniciar = document.getElementById('btn-iniciar');
 const btnPedir = document.getElementById('btn-pedir');
 const btnPlantarse = document.getElementById('btn-plantarse');
 const tabContent = document.getElementById('tab');
-const reset = document.getElementById('reset');
+// const reset = document.getElementById('reset');
 const apuestas = document.querySelector('.apuestas');
 const cotent = document.querySelector('.cotent');
 const controls = document.querySelector('.controls');
@@ -56,8 +56,8 @@ function empezar() {
     // Se resetean las cartas
     jugadaCasa = [];
     jugadaJugador = [];
-    // me ayuda a ocultar las monedas
-    apuestas.style.display = "none";
+    puntosCasa=0;
+    puntosJugador=0;
 
     activarBotones();
 
@@ -71,14 +71,19 @@ function empezar() {
     darCarta();
 
     // Recogemos la dos cartas iniciales de la casa:
-    darCarta("casa");
+    // darCarta("casa");
     cotent.style.display = "flex"
     tabContent.style.display = "flex"
     btnApostar.style.display = "none"
     btnPlantarse.style.display ="flex"
     reset.style.display ="flex"
-
     btnPedir.style.display ="flex"
+    manoCasa.classList.add('cartaOculta');
+    manoJugador.classList.add('cartaOculta');
+
+    
+// totalDisplay.innerHTML = total;
+
 
 
 }
@@ -165,9 +170,14 @@ function mostrarCartas() {
     manoCasa.innerHTML = '';
     manoJugador.innerHTML = '';
     for (let i = 0; i < jugadaCasa.length; i++) {
-        if (i == 0) {
+        if (jugadaCasa.length<2) {
             manoCasa.innerHTML += "<div class='carta duda'>"
                 + "<div class='palo'>" + iconoDuda + "</div>"
+                + "</div>"+
+                "<div class='carta'>"
+                + "<div class='num top'>" + jugadaCasa[i] + "</div>"
+                + "<div class='palo'>" + iconoDiamantes + "</div>"
+                + "<div class='num bot'>" + jugadaCasa[i] + "</div>"
                 + "</div>";
         } else {
             manoCasa.innerHTML += "<div class='carta'>"
@@ -251,8 +261,7 @@ function darCarta(jugada) {
             break;
     }
     //    Cuentas los puntos del jugador y de la casa
-    if (jugadaCasa.length >= 2 && jugadaJugador.length >= 2)
-        calcularPuntos();
+    if (jugadaJugador.length >= 2) calcularPuntos("");
 }
 
 function plantarse() {
@@ -275,15 +284,17 @@ function plantarse() {
 function jugar() {
     btnIniciar.style.display = "none"
     apuestas.style.display = "flex";
-    btnApostar.style.display = "none";
+    btnApostar.style.display = "flex";
+    
+    controls.style.display = "none";
+    empezar();
+
 
 
 }
 
 function playagain() {
-    cotent.style.display='none';
-    controls.style.display='none';
-    apuestas.style.display='flex';
+    empezar();
 }
 
 function mostrarMonedas() {
@@ -322,12 +333,18 @@ function mostrarMonedas() {
 
 mostrarMonedas()
 
-// totalDisplay.innerHTML = total;
 
 function apostar(coin) { 
     monedasJugador.push(coin)
     console.log(monedasJugador)
-    btnApostar.style.display = "flex";
+    btnApostar.style.display = "none";
+    controls.style.display='flex';
+    manoCasa.classList.remove('cartaOculta');
+    manoJugador.classList.remove('cartaOculta');
+
+    calcularPuntos("");
+
+
   
 //     console.log(total);
         
@@ -354,7 +371,7 @@ function apostar(coin) {
      <div class="${style_coins}" onclick="apostar(${coin})"><i class="bi bi-coin"></i>${coin}</div>
   </div> */
   
-//   la manera que me enseño román
+//   primera manera para referirse a las monedas
 //   <div>
 //             <div class="${style_coins}" onclick="apostar(${coin})">$${coin}</div>
 //         </div>
