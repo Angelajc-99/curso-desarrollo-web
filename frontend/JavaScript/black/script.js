@@ -152,23 +152,15 @@ function crearBaraja(){
 crearBaraja(); 
 
 let baraja = document.querySelectorAll('.baraja'); 
-
 let caraCartas = document.querySelectorAll('.baraja .carta-contenedor'); 
-
 let barajaTrasera = document.querySelectorAll('.trasera'); 
-
 let num = document.querySelectorAll('.baraja .num'); 
-
 let palos = document.querySelectorAll('.baraja .palo'); 
 
  
  
 
 function voltearBaraja() { 
-
- 
- 
-
     if (caraCartas[0].classList.contains('voltear')) { 
 
         for (let i = 0; i < caraCartas.length; i++) { 
@@ -197,19 +189,7 @@ function juntar() {
     for (let i = 0; i < baraja.length; i++) { 
 
         baraja[i].style.marginLeft = '-59.85px'; 
-
- 
- 
-
     } 
-
- 
- 
-
-    // contenedorBaraja.style.flexWrap = 'nowrap'; 
-
- 
- 
 
 } 
 
@@ -218,17 +198,7 @@ function separar() {
     for (let i = 0; i < baraja.length; i++) { 
 
         baraja[i].style.marginLeft = '0'; 
-
- 
- 
-
     } 
-
- 
- 
-
-    // contenedorBaraja.style.flexWrap = 'wrap'; 
-
 } 
 
 function mezclar() { 
@@ -256,58 +226,27 @@ function mezclar() {
       // Pick a remaining element. 
 
       randomIndex = Math.floor(Math.random() * currentIndex); 
-
       currentIndex--; 
-
- 
- 
 
       // And swap it with the current element. 
 
       [listado[currentIndex], listado[randomIndex]] = [ 
-
         listado[randomIndex], listado[currentIndex]]; 
 
     } 
 
- 
- 
-
     for (let i = 0; i < baraja.length; i++) { 
-
-        baraja[i].style.order = listado[i]; 
-
-        baraja[i].style.zIndex = listado[i]; 
-
- 
- 
-
+        setTimeout(() => {
+            baraja[listado[i]].style.left = '170px';
+            baraja[listado[i]].style.zIndex = i;
+            baraja[listado[i]].style.order = i;
+            setTimeout(()=> {
+                baraja[listado[i]],style.left = '0px';
+            }, 400);
+        }, 50 * i);
     } 
 
   } 
-
- 
- 
- 
-
-// Juego de la casa 
-
-//     "A" { 
-
- 
- 
-
-//     } 
-
-// ]; 
-
-// let diamantes = []; 
-
-// let treboles = []; 
-
-// let corazones = []; 
-
- 
  
 
 // Juego de la casa 
@@ -356,34 +295,7 @@ const reset = document.getElementById('reset');
 
 const fichas = document.getElementById('fichas'); 
 
- 
- 
-
-let jugadorPlantado = false; 
-
- 
- 
-
-let fin = false; 
-
-let timer = 0; 
-
- 
- 
-
-let temporizador = 0; 
-
- 
- 
- 
-
-// for (i = 0; i < 100; i++) { 
-
-//  carta.splice(Math.random() * 52, 0, carta[0]); 
-
-//  carta.shift(); 
-
-// } 
+ let temporizador = 0;
 
  
  
@@ -402,55 +314,22 @@ function empezar() {
 
     activarBotones(); 
 
- 
+    // Recogemos la dos cartas iniciales del jugador:
+    darCarta();
+    darCarta();
  
 
     //Recogemos las dos cartas iniciales de la casa: 
-
     darCarta("casa"); 
 
-    manoCasa.innerHTML += "<div class='carta duda'>" 
+    manoCasa.innerHTML += "<div id='girar' class='carta duda'>"
+    + "<div class='palo'>" + iconoDuda + "</div>"
+    + "</div>";
 
-        + "<div class='palo'>" + iconoDuda + "</div>" 
-
-        + "</div>"; 
-
- 
- 
- 
-
-    //Recogemos las dos cartas iniciales del jugador: 
-
-    darCarta(); 
-
-    darCarta(); 
-
- 
- 
-
-    // Recogemos la dos cartas iniciales de la casa: 
-
-    darCarta("casa"); 
-
-    manoCasa.innerHTML += "<div class='carta duda'>"  
-
-    + "<div class='palo'>" + iconoDuda + "</div>" 
-
-    + "</div>"; 
-
- 
- 
-
-    // Cada segundo los tiempos de la animación del parpadeo se randomizan 
-
+        
+    // Cada segundo los tiempos de la animación del parpadeo se randomizan
     let tempParp = setInterval(parpadeo, 1000); 
-
- 
- 
-
 } 
-
- 
  
 
 function activarBotones() { 
@@ -561,8 +440,6 @@ function desactivarBotones() {
 
                      break; 
 
-             
-
                 default: 
 
                     puntosJugador += jugadaJugador[i]; 
@@ -587,11 +464,8 @@ function desactivarBotones() {
     // Se imprime el estado de la partida por consola 
 
          console.log("Cartas de la casa:" + jugadaCasa.join()); 
-
          console.log("Puntuación de la casa:" + puntosCasa); 
-
          console.log("Cartas del jugador:" + jugadaJugador.join()); 
-
          console.log("Puntuación del jugador" + puntosJugador); 
 
  
@@ -605,328 +479,121 @@ function desactivarBotones() {
 
         // manoJugador.innerHTML = jugadaJugador.join(); 
 
+        // nos permite ver el estado de la partida en la consola y nos muestar las cartas
         mostrarCartas(); 
-
         displayCasa.innerHTML = puntosCasa; 
-
         displayJugador.innerHTML = puntosJugador; 
-
          ganador(); 
 
     } 
 
- 
- 
-
-    let iconoDiamante = `<i class='bi bi-suit-diamond-fill'></i>`; 
-
-    let iconoPica = `<i class="bi bi-suit-spade-fill"></i>`; 
-
- 
- 
-
-                // iconos  
-
-    // let iconoCorazon = `<i class="bi bi-suit-heart-fill"></i>`; 
-
-    // let iconoTrebol = `<i class="bi bi-suit-club-fill"></i>`; 
-
- 
- 
-
     function mostrarCartas() { 
-
     manoCasa.innerHTML = ''; 
-
     manoJugador.innerHTML = ''; 
-
     for (let i = 0; i < jugadaCasa.length; i++) { 
-
         manoCasa.innerHTML += "<div class='carta'>" 
-
             + "<div class='num top'>" + jugadaCasa[i] + "</div>" 
-
             + "<div class='palo'>" + iconoDiamantes + "</div>" 
-
             + "<div class='num bot'>" + jugadaCasa[i] + "</div>" 
-
             + "</div>"; 
-
     } 
 
     for (let i = 0; i < jugadaJugador.length; i++) { 
-
         manoJugador.innerHTML += "<div class='carta'>" 
-
             + "<div class='num top'>" + jugadaJugador[i] + "</div>" 
-
             + "<div class='palo'>" + iconoPicas + "</div>" 
-
             + "<div class='num bot'>" + jugadaJugador[i] + "</div>" 
-
             + "</div>"; 
-
     } 
 
 } 
-
- 
- 
- 
 
     // Le damos la función al ganador, el ganador debe tener 21 puntos no pasarse de 21 puntos. 
 
     function ganador() { 
 
- 
- 
-
         // Puntos de la partida la cual se pone cuando se gana la partida (REVISAR) 
-
-        // info.innerHTML = "Puntuación del jugador:" + puntosJugador + "<br>Puntuación de la casa: " + puntosCasa; 
-
- 
- 
-
+        // info.innerHTML = "Puntuación del jugador:" + puntosJugador + "<br>Puntuación de la casa: " + pu
         // Switch para comentar el estado actual del juego 
 
         switch (true) { 
-
             case puntosJugador > puntosCasa: 
-
                 resultado.innerHTML = "Va ganando el jugador" 
-
                 break; 
-
             case puntosCasa > puntosJugador: 
-
                 resultado.innerHTML = "Va ganando la casa" 
-
                 break; 
-
             case puntosCasa === puntosJugador: 
-
                 resultado.innerHTML = "Empate" 
-
                 break; 
-
- 
- 
-
             default:  
-
                 console.log("default switch 1"); 
-
                 break; 
-
         } 
-
         desactivarBotones(); 
-
-         
-
         // info.innerHTML = "Puntuación del jugador:" + puntosJugador + "<br>Puntuación de la casa: " + puntosCasa; 
-
- 
- 
- 
-
         // switch para determinar que ha finalizado la partida 
 
         switch (true) { 
-
             case (puntosCasa === 21 && puntosJugador === 21): 
-
                 resultado.innerHTML = "Ambas partes tienen 21, la apuesta se recupera."                 
-
                 break; 
-
             case (puntosCasa === 21 && puntosJugador != 21): 
-
                 resultado.innerHTML = "La casa tiene Blackjack. El jugador pierde la apuesta!" 
-
                 break; 
-
             case (puntosCasa != 21 && puntosJugador === 21): 
-
                 resultado.innerHTML = "Has ganado!" 
-
                 break; 
-
             case puntosJugador > 21: 
-
                 resultado.innerHTML = "Gana la casa." 
-
                 break; 
-
             case puntosCasa > 21: 
-
                 resultado.innerHTML = "La casa se ha pasado de 21. Gana el jugador." 
-
                 break; 
-
-         
-
             default: 
-
                 console.log("default switch 2"); 
-
                 activarBotones(); 
-
                 break; 
 
         } 
-
- 
- 
-
-         
-
-        // let fin = false; 
-
-        // if (puntosJugador > 21) { 
-
-        //     // esta variable mostrará el mensaje si es que la casa va ganando o no 
-
-        //     console.log("El jugador se ha pasado de 21. Gana la casa"); 
-
-        //     resultado.innerHTML = "El jugador se ha pasado de 21. Gana la casa"; 
-
-        //     fin = true; 
-
-        //     return; 
-
- 
- 
-
-        // } else if (puntosCasa > 21) { 
-
-        //     console.log("La casa se ha pasado de 21. Gana el jugador"); 
-
-        //     resultado.innerHTML = "La casa se ha pasado de 21. Gana el jugador"; 
-
-        //     fin = true; 
-
-        //     return; 
-
-        // } 
-
-        // if (puntosJugador > puntosCasa && !fin) { 
-
-        //     console.log ("Va ganando el jugador"); 
-
-        //     console.log(""); 
-
-        //     resultado.innerHTML = "Va ganando el jugador" 
-
-        //     // jugar("casa"); 
-
-        //     return; 
-
-        // } else if (puntosCasa > puntosJugador && ! fin) { 
-
-        //     console.log("Va ganando la casa"); 
-
-        //     console.log(""); 
-
-        //     resultado.innerHTML = "Va ganando la casa" 
-
-        //     // jugar("jugador"); 
-
-        //     return; 
-
-        // } else { 
-
-        //     console.log("Hay empate"); 
-
-        //     console.log(""); 
-
-        //     resultado.innerHTML = "Hay empate"; 
-
-        //     // jugar("jugador"); 
-
-        //     return; 
-
-             
-
-        // } 
-
     } 
 
    function darCarta(jugada) { 
 
        switch (jugada) { 
-
            case "casa": 
-
                jugadaCasa.push(cartasCasa[Math.floor(Math.random() * cartasCasa.length)]);             
-
                break; 
-
            default: 
-
                jugadaJugador.push(cartasJugador[Math.floor(Math.random() * cartasJugador.length)]); 
-
                break; 
-
        } 
 
     //    Cuentas los puntos del jugador y de la casa 
-
        if(jugadaCasa.length >= 2 && jugadaJugador.length >=2)  
-
        calcularPuntos(); 
-
     } 
-
- 
- 
 
     function plantarse() { 
-
     let info = document.getElementById("info"); 
-
         jugadorPlantado = true; 
-
         desactivarBotones(); 
-
-        if (puntosJugador > puntosCasa) { 
-
+        if (puntosJugador > puntosCasa) {
             darCarta('casa'); 
-
             timer = setTimeout(() => { 
-
                 plantarse(); 
-
             }, 1000); 
-
         } else { 
-
             clearTimeout(timer); 
-
             timer = 0; 
-
         } 
-
- 
- 
-
     } 
 
- 
- 
- 
-
 function jugar() {   
-
     tabContent.style.display ="flex" 
-
     btnIniciar.style.display ="none" 
-
     reset.style.display="flex" 
-
     btnPedir.style.display ="flex" 
-
     btnPlantarse.style.display ="flex" 
 
     // fichas.style.display ="flex" 

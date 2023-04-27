@@ -9,11 +9,6 @@ let iconoTreboles = `<i class="bi bi-suit-club-fill"></i>`;
 // Array para el valor de las monedas de apuestas
 let coins = [10, 25, 50, 100] ;
 
- // Variables que nos ayudaran hacer apuestas
-//  let total = 100;
-//  let totalDisplay = document.getElementById("total");
-//  let apuestaDisplay = document.getElementById("mensaje");
-//  let apuesta = 0;
 
 // Juego de la casa
 let puntosCasa = 0;
@@ -35,7 +30,7 @@ const btnIniciar = document.getElementById('btn-iniciar');
 const btnPedir = document.getElementById('btn-pedir');
 const btnPlantarse = document.getElementById('btn-plantarse');
 const tabContent = document.getElementById('tab');
-// const reset = document.getElementById('reset');
+const reset = document.getElementById('reset');
 const apuestas = document.querySelector('.apuestas');
 const cotent = document.querySelector('.cotent');
 const controls = document.querySelector('.controls');
@@ -81,8 +76,6 @@ function empezar() {
     manoCasa.classList.add('cartaOculta');
     manoJugador.classList.add('cartaOculta');
 
-    
-// totalDisplay.innerHTML = total;
 
 
 
@@ -97,13 +90,16 @@ function activarBotones() {
     btnPedir.style['opacity'] = 1;
     btnPlantarse.style['pointer-events'] = 'auto';
     btnPlantarse.style['opacity'] = 1;
-    // btnApostar.style['opacity'] = 1;
+    apuestas.style['pointer-events'] = 'auto';
+    apuestas.style['opacity'] = 1;
 }
 function desactivarBotones() {
     btnPedir.style['pointer-events'] = 'none';
     btnPedir.style['opacity'] = 0.7;
     btnPlantarse.style['pointer-events'] = 'none';
     btnPlantarse.style['opacity'] = 0.7;
+    apuestas.style['pointer-events'] = 'none';
+    apuestas.style['opacity'] = 0.7;
 }
 
 // Le damos la función a calcularPuntos
@@ -159,7 +155,6 @@ function calcularPuntos() {
     mostrarCartas();
     displayCasa.innerHTML = puntosCasa;
     displayJugador.innerHTML = puntosJugador;
-    // resultadoJuego.innerHTML = "Apuestas";
 
     ganador();
 }
@@ -173,8 +168,8 @@ function mostrarCartas() {
         if (jugadaCasa.length<2) {
             manoCasa.innerHTML += "<div class='carta duda'>"
                 + "<div class='palo'>" + iconoDuda + "</div>"
-                + "</div>"+
-                "<div class='carta'>"
+                + "</div>"
+                +"<div class='carta'>"
                 + "<div class='num top'>" + jugadaCasa[i] + "</div>"
                 + "<div class='palo'>" + iconoDiamantes + "</div>"
                 + "<div class='num bot'>" + jugadaCasa[i] + "</div>"
@@ -200,10 +195,6 @@ function mostrarCartas() {
 
 // Le damos la función al ganador, el ganador debe tener 21 puntos no pasarse de 21 puntos.
 function ganador() {
-
-    // Puntos de la partida la cual se pone cuando se gana la partida (REVISAR)
-    // info.innerHTML = "Puntuación del jugador:" + puntosJugador + "<br>Puntuación de la casa: " + puntosCasa;
-
     // Switch para comentar el estado actual del juego
     switch (true) {
         case puntosJugador > puntosCasa:
@@ -221,8 +212,6 @@ function ganador() {
             break;
     }
     desactivarBotones();
-
-    // info.innerHTML = "Puntuación del jugador:" + puntosJugador + "<br>Puntuación de la casa: " + puntosCasa;
 
 
     // switch para determinar que ha finalizado la partida
@@ -321,9 +310,12 @@ function mostrarMonedas() {
        return `
         <div>
             <div class="${style_coins}" onclick="apostar(${coin})">${coin}€</div>
-        </div>
-        
+        </div>        
        `
+      //  otra manera de las monedas
+      /*    <div>
+              <div class="${style_coins}" onclick="apostar(${coin})"><i class="bi bi-coin"></i>${coin}</div>
+            </div> */
     })
 
     apuestas.innerHTML = data.join('')
@@ -331,9 +323,9 @@ function mostrarMonedas() {
 
 }
 
-mostrarMonedas()
+mostrarMonedas();
 
-
+let apuestaDisplay = document.querySelector('#coin');
 function apostar(coin) { 
     monedasJugador.push(coin)
     console.log(monedasJugador)
@@ -343,6 +335,18 @@ function apostar(coin) {
     manoJugador.classList.remove('cartaOculta');
 
     calcularPuntos("");
+    let valorApuesta = 0;
+    for (let i = 0; i < monedasJugador.length; i++) {
+        valorApuesta += monedasJugador[i];
+        
+    }
+    console.log(valorApuesta);
+    apuestaDisplay.innerHTML = valorApuesta + " €" 
+    + " Apuesta realizada!";
+
+    if (resultado === true);{
+        total = 100;
+    }
 
 
   
@@ -366,12 +370,4 @@ function apostar(coin) {
 //     }
 }
 
-//  otra manera de las monedas
-/* <div>
-     <div class="${style_coins}" onclick="apostar(${coin})"><i class="bi bi-coin"></i>${coin}</div>
-  </div> */
-  
-//   primera manera para referirse a las monedas
-//   <div>
-//             <div class="${style_coins}" onclick="apostar(${coin})">$${coin}</div>
-//         </div>
+
