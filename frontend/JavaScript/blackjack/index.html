@@ -29,11 +29,13 @@
 
             <div id="tab">
                 <div class="tab-casa">
-                    <p>Cartas de la casa: <br><span class="cartas-mesa" id="mano-casa"></span></p>
+                    <p>Cartas de la casa: <br></p>
+                    <p><span class="cartas-mesa" id="mano-casa"></span></p>
                     <p>Puntos: <span id="puntos-casa"></span></p>
                 </div>
                 <div class="tab-jugador">
-                    <p>Cartas del jugador: <span class="cartas-mesa" id="mano-jugador"></span></p>
+                    <p>Cartas del jugador:</p>
+                    <p><span class="cartas-mesa" id="mano-jugador"></span></p>
                     <p>Puntos: <span id="puntos-jugador"></span></p>
                 </div>
             </div>
@@ -43,11 +45,16 @@
                 <p><span id="coin"></span></p>
                 
             </div>
+            <!-- <div class="cash">
+                <p>Saldo:</p>
+                <p><span id="total"></span></p>
+                <div id="mensaje"></div>
+            </div> -->
         </div>
         <!-- Contenedor de los controles -->
         <div class="controls">
             <button id="btn-iniciar" onclick="jugar()">Jugar</button>
-            <button id="reset" onclick="playagain()">Jugar de nuevo</button>
+            <button id="reset" onclick="playagain()">Iniciar partida</button>
             <button id="btn-pedir" onclick="darCarta('jugador')">Pedir carta</button>
             <button id="btn-plantarse" onclick="plantarse()">Plantarse</button>
         </div>

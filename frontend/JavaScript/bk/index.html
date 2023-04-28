@@ -10,34 +10,55 @@
 <body>
     <div class="container">
         <h1>Blackjack</h1>
-        <div class="contenido"> 
+        <div class="tab"> 
             <div class="card"></div>
-            <div id="info">
-                <div class="cont-casa" id="mano-casa" ><span id="puntos-casa"></span></div>
-                <div class="cont-jugador" id="mano-jugador"><span id="puntos-jugador"></span></div>
-                <div class="tab-resultados">
-                    <p id="resultado"></p>
+                <div id="tab">
+                    <div class="tab-casa">
+                        <div>
+                            <p>Cartas de la casa: <br></p>
+                            <p><span class="cartas-mesa"     id="mano-casa"></span></p>
+                        </div>
+                        <div id="puntos-casa"></div>
+                        <p><span id="puntos"></span></p>
+                    </div>
+                    <div class="tab-jugador">
+                        <div>
+                            <p>Cartas del jugador:</p>
+                            <p><span class="cartas-mesa"     id="mano-jugador"></span></p>
+                        </div>
+                        <div id="puntos-jugador">
+                            <p><span id="puntos"></span></p>
+                        </div>
+                    </div>
                 </div>
-            </div>
+
+                <div class="resultado">
+                    <p><i class="bi bi-trophy-fill"></i></p>
+                    <p><span id="resultado"></span></p>
+                </div>   
+
 
              <!-- Contenedor de los botones -->
         <div class="controles">
-            <button id="btn-iniciar" onclick="jugar()">Jugar</button>
-            <button id="reset" onclick="playagain()">Jugar de nuevo</button>            
+            <button id="inicio" onclick="empezar()">Empezar Juego</button>
             <button id="btn-pedir" onclick="darCarta('jugador')">Pedir carta</button>
+            <button id="reset" onclick="playAgain()">Jugar de nuevo</button> 
             <button id="btn-plantarse" onclick="plantarse()">Plantarse</button>
+                       
+            
+            
         </div>
 
         <div class="apuestas">
-            <div id="ficha rosa" class="apuesta" onclick="apostar(10)"></div>
-            <div id="ficha azul" class="apuesta" onclick="apostar(25)"></div>
-            <div id="ficha lila" class="apuesta" onclick="apostar(50)"></div>
-            <div id="ficha negra" class="apuesta"  onclick="apostar(100)"></div>
+            <div id="ficha rosa" class="apuesta" onclick="apostar(10)">10€</div>
+            <div id="ficha azul" class="apuesta" onclick="apostar(25)">25€</div>
+            <div id="ficha lila" class="apuesta" onclick="apostar(50)">50€</div>
+            <div id="ficha negra" class="apuesta"  onclick="apostar(100)">100€</div>
         </div>
         <div class="dinero">
             <p>Saldo restante:</p>
             <p><span id="total"></span>€</p>
-            <div id="message"></div>
+            <div id="mensaje"></div>
         </div>
             
         </div>        

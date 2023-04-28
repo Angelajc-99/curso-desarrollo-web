@@ -1,244 +1,322 @@
 // Juego de la casa 
 
 let puntosCasa = 0; 
-
 let jugadaCasa = []; 
-
 let cartasCasa = [ 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"]; 
 
 //Juego del jugador 
 
 let puntosJugador = 0; 
-
 let jugadaJugador = []; 
-
 let cartasJugador = [2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K", "A"]; 
 
 // Identificamos los elementos de HTML, para las variables que vamos a imprimir en pantalla 
+const cartasCa = document.getElementById('cartas-casa');
+const cartasJu = document.getElementById('cartas-jugador');
 
-const manoCasa = document.getElementById('mano-casa'); 
+const marcadorCa = document.getElementById('puntos');
+const marcadorJu = document.getElementById('puntosJu');
+const result = document.getElementById('result'); 
 
-const manoJugador = document.getElementById('mano-jugador'); 
+const btnInicio = document.getElementById('inicio');
+const btnApostar = document.getElementsByClassName('apuesta');
+const btnPedir = document.getElementById('btn-pedir');
+const btnPlantarse = document.getElementById('detener');
+const btnReset = document.getElementById('reset');
 
-const displayCasa = document.getElementById('puntos-casa'); 
-
-const displayJugador = document.getElementById('puntos-jugador'); 
-
-const resultado = document.getElementById('resultado'); 
-
-const btnIniciar  = document.getElementById('btn-iniciar'); 
-
-const btnPlantarse = document.getElementById('btn-plantarse');
-
-const btnPedir = document.getElementById('btn-pedir'); 
-
-const reset = document.getElementById('reset');
-
-
-let apuestas = document.querySelector('.apuestas');
-
-let jugadorPlantado = false;
+let alerta = document.getElementById('alerta');
 
 let fin = false;
 let timer = 0;
 
 function empezar() {
+
     puntosCasa = 0;
-    manoCasa = [];
+    jugadaCasa = [];
 
     puntosJugador = 0;
-    manoJugador = [];
+    jugadaJugador = [];
 
-    resultJuego.innerHTML = "Apuesta";
+    result.innerHTML = "¿Cuál es tu apuesta?";
 
-    if (manoCasa.length == 0 && manoJugador.length == 0) {
-        jugar("casa");
-        jugar("casa");
+    if (jugadaCasa.length == 0 && jugadaJugador.length == 0) {
+        
+        jugar("casa")
+        jugar("");
 
-        jugar("jugador");
-        jugar("jugador");
+        jugar("jugador")
+        jugar("");
+    }
+
+    btnInicio.disabled = true;
+
+    for (let i = 0; i < btnApostar.length; i++) {
+        btnApostar[i].disabled = true;
+
     }
 }
-    btnIniciar.disabled = true;
 
-     //para desabilitar los botones despues de apostar creamos un FOR para recorrer los botones
-    //
-    for (let i = 0; i < apostar.length; i++) {
-        apostar[i].disabled = true;
-    }
+let total = 100;
+let totalDisplay = document.getElementById("total");
+let apuestaDisplay = document.getElementById("mensaje");
+let apuesta = 0;
 
-    // Variables que nos ayudaran hacer apuestas
-    let total = 100;
-    let totalDisplay = document.getElementById("total");
-    let apuestaDisplay = document.getElementById("mensaje");
-    let apuesta = 0;
+btnPlantarse.disabled = true;
+btnPedir.disabled = true;
+btnInicio.disabled = true;
+totalDisplay.innerHTML = total;
 
-    btnIniciar.disabled = true;
+function apostar() {
+    apuesta = apuesta;
+    console.log(total);
 
-    totalDisplay.innerHTML = total;
+    if (total < 0) {
+        btnInicio.disabled = true;
+        apuestaDisplay.innerHTML = 'No tienes dinero para apostar';
 
-    // Creamos una función que nos permitirá hacer apuestas
-    function apuestas() {
-
-        apostar = apuestas;
-        console.log(total);
-        
-        if ((total - apuesta < 0)) {
-     
-           btnIniciar.disabled = true;
-           let resultado = window.confirm('¡No tienes suficientes fondos!, ¿Quieres volver a iniciar la partida?');
-     
-           if (resultado === true) {
-               total = 50;
-           }
-           return true;
-       } else {
+        return true;
+    } else {
         console.log(total);
         totalDisplay.innerHTML = total - apuesta;
-
-        apuestaDisplay.innerHTML = apuesta + " € " + "Apuesta realizada!";
-        btnIniciar.disabled = false;
-        }
+        apuestaDisplay.innerHTML = apuesta + " € " + "apuesta realizada!";
+        btnInicio.disabled = false;
     }
-    function empezar() {
+    juntar();
+    contenedor.style.opacity = 1;
+} 
 
-        switch (jugada) {
-            case "casa":
-                manoCasa.push(cartasCasa[Math.floor(Math.random() * cartasCasa.length)]);
-                break;
-            case "jugador":
-                manoJugador.push(cartasJugador[Math.floor(Math.random() * cartasJugador.length)]);
-                break;
-        }
-
-        //este if nos permitira calcular cuando cada jugador tenga 2 cartas 
-    if (manoCasa.length >= 2 && manoJugador.length >= 2) calcularPuntos();
-
+function jugar(jugada) {
+    switch (jugada) {
+        case "casa":
+            manoCasa.push(mazo[Math.floor(Math.random() * mazo.length)]);
+            break;
+        case "jugador":
+            manoJugador.push(mazo[Math.floor(Math.random() * mazo.length)]);
+            break;
     }
-    // creamos la funcion de calcular puntos en donde le daremos el valor a las cartas con letra,primero con un for que cuente las cartas
-// y despues le agregamos un swich(if) para darles el valor con la condicion
+    if (jugadaCasa.length >= 2 && jugadaJugador.length >= 2) calcularPuntos();
+}
+
 function calcularPuntos() {
+
     puntosCasa = 0;
     puntosJugador = 0;
+
     // se realiza el for con cada jugador primero con la casa 
-    for (let i = 0; i < manoCasa.length; i++) {
-        let as = false;
-        switch (manoCasa[i]) {
+    let as = false;
+    let limite = 1;
+    if (jugadorPlantado) limite = manoCasa.length;
+    for (let i = 0; i < limite; i++) {
+
+        let puntos = manoCasa[i].charAt(0);
+        switch (puntos) {
             case "A":
                 puntosCasa += 11;
                 as = true;
                 break;
+            case '0':
             case "J":
             case "Q":
             case "K":
                 puntosCasa += 10;
                 break;
+
             default:
-                puntosCasa += manoCasa[i];
+                puntosCasa += parseInt(puntos);
                 break;
         }
-        //si los puntos son menores que 21 al AS se le restaran 10 para que valga 1
-        if (manoCasa > 21 && as) {
-            puntosCasa -= 10;
-        }
+
     }
+    //si los puntos son menores que 21 al AS se le restaran 10 para que valga 1
+    if (puntosCasa > 21 && as) {
+        puntosCasa -= 10;
+    }
+
     // for despues con el jugador
+    let asJ = false;
     for (let i = 0; i < manoJugador.length; i++) {
-        let as = false;
-        switch (manoJugador[i]) {
+
+        let puntos = manoJugador[i].charAt(0);
+        console.log(puntos);
+        console.log(manoJugador[i].charAt(0));
+        switch (puntos) {
             case "A":
                 puntosJugador += 11;
-                as = true;
+                asJ = true;
                 break;
+            case '0':
+                console.log('diez');
             case "J":
             case "Q":
             case "K":
                 puntosJugador += 10;
                 break;
+
             default:
-                puntosJugador += manoJugador[i];
+                puntosJugador += parseInt(puntos);
                 break;
         }
-        if (puntosJugador > 21 && as) {
-            puntosJugador -= 10;
-        }
-    }
-    console.log("Cartas de la casa:" + manoCasa.join());
-    // document.getElementById("cartascasa").innerHTML = manoCasa.join();
-    console.log("Puntuación de la casa: " + puntosCasa);
-    marcadorc.innerHTML = puntosCasa;
-    console.log("Cartas del jugador:" + manoJugador.join());
 
+    }
+    if (puntosJugador > 21 && asJ) {
+        puntosJugador -= 10;
+    }
+
+    console.log("cartas de la casa:" + manoCasa.join());
+    console.log("puntuación de la casa: " + puntosCasa);
+
+    marcadorCa.innerHTML = puntosCasa;
+
+    console.log("cartas del jugador:" + manoJugador.join());
     console.log("puntuación del jugador: " + puntosJugador);
-    marcadorJ.innerHTML = puntosJugador;
-    cartasc.innerHTML = manoCasa.join();
-    cartasj.innerHTML = manoJugador.join();
+
+    marcadorJu.innerHTML = puntosJugador;
+    cartasCa.innerHTML = manoCasa.join();
+    cartasJu.innerHTML = manoJugador.join();
     //cerramos la funcion
     mostrarCartas();
+
     ganador();
+
 }
-let iconoDiamantes = `<i class='bi bi-suit-diamond-fill'></i>`;
+
 let iconoPicas = `<i class="bi bi-suit-spade-fill"></i>`;
+let iconoCorazones = `<i class="bi bi-suit-heart"></i>`;
 
 function mostrarCartas() {
-    cartasCasa.innerHTML = '';
-    cartasJugador.innerHTML = '';
+
+    cartasCa.innerHTML = '';
+    cartasJu.innerHTML = '';
+    // baraja.innerHTML = '';
+
     for (let i = 0; i < manoCasa.length; i++) {
-        cartasCasa.innerHTML += "<div class='carta'>"
-            + "<div class='num top'>" + manoCasa[i] + "</div>"
-            + "<div class='palo'>" + iconoDiamantes + "</div>"
-            + "<div class='num bot'>" + manoCasa[i] + "</div>"
-            + "</div>";
+        let valor = manoCasa[i].charAt(0);
+
+        if (valor == 0) valor = 10;
+        let palo = manoCasa[i].charAt(1);
+
+        let print = '';
+        let color = '';
+        switch (palo) {
+            case 'D':
+                print = iconoDiamantes;
+                color = 'carta-roja';
+                break;
+            case 'P':
+                print = iconoPicas;
+                color = 'carta-negra';
+                break;
+            default:
+                break;
+        }
+
+        cartasCa.innerHTML +=
+
+            "<div id='" + manoCasa[i] + "' class='carta baraja'>"
+            + "<div class='carta-contenedor'>"
+            + "<div class='frontal " + color + "'>"
+            + "<div class='num top'>" + valor + "</div>"
+            + "<div class='palo'>" + print + "</div>"
+            + "<div class='num bot'>" + valor + "</div>"
+            + "</div>"
+
+            + "<div class='trasera'>"
+            + "<div class='palo'>"
+            // + reves 
+            + "</div>"
+            + "</div>"
+
+            + "</div>"
+            + "</div>"
     }
 
-    //ocultamos una de las cartas
-    ultimaCarta = document.querySelectorAll('#cartas-casa .carta');
+    if (!jugadorPlantado) {
+        let ultimaCarta = document.querySelectorAll('#cartas-casa .carta');
+        ultimaCarta[ultimaCarta.length - 1].style.backgroundImage =
+            "url('https://img.freepik.com/free-vector/neon-suit-poker-casino-brick-wall_47243-538.jpg?size=338&ext=jpg')";
+        ultimaCarta[ultimaCarta.length - 1].childNodes[0].style.opacity = '0';
+        ultimaCarta[ultimaCarta.length - 1].style.transition = 'all 1s';
+    }
+
 
     for (let i = 0; i < manoJugador.length; i++) {
-        cartasj.innerHTML += "<div class='carta'>"
-            + "<div class='num top'>" + manoJugador[i] + "</div>"
-            + "<div class='palo'>" + iconoPicas + "</div>"
-            + "<div class='num bot'>" + manoJugador[i] + "</div>"
-            + "</div>";
+        let valor = manoJugador[i].charAt(0);
+
+        if (valor == 0) valor = 10;
+        let palo = manoJugador[i].charAt(1);
+
+        let print = '';
+        let color = '';
+        switch (palo) {
+            case 'D':
+                print = iconoDiamantes;
+                color = 'carta-roja';
+                break;
+            case 'P':
+                print = iconoPicas;
+                color = 'carta-negra';
+                break;
+            default:
+                break;
+        }
+
+        cartasJu.innerHTML +=
+
+            "<div id='" + manoJugador[i] + "' class='carta baraja'>"
+            + "<div class='carta-contenedor'>"
+            + "<div class='frontal " + color + "'>"
+            + "<div class='num top'>" + valor + "</div>"
+            + "<div class='palo'>" + print + "</div>"
+            + "<div class='num bot'>" + valor + "</div>"
+            + "</div>"
+
+            + "<div class='trasera'>"
+            + "<div class='palo'>"
+            + "</div>"
+            + "</div>"
+
+            + "</div>"
+            + "</div>"
     }
 
+    // for (let i = 0; i < manocasa.length; i++) {
+
 }
+
+//al tener los puntos ya determinamos necesitamos saber quien va ganando y si es necesario pedrir otra carta
+//para esto creamos la funcion ganador
+
+
 function ganador() {
+
     let fin = false;
-    btnplantarse.disabled = false;
+    btnPlantarse.disabled = false;
     btnjugar.disabled = false;
+    btnreset.disabled = false;
+
     // primero se estipula si alguno se a pasado de 21  
     if (puntosJugador > 21) {
         console.log("El jugador se ha pasado de 21. Gana la casa");
-        resultJuego.innerHTML = "El jugador se ha pasado de 21. Gana la casa";
+        resultadoJuego.innerHTML = "El jugador se ha pasado de 21. Gana la casa";
         btnjugar.disabled = true;
-        btnplantarse.disabled = true;
-    }
-    function ganador() {
-        let fin = false;
-        btnplantarse.disabled = false;
-        btnjugar.disabled = false;
-        // primero se estipula si alguno se a pasado de 21  
-        if (puntosJugador > 21) {
-            console.log("El jugador se ha pasado de 21. Gana la casa");
-            resultadoJuego.innerHTML = "El jugador se ha pasado de 21. Gana la casa";
-            btnjugar.disabled = true;
-            btnplantarse.disabled = true;
-           // Si el jugador pierde, se le resta la apuesta de su saldo
+        btnPlantarse.disabled = true;
+
+        // Si el jugador pierde, se le resta la apuesta de su saldo
         total = total - apuestaJ;
         totalDisplay.innerHTML = total;
         console.log(total);
 
         if ((total - apuestaJ <= 0)) {
 
-            //usamos el setTimeout para que me permita ver las carta antes de que me salga la alerta
+            //usamos el setTimeout para que me permita ver las 
+            //carta antes de que me salga la alerta
             setTimeout(() => {
-                let resultado = window.confirm('¡Te faltan fondos!, ¿Quieres volver a iniciar?');
-                if (resultado === true) {
-                    total = 50;
-                }
-            }, 1000);
 
+                alerta.style.display = "block";
+                total = 50;
+                btnreset.disabled = true;
+
+            }, 1000);
 
         }
         fin = true;
@@ -248,7 +326,7 @@ function ganador() {
         console.log("La casa se ha pasado de 21. Gana el jugador");
         resultadoJuego.innerHTML = "La casa se ha pasado de 21. Gana el jugador";
         btnjugar.disabled = true;
-        btnplantarse.disabled = true;
+        btnPlantarse.disabled = true;
         //calcula la apuesta
         total = total + apuestaJ;
         totalDisplay.innerHTML = total;
@@ -257,16 +335,15 @@ function ganador() {
         return;
     }
 
-
     if (puntosJugador == 21) {
         if (puntosCasa == 21) {
-            btnplantarse.disabled = true;
+            btnPlantarse.disabled = true;
             resultadoJuego.innerHTML = "Hay empate";
             total = total + apuestaJ;
             apuestaDisplay.innerHTML = total;
             totalDisplay.innerHTML = total;
         } else {
-            btnplantarse.disabled = true;
+            btnPlantarse.disabled = true;
             btnjugar.disabled = true;
             resultadoJuego.innerHTML = "El jugador tiene un 21. Ganas el doble de tu apuesta!";
             total = total + apuestaJ * 2;
@@ -283,7 +360,7 @@ function ganador() {
             apuestaDisplay.innerHTML = total;
             totalDisplay.innerHTML = total;
         } else {
-            btnplantarse.disabled = true;
+            btnPlantarse.disabled = true;
             btnjugar.disabled = true;
             resultadoJuego.innerHTML = "La casa tiene 21. Pierdes tu apuesta";
             total = total - apuestaJ;
@@ -293,21 +370,25 @@ function ganador() {
         }
         return;
     }
+
     // si ninguno se a pasado revisamos los puntos y si necesita otra carta
     if (puntosJugador > puntosCasa && !fin) {
-        //si los puntos son mayores a los del contrincante pero es diferente de la variable fin(21) 
+        //si los puntos son mayores a los del contrincante pero es 
+        //diferente de la variable fin(21) 
         //va ganando y juega el contrario       
         console.log("Va ganando el jugador");
         resultadoJuego.innerHTML = "Va ganando el jugador";
         console.log("");
         // jugar("casa");
         return;
+
     } else if (puntosCasa > puntosJugador && !fin) {
         console.log("Va ganando la casa");
         resultadoJuego.innerHTML = "Va ganando la casa";
         console.log("");
         // jugar("jugador");
         return;
+
     } else {
         console.log("Hay empate");
         console.log("");
@@ -317,43 +398,11 @@ function ganador() {
             // total = total + apuestaJ;
             apuestaDisplay.innerHTML = total;
             totalDisplay.innerHTML = total;
-            btnplantarse.disabled = true;
+            btnPlantarse.disabled = true;
             btnjugar.disabled = true;
             console.log(total);
         }
         return;
     }
+
 }
-// creamos una funcion que nos permitira jugar,introducimos un switch que nos arrojara una carta adicional de forma aleatoria
-// en este caso usamos el numero random del inicio en una funcion
-let jugadorPlantado = false;
-function plantarse() {
-    jugadorPlantado = true;
-    btnplantarse.disabled = true;
-    btnjugar.disabled = true;
-    if (puntosJugador > puntosCasa) {
-        jugar("casa");
-        timer = setTimeout(() => {
-            plantarse();
-        }, 1500);
-    } else {
-        clearTimeout(timer);
-        timer = 0;
-        ganador();
-    }
-    console.log(fin);
-}
-function reset() {
-    puntosCasa = 0;
-    manocasa = [];
-    puntosJugador = 0;
-    manojugador = [];
-    cartasc.innerHTML = [];
-    cartasj.innerHTML = [];
-    marcadorc.innerHTML = [];
-    marcadorJ.innerHTML = [];
-    resultadoJuego.innerHTML = "Introduce tu apuesta";
-    apuestaDisplay.innerHTML = "";
-    totalDisplay.innerHTML = total;
-        }
-    }
