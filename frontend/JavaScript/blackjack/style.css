@@ -54,11 +54,8 @@ h1 {
 
 
 #tab {
-    /* display: flex; */
     justify-content: space-between;
     display: none;
-    /* height: 50%; */
-    width: 50%;
     min-width: 455px;
 }
 #tab > div {
