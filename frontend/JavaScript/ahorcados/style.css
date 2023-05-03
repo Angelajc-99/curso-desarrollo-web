@@ -1,16 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+
 body {
     background: linear-gradient(75deg, rgb(98, 570, 960), rgb(91, 10, 197));
-    
-}
-#palabra {
-font-size: 60px;
-font-weight: bold;
- letter-spacing: 20px;
 
 }
+
+h1 {
+    display: flex;
+    justify-content: center;
+
+    font-size: 50px;
+    font-family: 'Courgette', cursive;
+}
+
+#palabra {
+    display: flex;
+    justify-content: center;
+    font-size: 60px;
+    font-weight: bold;
+    letter-spacing: 20px;
+
+}
+
 #Lienzo {
-    
+
+
     height: 300px;
     border: 2px solid rgb(30, 82, 134);
 }
 
+button {
+
+    border-radius: 15px;
+    margin-right: 3px;
+    height: 45px;
+    width: 45px;
+}
+
+/* .canvas svg {
+    border: 2px dashed green;
+} */
+
+line {
+    stroke: aqua;
+    stroke-width: 3;
+
+}
