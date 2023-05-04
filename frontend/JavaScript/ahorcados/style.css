@@ -3,6 +3,7 @@
 
 body {
     background: linear-gradient(75deg, rgb(98, 570, 960), rgb(91, 10, 197));
+    
 
 }
 
@@ -25,25 +26,39 @@ h1 {
 
 #Lienzo {
 
-
+    margin: 15px;
+    display: flex;
+    justify-content: center;
     height: 300px;
     border: 2px solid rgb(30, 82, 134);
 }
 
 button {
 
+    text-align: center;
+
     border-radius: 15px;
     margin-right: 3px;
+    cursor: pointer;
     height: 45px;
     width: 45px;
 }
 
 /* .canvas svg {
-    border: 2px dashed green;
+    display: flex;
+    justify-content: center;
 } */
 
 line {
-    stroke: aqua;
+    stroke: rgb(19, 34, 152);
     stroke-width: 3;
 
+}
+.hide {
+    display: none;
+}
+#body {
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
 }

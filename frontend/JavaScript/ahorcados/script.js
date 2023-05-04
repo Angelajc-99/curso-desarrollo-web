@@ -1,3 +1,4 @@
+
 const abecedario = [
     "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","U","V","W","X","Y","Z"
 ];
@@ -8,7 +9,6 @@ const abecedario = [
     console.log (abecedario[i] ); 
     contenedorBotones.innerHTML += `<button>${abecedario[i]}</button>`
 }
-
 const palabras = [
     "lagarto",
     "pájaro",
@@ -19,7 +19,6 @@ const palabras = [
     "léon",
     "atardecer",
 ]
-
 const iguana = [
     "i",
     "g",
@@ -32,24 +31,22 @@ const iguana = [
 let displayPalabra =document.getElementById('palabra');
 
 let random = Math.random();
-random = Math.random() * palabras.length;
+random = Math.random() * palabra.length;
 
 // math.floor sirve para las palabras flotantes
-random = Math.floor(Math.random() * palabras.length);
+random = Math.floor(Math.random() * palabra.length);
+random = Math.floor(Math.random() * palabra.length);
 
 let palabra = palabras[random];
 
 let longitud = palabra.length;
-
 let texto = "";
 
 for (let i = 0; i < array.length; i++) {
     botones[i].addEventListener("click", juego)
-    
+
+
 }
-
-
-
 
 
 // // Creamos un array con las distintas palabras del juego
