@@ -39,7 +39,7 @@ function createBlob() {
     width:${blobWidth}px;`;
 
     // imprimimos en pantalla el valor del border-radius
-    output.innerHTML = `${borderRadius}`;
+    outputcode.innerHTML = `${borderRadius}`;
 
 }
 
@@ -51,5 +51,8 @@ function copy() {
     document.execCommand('copy');
     window.getSelection().removeAllRanges();
 }
+
+
+
 
 

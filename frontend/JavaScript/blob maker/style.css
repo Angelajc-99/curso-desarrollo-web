@@ -112,18 +112,30 @@ input.range4 {
 .copy-btn {
     all: unset;
 
+    cursor: pointer;
+
     position: absolute;
-    top: 500px;
+    top: 515px;
     left: 50%;
     transform: translate(-50%, -50%);
     
     color: white;
     background: #f000ff;
+
     padding: 5px;
-    width: 340px;
+    width: 150px;
     text-align: center;
     border-radius: 3px;
+    
+    transition: all .7s;
+    
 }
+.copy-btn:hover {
+    box-shadow: 20px 19px 60px -7px rgb(6, 183, 214);
+    cursor: pointer;
+    font-size: 15px;
+}
+
 input[type="number"] {
     all: unset;
     width: 80px;
@@ -145,3 +157,5 @@ label {
     width: 400px;
     
 }
+
+
